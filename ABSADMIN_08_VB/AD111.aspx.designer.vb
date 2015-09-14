@@ -77,15 +77,6 @@ Partial Public Class AD111
     Protected WithEvents td_Return_Link As Global.System.Web.UI.HtmlControls.HtmlTableCell
     
     '''<summary>
-    '''PageAnchor_Return_Link control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents PageAnchor_Return_Link As Global.System.Web.UI.HtmlControls.HtmlAnchor
-    
-    '''<summary>
     '''txtAction control.
     '''</summary>
     '''<remarks>

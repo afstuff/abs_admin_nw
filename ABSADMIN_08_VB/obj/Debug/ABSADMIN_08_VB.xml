@@ -6,39 +6,15 @@ ABSADMIN_08_VB
 </name>
 </assembly>
 <members>
-<member name="F:ABSADMIN_08_VB.Site7.headSection">
+<member name="F:ABSADMIN_08_VB.Site1.head">
 	<summary>
-headSection control.
+head control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.Site7.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site7.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site6.headSection">
-	<summary>
-headSection control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site6.form1">
+</member><member name="F:ABSADMIN_08_VB.Site1.form1">
 	<summary>
 form1 control.
 </summary>
@@ -46,31 +22,7 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.Site6.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site5.headSection">
-	<summary>
-headSection control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site5.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site5.ContentPlaceHolder1">
+</member><member name="F:ABSADMIN_08_VB.Site1.ContentPlaceHolder1">
 	<summary>
 ContentPlaceHolder1 control.
 </summary>
@@ -95,54 +47,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:ABSADMIN_08_VB.Site4.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site3.headSection">
-	<summary>
-headSection control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site3.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site3.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site1.head">
-	<summary>
-head control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site1.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site1.ContentPlaceHolder1">
 	<summary>
 ContentPlaceHolder1 control.
 </summary>
@@ -175,6 +79,30 @@ To modify move field declaration from designer file to code-behind file.
  Module used to define the properties that are available in the My Namespace for Web projects.
  </summary>
 	<remarks></remarks>
+</member><member name="F:ABSADMIN_08_VB.Site7.headSection">
+	<summary>
+headSection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site7.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site7.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:ABSADMIN_08_VB.Site2.head">
 	<summary>
 head control.
@@ -192,6 +120,30 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:ABSADMIN_08_VB.Site2.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site5.headSection">
+	<summary>
+headSection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site5.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site5.ContentPlaceHolder1">
 	<summary>
 ContentPlaceHolder1 control.
 </summary>
@@ -250,14 +202,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:ABSADMIN_08_VB.AD111.td_Return_Link">
 	<summary>
 td_Return_Link control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD111.PageAnchor_Return_Link">
-	<summary>
-PageAnchor_Return_Link control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -482,6 +426,54 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:ABSADMIN_08_VB.dashboard.form1">
 	<summary>
 form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site3.headSection">
+	<summary>
+headSection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site3.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site3.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site6.headSection">
+	<summary>
+headSection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site6.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site6.ContentPlaceHolder1">
+	<summary>
+ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.

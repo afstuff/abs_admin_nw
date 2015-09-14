@@ -79,10 +79,10 @@ Public Class AD111
         End Try
 
         If UCase(Trim(strPOP_UP)) = "YES" Then
-            Me.PageAnchor_Return_Link.Visible = False
+            'Me.PageAnchor_Return_Link.Visible = False
             PageLinks = "<a href='javascript:void(0);' onclick='javascript:window.close();'>CLOSE PAGE...</a>"
         Else
-            Me.PageAnchor_Return_Link.Visible = True
+            'Me.PageAnchor_Return_Link.Visible = True
             PageLinks = ""
         End If
     End Sub

@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="AD111.aspx.vb" Inherits="ABSADMIN_08_VB.AD111" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="calendar.css" />
-    <link rel="stylesheet" type="text/css" href="StyleAdmin.css" />
-    <script src="AD_HOME.aspx" type="text/javascript"></script>
-    <script src="jquery.simplemodal.js" type="text/javascript"></script>
-    <script src="jquery-1.11.0.js" type="text/javascript"></script>
-    <script language="javascript" type="text/javascript" src="Script/ScriptJS.js"></script>
+    <link rel="stylesheet" href="Content/calendar.css" />
+    <link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
+    <%--<script src="AD_HOME.aspx" type="text/javascript"></script>--%>
+    <script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/ScriptJS.js"></script>
     <title>Admin Codes Setup</title>
 
 
@@ -14,7 +14,59 @@
     <script type="text/javascript">
         // calling jquery functions once document is ready
         $(document).ready(function () {
-            function GeneralRefresh() {
+            function onErrorLoadMotorTypes(response) {
+                //debugger;
+                var errorText = response.responseText;
+                alert('Error!!!' + '\n\n' + errorText);
+            }
+
+            function OnFailure(response) {
+                //debugger;
+                alert('Failure!!!' + '<br/>' + response.reponseText);
+            }
+
+            function loadMotorTypes() {
+                $.ajax({
+                    type: "POST",
+                    url: "AD111.aspx/GetMotorTypesInfo",
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $("#cmbCodeType").empty().append($("<option></option>").val("[-]").html("Please select"));
+                        $.each(response.d, function (key, value) {
+                            $("#cmbCodeType").append($("<option></option>").val(value.mId).html(value.Make + ',  ' + value.Type));
+                        });
+                    },
+                    failure: OnFailure,
+                    error: onErrorLoadMotorTypes
+                });
+                // this avoids page refresh on button click
+                return false;
+            }
+
+            function loadMeterTypes() {
+                $.ajax({
+                    type: "POST",
+                    url: "AD111.aspx/GetMeterTypeList",
+                    data: "{}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $("#cmbCodeType").empty().append($("<option></option>").val("[-]").html("Please select"));
+                        $.each(response.d, function () {
+                            $("#cmbCodeType").append($("<option></option>").val(this['Value']).html(this['Text']));
+                        });
+                    },
+                    error: function () {
+                        alert("An error has occurred loading the meter types.");
+                    }
+                });
+
+
+            }
+
+            function generalRefresh() {
                 switch ($('#cmbCodeClass').val()) {
                     case "001": //vehicle
                         $('#lblItemCode').text('Vehicle No');
@@ -22,7 +74,7 @@
                         $('#type1').show();
                         $('#BranchRow').show();
                         $('#DeptRow').show();
-                        LoadMotorTypes();
+                        loadMotorTypes();
                         $('#TransClassRow').hide();
                         break;
                     case "002": //supplier
@@ -72,7 +124,7 @@
                         $('#BranchRow').show();
                         $('#DeptRow').hide();
                         $('#TransClassRow').hide();
-                        LoadMeterTypes();
+                        loadMeterTypes();
                         break;
                     case "008": //Department
                         $('#lblItemCode').text('Dept Code');
@@ -116,66 +168,13 @@
             //screen responds according to selection
             $("#cmbCodeClass").on('focusout', function (e) {
                 e.preventDefault();
-                GeneralRefresh();
+                generalRefresh();
 
             });
 
             //load data into type combo according to selection
-
-            function LoadMeterTypes() {
-                $.ajax({
-                    type: "POST",
-                    url: "AD111.aspx/GetMeterTypeList",
-                    data: "{}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        $("#cmbCodeType").empty().append($("<option></option>").val("[-]").html("Please select"));
-                        $.each(response.d, function () {
-                            $("#cmbCodeType").append($("<option></option>").val(this['Value']).html(this['Text']));
-                        });
-                    },
-                    error: function () {
-                        alert("An error has occurred loading the meter types.");
-                    }
-                });
-
-
-            }
-
-            // ajax call to load motor types information
-            function LoadMotorTypes() {
-                $.ajax({
-                    type: "POST",
-                    url: "AD111.aspx/GetMotorTypesInfo",
-                    data: "{}",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
-                        $("#cmbCodeType").empty().append($("<option></option>").val("[-]").html("Please select"));
-                        $.each(response.d, function (key, value) {
-                            $("#cmbCodeType").append($("<option></option>").val(value.mId).html(value.Make + ',  ' + value.Type));
-                        });
-                    },
-                    failure: OnFailure,
-                    error: OnError_LoadMotorTypes
-                });
-                // this avoids page refresh on button click
-                return false;
-            }
-
-            GeneralRefresh();
-
-            function OnFailure(response) {
-                //debugger;
-                alert('Failure!!!' + '<br/>' + response.reponseText);
-            }
-
-            function OnError_LoadMotorTypes(response) {
-                //debugger;
-                var errorText = response.responseText;
-                alert('Error!!!' + '\n\n' + errorText);
-            }
+// ajax call to load motor types information
+            generalRefresh();
         });
     </script>
 </asp:Content>
@@ -200,8 +199,9 @@
                             &nbsp;<asp:Button ID="cmdPrint" CssClass="cmd_butt" Enabled="false" Text="Print" runat="server" />
                             &nbsp;
                         </td>
-                        <td id="td_Return_Link" colspan="1" valign="top" runat="server">&nbsp;|&nbsp;&nbsp;<a id="PageAnchor_Return_Link" runat="server" href="Blankpg.aspx" style="font-size: large; font-weight: bold;">CLOSE PAGE</a>
-                            <%=PageLinks%>&nbsp;&nbsp;|
+                        <td id="td_Return_Link" colspan="1" valign="top" runat="server"><%--&nbsp;|&nbsp;&nbsp;
+                            <a id="PageAnchor_Return_Link" runat="server" href="Blankpg.aspx" style="font-size: large; font-weight: bold;">CLOSE PAGE</a>
+                            <%=PageLinks%>&nbsp;&nbsp;|--%>
                         </td>
                         <td colspan="1" valign="top">
                             <div style="display: none;">
