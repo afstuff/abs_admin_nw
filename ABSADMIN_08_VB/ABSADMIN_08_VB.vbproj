@@ -80,6 +80,10 @@
   <ItemGroup>
     <Content Include="AD110.aspx" />
     <Content Include="AD111.aspx" />
+    <Content Include="AD112.aspx" />
+    <Content Include="AD130.aspx" />
+    <Content Include="AD140.aspx" />
+    <Content Include="AD150.aspx" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Castle.Core.dll" />
     <Content Include="bin\Castle.Core.xml" />
@@ -100,6 +104,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\calendar.css" />
+    <Content Include="imgs\ABS_Print_Canvas_02.jpg" />
+    <Content Include="PrintView.aspx" />
     <Content Include="Scripts\calendar_eu.js" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\StyleSheet1.css" />
@@ -130,6 +136,7 @@
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Reports.Master" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -158,6 +165,34 @@
     </Compile>
     <Compile Include="AD111.aspx.vb">
       <DependentUpon>AD111.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AD112.aspx.designer.vb">
+      <DependentUpon>AD112.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AD112.aspx.vb">
+      <DependentUpon>AD112.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AD130.aspx.designer.vb">
+      <DependentUpon>AD130.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AD130.aspx.vb">
+      <DependentUpon>AD130.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AD140.aspx.designer.vb">
+      <DependentUpon>AD140.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AD140.aspx.vb">
+      <DependentUpon>AD140.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="AD150.aspx.designer.vb">
+      <DependentUpon>AD150.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AD150.aspx.vb">
+      <DependentUpon>AD150.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="BranchExpenses.aspx.designer.vb">
@@ -221,12 +256,26 @@
       <DependentUpon>PremiumPaid.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="PrintView.aspx.designer.vb">
+      <DependentUpon>PrintView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintView.aspx.vb">
+      <DependentUpon>PrintView.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Procurement.aspx.designer.vb">
       <DependentUpon>Procurement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Procurement.aspx.vb">
       <DependentUpon>Procurement.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Reports.Master.designer.vb">
+      <DependentUpon>Reports.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.Master.vb">
+      <DependentUpon>Reports.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ServicesBill.aspx.designer.vb">
       <DependentUpon>ServicesBill.aspx</DependentUpon>
@@ -412,15 +461,15 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ABSADMIN\CustodianAdmin.Data\CustodianAdmin.Data.csproj">
+    <ProjectReference Include="..\abs_admin_nw\CustodianAdmin.Data\CustodianAdmin.Data.csproj">
       <Project>{91b961e1-b651-434f-98de-d407815a6d65}</Project>
       <Name>CustodianAdmin.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ABSADMIN\CustodianAdmin.Model\CustodianAdmin.Model.csproj">
+    <ProjectReference Include="..\abs_admin_nw\CustodianAdmin.Model\CustodianAdmin.Model.csproj">
       <Project>{61d1e335-35d9-48c6-96e3-73707f9878d0}</Project>
       <Name>CustodianAdmin.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ABSADMIN\CustodianAdmin.Repositories\CustodianAdmin.Repositories.csproj">
+    <ProjectReference Include="..\abs_admin_nw\CustodianAdmin.Repositories\CustodianAdmin.Repositories.csproj">
       <Project>{304ddeba-2f9c-4693-b416-aa29bdfa7192}</Project>
       <Name>CustodianAdmin.Repositories</Name>
     </ProjectReference>

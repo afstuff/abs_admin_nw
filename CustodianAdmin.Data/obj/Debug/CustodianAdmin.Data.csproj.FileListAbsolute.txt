@@ -29,3 +29,12 @@ C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model
 C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\ResolveAssemblyReference.cache
 C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
 C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.csprojResolveAssemblyReference.cache
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb

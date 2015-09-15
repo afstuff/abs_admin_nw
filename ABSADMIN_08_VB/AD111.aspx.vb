@@ -11,7 +11,29 @@ Public Class AD111
     Dim aCode As AdminCode
     Dim updateFlag As Boolean
     Dim strKey As String
+    Dim strKey1 As String
+
     Dim strOption As String
+
+    Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreInit
+
+        strKey = Request.QueryString("sopt")
+        strKey1 = Request.QueryString("mod")
+
+        If (strKey = "007") Then
+            MasterPageFile = "~/Site2.master"
+        ElseIf (strKey = "001") Then
+            MasterPageFile = "~/Site3.master"
+        ElseIf ((strKey = "002") And (strKey1 = "bra")) Then
+            MasterPageFile = "~/Site5.master"
+        ElseIf (strKey = "002") Then
+            MasterPageFile = "~/Site4.master"
+        ElseIf (strKey = "005") Then
+            MasterPageFile = "~/Site4.master"
+        Else
+            MasterPageFile = "~/Site1.master"
+        End If
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             acRepo = New AdminCodeRepository

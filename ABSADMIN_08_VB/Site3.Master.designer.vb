@@ -14,13 +14,13 @@ Option Explicit On
 Partial Public Class Site3
     
     '''<summary>
-    '''headSection control.
+    '''head control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents headSection As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
     
     '''<summary>
     '''form1 control.

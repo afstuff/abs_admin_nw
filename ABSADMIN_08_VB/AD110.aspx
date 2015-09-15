@@ -4,7 +4,6 @@
     <link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
     <script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
-    <%--<script language="javascript" type="text/javascript" src="Scripts/ScriptJS.js"></script>--%>
     <script type="text/javascript" src="Scripts/ScriptJS.js"></script>
 
     <script type="text/javascript">
@@ -16,9 +15,9 @@
                 //debugger;
                 $.each(admobjects, function () {
                     var admobject = $(this);
-                    document.getElementById('txtTelUsersName').value = $(this).find("sItemDesc").text()
-                    $('#ddlBraNum').val($(this).find("sBranch").text())
-                    $('#ddlDeptNum').val($(this).find("sDept").text())
+                    document.getElementById('txtTelUsersName').value = $(this).find("sItemDesc").text();
+                    $('#ddlBraNum').val($(this).find("sBranch").text());
+                    $('#ddlDeptNum').val($(this).find("sDept").text());
 
                 });
 
