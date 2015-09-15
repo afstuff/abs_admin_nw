@@ -8,6 +8,8 @@ namespace CustodianAdmin.Model
     public class VehicleMaintenance
     {
         public virtual int? vmId { get; set; }
+        public virtual string TransClass { get; set; }
+        public virtual string TransId { get; set; }
         public virtual string VehicleNo { get; set; }
         public virtual string VehicleType { get; set; }
         public virtual DateTime TransDate { get; set; }

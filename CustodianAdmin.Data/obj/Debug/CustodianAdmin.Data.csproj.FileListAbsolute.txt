@@ -20,52 +20,12 @@ C:\james stuff\myC\WEBAPPS\PRODUCTION\CSHARP\VS2008 version\CustodianAdmin.Data\
 C:\james stuff\myC\WEBAPPS\PRODUCTION\CSHARP\VS2008 version\CustodianAdmin.Data\bin\Debug\Castle.Core.xml
 C:\james stuff\myC\WEBAPPS\PRODUCTION\CSHARP\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
 C:\james stuff\myC\WEBAPPS\PRODUCTION\CSHARP\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.pdb
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\Castle.DynamicProxy2.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\log4net.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\Iesi.Collections.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\Antlr3.Runtime.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\Castle.Core.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.pdb
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\Castle.DynamicProxy2.xml
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.pdb
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\log4net.xml
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\NHibernate.ByteCode.Castle.xml
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\Iesi.Collections.xml
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\NHibernate.xml
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\bin\Debug\Castle.Core.xml
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\obj\Debug\ResolveAssemblyReference.cache
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
-E:\AFRIK\SourceCodes\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.pdb
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\Castle.DynamicProxy2.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\log4net.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\Iesi.Collections.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\Antlr3.Runtime.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\Castle.Core.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.pdb
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\Castle.DynamicProxy2.xml
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.pdb
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\log4net.xml
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\NHibernate.ByteCode.Castle.xml
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\Iesi.Collections.xml
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\NHibernate.xml
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\bin\Debug\Castle.Core.xml
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\obj\Debug\ResolveAssemblyReference.cache
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
-E:\AFRIK\SourceCodes\ABSW_ADMIN\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.dll
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.pdb
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.dll
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.dll
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.pdb
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.pdb
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.csprojResolveAssemblyReference.cache
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
-C:\AFRIK\ABSADMIN\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.dll
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.pdb
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.dll
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.dll
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.pdb
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.pdb
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\ResolveAssemblyReference.cache
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
+C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb

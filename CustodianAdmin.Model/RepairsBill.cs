@@ -8,6 +8,8 @@ namespace CustodianAdmin.Model
     public class RepairsBill
     {
         public virtual int? rbId { get; set; }
+        public virtual string TransClass { get; set; }
+        public virtual string TransId { get; set; }
         public virtual string TransNo { get; set; }
         public virtual string RepairsType { get; set; }
         public virtual DateTime TransDate { get; set; }

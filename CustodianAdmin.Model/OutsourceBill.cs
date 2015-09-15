@@ -8,6 +8,8 @@ namespace CustodianAdmin.Model
     public class OutsourceBill
     {
         public virtual int? obId { get; set; }
+        public virtual string TransClass { get; set; }
+        public virtual string TransId { get; set; }
         public virtual string TransNo { get; set; }
         public virtual string TransactionType { get; set; }
         public virtual DateTime TransDate { get; set; }

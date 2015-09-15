@@ -4,6 +4,8 @@
     <id name="tbId" column="ADM_BILL_REC_ID"  >
       <generator class="identity"/>
     </id>
+    <property name="TransClass" column="ADM_TRANS_CLASS" length="15" />
+    <property name="TransId" column="ADM_TRANS_ID" length="5" />
     <property name="TelephoneNo" column="ADM_TELEPHONE_NO" length="22" />
     <property name="TransDate" column="ADM_TRANS_DATE" type="datetime" />
     <property name="BranchCode" column="ADM_BRANCH_CODE" length="05" />

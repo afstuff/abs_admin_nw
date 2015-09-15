@@ -8,6 +8,8 @@ namespace CustodianAdmin.Model
     public class ElectricityBill
     {
         public virtual int? ebId { get; set; }
+        public virtual string TransClass { get; set; }
+        public virtual string TransId { get; set; }
         public virtual string MeterNo { get; set; }
         public virtual string AccountNo { get; set; }
         public virtual DateTime TransDate { get; set; }

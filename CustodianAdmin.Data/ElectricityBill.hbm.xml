@@ -4,6 +4,8 @@
     <id name="ebId" column="[ADM_ELEC_BILL_REC_ID]"  >
       <generator class="identity"/>
     </id>
+    <property name="TransClass" column="ADM_ELEC_TRANS_CLASS" length="15" />
+    <property name="TransId" column="ADM_ELEC_TRANS_ID" length="5" />
     <property name="MeterNo" column="ADM_ELEC_METER_NO" length="30" />
     <property name="AccountNo" column="ADM_ELEC_ACCOUNT_NO" length="30" />
     <property name="TransDate" column="ADM_ELEC_TRANS_DATE" type="datetime" />
