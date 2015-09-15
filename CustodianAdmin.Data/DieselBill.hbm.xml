@@ -4,6 +4,8 @@
     <id name="dbId" column="ADM_DIESEL_BILL_REC_ID"  >
       <generator class="identity"/>
     </id>
+    <property name="TransClass" column="ADM_DIESEL_TRANS_CLASS" length="15" />
+    <property name="TransId" column="ADM_DIESEL_TRANS_ID" length="5" />
     <property name="TransNo" column="ADM_DIESEL_TRANS_NO" length="15" />
     <property name="TransactionType" column="ADM_DIESEL_TRANS_TYPE" length="3" />
     <property name="TransDate" column="ADM_DIESEL_TRANS_DATE" type="datetime" />

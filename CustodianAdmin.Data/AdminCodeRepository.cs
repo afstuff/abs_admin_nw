@@ -96,7 +96,19 @@ namespace CustodianAdmin.Data
         public IList<AdminCode> GetAdminCodes(String _classcode, String _criteria)
         {
 
-            string hqlOptions = "from AdminCode i where i.ClassCode = '" + _classcode + "' and i.ItemDesc like '%" + _criteria.Trim()+ "%'";
+            string hqlOptions = "from AdminCode i where i.ClassCode = '" + _classcode + "' and i.ItemDesc like '%" + _criteria.Trim() + "%'";
+
+            using (var session = GetSession())
+            {
+                return session.CreateQuery(hqlOptions).List<AdminCode>();
+
+            }
+        }
+
+        public IList<AdminCode> GetAdminOtherCodes(String _classcode, String _criteria)
+        {
+
+            string hqlOptions = "from AdminCode i where i.ClassCode = '" + _classcode + "' and i.Branch = '" + _criteria.Trim() + "'";
 
             using (var session = GetSession())
             {

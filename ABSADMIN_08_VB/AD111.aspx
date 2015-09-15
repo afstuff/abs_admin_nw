@@ -1,13 +1,11 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="AD111.aspx.vb" Inherits="ABSADMIN_08_VB.AD111" %>
+﻿<%@ Page Title="Code Setup ::Telephone Bill" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="AD111.aspx.vb" Inherits="ABSADMIN_08_VB.AD111" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="Content/calendar.css" />
     <link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
-    <%--<script src="AD_HOME.aspx" type="text/javascript"></script>--%>
     <script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript" src="Scripts/ScriptJS.js"></script>
-    <title>Admin Codes Setup</title>
 
 
 
@@ -182,10 +180,6 @@
     <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">Code Setup
     </h3>
 
-    <%--<body>
-    <form id="AD111" runat="server">
-    <div class="div_container_02">
-    <br />--%>
     <table align="center" border="0" class="tbl_main">
         <tr>
             <td align="left" colspan="7" valign="top">
@@ -199,9 +193,8 @@
                             &nbsp;<asp:Button ID="cmdPrint" CssClass="cmd_butt" Enabled="false" Text="Print" runat="server" />
                             &nbsp;
                         </td>
-                        <td id="td_Return_Link" colspan="1" valign="top" runat="server"><%--&nbsp;|&nbsp;&nbsp;
-                            <a id="PageAnchor_Return_Link" runat="server" href="Blankpg.aspx" style="font-size: large; font-weight: bold;">CLOSE PAGE</a>
-                            <%=PageLinks%>&nbsp;&nbsp;|--%>
+                        <td id="td_Return_Link" colspan="1" valign="top" runat="server">
+                            &nbsp;
                         </td>
                         <td colspan="1" valign="top">
                             <div style="display: none;">
@@ -373,7 +366,4 @@
     </asp:ObjectDataSource>
 
 
-    <%--</form>
-</body>
-</html>--%>
 </asp:Content>

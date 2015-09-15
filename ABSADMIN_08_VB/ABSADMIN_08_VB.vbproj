@@ -78,6 +78,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AD110.aspx" />
     <Content Include="AD111.aspx" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Castle.Core.dll" />
@@ -86,6 +87,8 @@
     <Content Include="bin\Castle.DynamicProxy2.xml" />
     <Content Include="bin\Iesi.Collections.dll" />
     <Content Include="bin\Iesi.Collections.xml" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\log4net.xml" />
     <Content Include="bin\NHibernate.ByteCode.Castle.dll" />
     <Content Include="bin\NHibernate.ByteCode.Castle.xml" />
     <Content Include="BranchExpenses.aspx" />
@@ -143,6 +146,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AD110.aspx.designer.vb">
+      <DependentUpon>AD110.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AD110.aspx.vb">
+      <DependentUpon>AD110.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="AD111.aspx.designer.vb">
       <DependentUpon>AD111.aspx</DependentUpon>
     </Compile>
@@ -403,11 +413,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABSADMIN\CustodianAdmin.Data\CustodianAdmin.Data.csproj">
-      <Project>{91B961E1-B651-434F-98DE-D407815A6D65}</Project>
+      <Project>{91b961e1-b651-434f-98de-d407815a6d65}</Project>
       <Name>CustodianAdmin.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\ABSADMIN\CustodianAdmin.Model\CustodianAdmin.Model.csproj">
-      <Project>{61D1E335-35D9-48C6-96E3-73707F9878D0}</Project>
+      <Project>{61d1e335-35d9-48c6-96e3-73707f9878d0}</Project>
       <Name>CustodianAdmin.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\ABSADMIN\CustodianAdmin.Repositories\CustodianAdmin.Repositories.csproj">

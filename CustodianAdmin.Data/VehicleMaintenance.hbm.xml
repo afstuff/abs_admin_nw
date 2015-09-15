@@ -4,6 +4,8 @@
     <id name="vmId" column="ADM_VEH_MAINT_BILL_REC_ID"  >
       <generator class="identity"/>
     </id>
+    <property name="TransClass" column="ADM_VEH_MAINT_TRANS_CLASS" length="15" />
+    <property name="TransId" column="ADM_VEH_MAINT_TRANS_ID" length="5" />
     <property name="VehicleNo" column="ADM_VEH_MAINT_VEH_NO" length="12" />
     <property name="VehicleType" column="ADM_VEH_MAINT_VEH_TYPE" length="50" />
     <property name="TransDate" column="ADM_VEH_MAINT_TRANS_DATE" type="datetime" />

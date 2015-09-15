@@ -4,7 +4,9 @@
     <id name="obId" column="ADM_OUTSOURCE_BILL_REC_ID"  >
       <generator class="identity"/>
     </id>
-    <property name="TransNo" column="ADM_DIESEL_TRANS_NO" length="15" />
+    <property name="TransClass" column="ADM_OUTSOURCE_TRANS_CLASS" length="15" />
+    <property name="TransId" column="ADM_OUTSOURCE_TRANS_ID" length="5" />
+    <property name="TransNo" column="ADM_OUTSOURCE_TRANS_NO" length="15" />
     <property name="TransactionType" column="ADM_OUTSOURCE_TRANS_TYPE" length="3" />
     <property name="TransDate" column="ADM_OUTSOURCE_TRANS_DATE" type="datetime" />
     <property name="BranchCode" column="ADM_OUTSOURCE_BRANCH_CODE" length="05" />

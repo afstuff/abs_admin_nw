@@ -42,15 +42,24 @@ namespace CustodianAdmin.Data
                 }
             }
         }
+        //public IList<TelephoneBill> TelephoneBills()
+        //{
+        //    using (var session = GetSession())
+        //    {
+        //        var pDet = session.CreateCriteria<TelephoneBill>()
+
+        //                             .List<TelephoneBill>();
+
+        //        return pDet;
+        //    }
+        //}
         public IList<TelephoneBill> TelephoneBills()
         {
             using (var session = GetSession())
             {
-                var pDet = session.CreateCriteria<TelephoneBill>()
+                string hqlOptions = "from TelephoneBill i where i.EntryDate =" + DateTime.Now.Date.ToShortDateString();
 
-                                     .List<TelephoneBill>();
-
-                return pDet;
+                return session.CreateQuery(hqlOptions).List<TelephoneBill>();
             }
         }
         public TelephoneBill GetById(Int32? id)
