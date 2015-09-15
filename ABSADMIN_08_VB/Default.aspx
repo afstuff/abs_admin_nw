@@ -32,8 +32,7 @@
                                 Remember me
                             </label>
                         </div>
-                        <asp:Button ID="loginBtn" CssClass="btn btn-lg btn-primary btn-block btn-signin" runat="server" Text="Sign in" OnClick="Button1_Click" />
-                        <%--<button runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>--%>
+                        <asp:Button ID="loginBtn" CssClass="btn btn-lg btn-info btn-block btn-signin" runat="server" Text="Sign in" OnClick="Button1_Click" />
                     </div>
                     <!-- /form -->
                     <a href="#" class="forgot-password">Forgot the password?
@@ -47,7 +46,7 @@
             <div class="container">
                 <hr />
                 <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">
-                    &copy;Afrik Business Software
+                    &copy;<%= Now.Year %> - Afrik Business Software
                 </span>
                 <span class="pull-right" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">
                     Custodian And Allied Insurance Plc.
