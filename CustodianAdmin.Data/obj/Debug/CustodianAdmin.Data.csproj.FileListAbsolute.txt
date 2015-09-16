@@ -29,6 +29,7 @@ C:\James Stuff\VS2008 version\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model
 C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\ResolveAssemblyReference.cache
 C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
 C:\James Stuff\VS2008 version\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
+<<<<<<< HEAD
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.dll
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.pdb
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.dll
@@ -38,3 +39,14 @@ E:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.csprojResolveAssemblyReference.cache
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
+=======
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Data.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Model.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\bin\Debug\CustodianAdmin.Repositories.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.csprojResolveAssemblyReference.cache
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Data\obj\Debug\CustodianAdmin.Data.pdb
+>>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189

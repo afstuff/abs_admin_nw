@@ -11,16 +11,16 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Site3
+Partial Public Class PrintView
     
     '''<summary>
-    '''head control.
+    '''Head1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
     
     '''<summary>
     '''form1 control.
@@ -32,11 +32,29 @@ Partial Public Class Site3
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''ContentPlaceHolder1 control.
+    '''lblDesc2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ContentPlaceHolder1 As Global.System.Web.UI.WebControls.ContentPlaceHolder
+    Protected WithEvents lblDesc2 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''butView control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents butView As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''butClsoe control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents butClsoe As Global.System.Web.UI.WebControls.Button
 End Class

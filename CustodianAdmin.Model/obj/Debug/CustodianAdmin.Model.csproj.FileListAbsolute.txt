@@ -8,8 +8,16 @@ C:\James Stuff\VS2008 version\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Mode
 C:\James Stuff\VS2008 version\CustodianAdmin.Model\obj\Debug\ResolveAssemblyReference.cache
 C:\James Stuff\VS2008 version\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.dll
 C:\James Stuff\VS2008 version\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.pdb
+<<<<<<< HEAD
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Model.dll
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Model.pdb
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.csprojResolveAssemblyReference.cache
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.dll
 E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.pdb
+=======
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Model.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Model.pdb
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.csprojResolveAssemblyReference.cache
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.dll
+C:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.pdb
+>>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189

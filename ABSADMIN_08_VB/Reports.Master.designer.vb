@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Site3
+Partial Public Class Reports
     
     '''<summary>
     '''head control.
