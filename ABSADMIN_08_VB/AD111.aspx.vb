@@ -26,6 +26,10 @@ Public Class AD111
             MasterPageFile = "~/Site3.master"
         ElseIf ((strKey = "002") And (strKey1 = "bra")) Then
             MasterPageFile = "~/Site5.master"
+        ElseIf ((strKey = "005") And (strKey1 = "prm")) Then
+            MasterPageFile = "~/Site6.master"
+        ElseIf ((strKey = "005") And (strKey1 = "clm")) Then
+            MasterPageFile = "~/Site7.master"
         ElseIf (strKey = "002") Then
             MasterPageFile = "~/Site4.master"
         ElseIf (strKey = "005") Then

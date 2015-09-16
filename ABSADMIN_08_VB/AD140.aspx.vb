@@ -12,25 +12,26 @@ Public Class AD140
     Dim rbill As RepairsBill
     Dim updateFlag As Boolean
     Dim strKey As String
+    Dim strKey1 As String
     Dim TotTransAmt As Decimal = 0
     Dim TransAmt As Decimal = 0
-   
-  Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreInit
 
-        strKey = Request.QueryString("mod")
-        If (strKey = "pro") Then
+    Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreInit
+
+        strKey1 = Request.QueryString("mod")
+        If (strKey1 = "pro") Then
             MasterPageFile = "~/Site4.master"
-        'ElseIf (strKey = "001") Then
+        'ElseIf (strKey1 = "001") Then
         '    MasterPageFile = "~/Site3.master"
-        'ElseIf (strKey = "002") Then
-        '    MasterPageFile = "~/Site4.master"
-        'ElseIf (strKey = "005") Then
-        '    MasterPageFile = "~/Site4.master"
+            'ElseIf (strKey = "002") Then
+            '    MasterPageFile = "~/Site4.master"
+            'ElseIf (strKey = "005") Then
+            '    MasterPageFile = "~/Site4.master"
         Else
-            MasterPageFile = "~/Site1.master"
+            MasterPageFile = "~/Site2.master"
         End If
     End Sub
- Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         'SessionProvider.RebuildSchema()
         'ddlBraNum.Attributes.Add("disabled", "disabled")
