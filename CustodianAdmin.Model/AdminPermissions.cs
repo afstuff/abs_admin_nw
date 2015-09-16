@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CustodianAdmin.Model
 {
-    public class ADPermissions
+    public class AdminPermissions
     {
         public virtual int? ADM_REC_ID { get; set; }
         public virtual int ADM_Role_ID { get; set; }

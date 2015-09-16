@@ -106,7 +106,7 @@
                             <asp:Label ID="Label1" Text="Start Print Date:" runat="server"></asp:Label>&nbsp;</td>
                         <td valign="top">
                             <asp:TextBox ID="txtStartDate" MaxLength="10" runat="server"></asp:TextBox>
-                            <script type="text/javascript">
+                            <script language="JavaScript" type="text/javascript">
                                 new tcal({ 'formname': 'AD112', 'controlname': 'txtTransDate' });</script>
                             &nbsp;&nbsp;dd/mm/yyyy</td>
                     </tr>
@@ -115,7 +115,7 @@
                             <asp:Label ID="lblTransDate" Text="End Print Date:" runat="server"></asp:Label>&nbsp;</td>
                         <td valign="top">
                             <asp:TextBox ID="txtEndDate" MaxLength="10" runat="server"></asp:TextBox>
-                            <script type="text/javascript">
+                            <script language="JavaScript" type="text/javascript">
                                 new tcal({ 'formname': 'AD112', 'controlname': 'txtTransDate' });</script>
                             &nbsp;&nbsp;dd/mm/yyyy</td>
                     </tr>

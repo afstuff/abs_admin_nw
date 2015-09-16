@@ -15,7 +15,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="row profile">
-                <div id="profilePane" class="col-md-3">
+                <div class="col-md-3">
                     <div class="profile-sidebar">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
@@ -34,7 +34,7 @@
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR BUTTONS -->
                         <div class="profile-userbuttons form-group-sm">
-                            <button id="hidePaneBtn" class="btn btn-info input-sm pull-right">
+                            <button id="hidePaneBtn" class="btn btn-info btn-sm pull-right">
                                 <i class="glyphicon glyphicon-align-justify"></i>
                             </button>
                             <br />
@@ -68,13 +68,12 @@
                         <!-- END MENU -->
                     </div>
                 </div>
-                <div id="contentPane" class="col-md-9">
+                <div class="col-md-9">
                     <div class="profile-content">
-                        <span style="font-weight: bold; font-family: Century Gothic; font-size: xx-large;">ABS - ADMIN
-                        </span>
-                        <button id="showPaneBtn" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-align-justify"></i></button>
+                        <h1 style="font-weight: bold; font-family: Century Gothic;">ABS - ADMIN
+                        </h1>
                         <hr />
-                        
+
                         <h3 style="font-weight: bold; font-family: Century Gothic;">Dashboard
                         </h3>
                         <p>

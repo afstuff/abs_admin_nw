@@ -22,7 +22,7 @@
     <form id="form1" runat="server">
         <div class="container">
             <div class="row profile">
-                <div id="profilePane" class="col-md-3">
+                <div class="col-md-3">
                     <div class="profile-sidebar">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
@@ -32,7 +32,7 @@
                         <!-- SIDEBAR USER TITLE -->
                         <div class="profile-usertitle">
                             <div class="profile-usertitle-name">
-                                ABS USER
+                               ABS USER
                             </div>
                             <div class="profile-usertitle-job">
                                 ABS
@@ -40,8 +40,8 @@
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR BUTTONS -->
-                        <div class="profile-userbuttons">
-                            <button id="hidePaneBtn" class="btn btn-info input-sm pull-right">
+                        <div class="profile-userbuttons form-group-sm">
+                            <button id="hidePaneBtn" class="btn btn-info btn-sm pull-right">
                                 <i class="glyphicon glyphicon-align-justify"></i>
                             </button>
                             <br />
@@ -75,7 +75,7 @@
                         <!-- END MENU -->
                     </div>
                 </div>
-                <div id="contentPane" class="col-md-9">
+                <div class="col-md-9">
                     <div class="profile-content">
                         <h1 style="font-weight: bold; font-family: Century Gothic;">ABS - ADMIN
                         </h1>
@@ -86,10 +86,22 @@
                                     <span class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Bills Report 
                                     </span>
                                 </td>
-                                <td>&nbsp;</td>
                                 <td>
-                                    <a href="dashboard.aspx" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-home"></i></a>
-                                    <button id="showPaneBtn" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-align-justify"></i></button>
+                                   <%-- <div class="dropdown input-group-sm">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Select Task
+    <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
+                                            <li><a href='AD111.aspx?sopt=006' target='_self'>Codes Setup</a></li>
+                                            <li><a href='AD110.aspx' target='_self'>Transaction</a></li>
+                                            <li><a href='AD112.aspx' target='_self'>Report</a></li>
+                                        </ul>
+                                    </div>--%>
+                                </td>
+                                <td>
+                                    <a href="dashboard.aspx" class="btn btn-info btn-sm pull-right"><i class="glyphicon glyphicon-home"></i></a>
+                                    
                                 </td>
                             </tr>
                             <tr>
