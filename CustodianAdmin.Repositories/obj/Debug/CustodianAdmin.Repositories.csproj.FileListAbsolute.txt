@@ -12,3 +12,10 @@ C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\bin\Debug\CustodianAdm
 C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\obj\Debug\ResolveAssemblyReference.cache
 C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.dll
 C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.pdb
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Repositories.dll
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Repositories.pdb
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Model.dll
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Model.pdb
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.csprojResolveAssemblyReference.cache
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.dll
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.pdb

@@ -8,3 +8,8 @@ C:\James Stuff\VS2008 version\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Mode
 C:\James Stuff\VS2008 version\CustodianAdmin.Model\obj\Debug\ResolveAssemblyReference.cache
 C:\James Stuff\VS2008 version\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.dll
 C:\James Stuff\VS2008 version\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.pdb
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Model.dll
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\bin\Debug\CustodianAdmin.Model.pdb
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.csprojResolveAssemblyReference.cache
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.dll
+E:\AFRIK\abs_admin_nw\CustodianAdmin.Model\obj\Debug\CustodianAdmin.Model.pdb

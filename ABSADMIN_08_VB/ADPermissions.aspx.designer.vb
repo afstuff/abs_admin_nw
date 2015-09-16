@@ -68,31 +68,22 @@ Partial Public Class ADPermissions
     Protected WithEvents cmdDelN As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''cmdPrint control.
+    '''Label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents cmdPrint As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''td_Return_Link control.
+    '''cboRole control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents td_Return_Link As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''txtAction control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtAction As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cboRole As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''lblMessage control.
