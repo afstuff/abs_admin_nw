@@ -10,7 +10,7 @@ using CustodianAdmin.Repositories;
 using NHibernate;
 namespace CustodianAdmin.Data
 {
-  public class AdminPermissionsRepository
+    public class AdminPermissionsRepository
     {
         private static ISession GetSession()
         {
@@ -43,14 +43,14 @@ namespace CustodianAdmin.Data
                     int a = search.Count();
                     if (search != null)
                     {
-                        for (int i = 0; i <= a; i++ )
+                        for (int i = 0; i <= a; i++)
                         {
                             var delRoles = session.CreateCriteria<AdminPermissions>().List<AdminPermissions>().Where(c => c.ADM_Role_ID == _roleID).FirstOrDefault();
                             if (delRoles != null)
                             {
                                 session.Delete(delRoles);
                             }
-                     
+
                         }
                         trans.Commit();
                     }
@@ -93,13 +93,13 @@ namespace CustodianAdmin.Data
                 return session.Get<AdminCode>(id);
             }
         }
-      
+
         public IList<AdminPermissions> GetAdminPermissions(int _roleID)
         {
             using (var session = GetSession())
             {
-               // return session.CreateQuery(hqlOptions).List<AdminPermissions>();
-               return session.CreateCriteria<AdminPermissions>().List<AdminPermissions>().Where(c => c.ADM_Role_ID == _roleID).ToList();
+                // return session.CreateQuery(hqlOptions).List<AdminPermissions>();
+                return session.CreateCriteria<AdminPermissions>().List<AdminPermissions>().Where(c => c.ADM_Role_ID == _roleID).ToList();
             }
         }
         public IList<AdminCode> GetAdminCodes(String _classcode, String _criteria)
@@ -166,6 +166,14 @@ namespace CustodianAdmin.Data
             }
         }
 
+        public String GeUserRoleInfo(Int32 roleId)
+        {
+            //queries the generic admincodes table and extract info for the vehicles only
+            string query = "SELECT * "
+                          + "FROM ADMPermissions where ADM_Role_ID = " + roleId + "";
+
+            return GetDataSet(query).GetXml();
+        }
 
 
     }
