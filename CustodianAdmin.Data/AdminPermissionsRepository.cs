@@ -31,6 +31,39 @@ namespace CustodianAdmin.Data
                 }
             }
         }
+
+
+        public void DeleteRoles(int _roleID)
+        {
+            using (var session = GetSession())
+            {
+                using (var trans = session.BeginTransaction())
+                {
+                    var search = session.CreateCriteria<AdminPermissions>().List<AdminPermissions>().Where(c => c.ADM_Role_ID == _roleID).ToList();
+                    int a = search.Count();
+                    if (search != null)
+                    {
+                        for (int i = 0; i <= a; i++ )
+                        {
+                            var delRoles = session.CreateCriteria<AdminPermissions>().List<AdminPermissions>().Where(c => c.ADM_Role_ID == _roleID).FirstOrDefault();
+                            if (delRoles != null)
+                            {
+                                session.Delete(delRoles);
+                            }
+                     
+                        }
+                        trans.Commit();
+                    }
+                }
+            }
+
+        }
+
+
+
+
+
+
         public void Delete(AdminPermissions delObj)
         {
             using (var session = GetSession())
@@ -63,17 +96,10 @@ namespace CustodianAdmin.Data
       
         public IList<AdminPermissions> GetAdminPermissions(int _roleID)
         {
-
-          //  string hqlOptions = "from AdminPermissions i where i.ADM_Role_ID = '" + _roleID + "'";
-
-            using (
-                var session = GetSession())
+            using (var session = GetSession())
             {
                // return session.CreateQuery(hqlOptions).List<AdminPermissions>();
-
                return session.CreateCriteria<AdminPermissions>().List<AdminPermissions>().Where(c => c.ADM_Role_ID == _roleID).ToList();
-                  
-
             }
         }
         public IList<AdminCode> GetAdminCodes(String _classcode, String _criteria)

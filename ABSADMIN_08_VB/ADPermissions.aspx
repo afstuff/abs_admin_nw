@@ -44,7 +44,7 @@
                     <tr>
                         <td valign="top" align="right">
                          <asp:Label ID="Label1" runat="server" Text="Role"></asp:Label> &nbsp; &nbsp; &nbsp;
-                            <asp:DropDownList ID="cboRole" runat="server">
+                            <asp:DropDownList ID="cboRole" runat="server" AutoPostBack="True">
                             </asp:DropDownList>
                          </td>
                     </tr>
@@ -107,6 +107,8 @@
                                   </ul>
                               </div>
                     </td><td valign="top">
+                            <asp:GridView ID="GridView1" runat="server" Visible="False">
+                            </asp:GridView>
                         <asp:GridView ID="GrdLapsePolicy" runat="server"
                                           AutoGenerateColumns="False" Height="117px" Width="502px" BorderWidth="0px">
                               <Columns>
