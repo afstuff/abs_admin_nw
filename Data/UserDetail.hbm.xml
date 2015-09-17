@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CustodianAdmin.Model" namespace="CustodianAdmin.Model">
+  <class name="UserDetail" table="ADM_USER_LIFE_DETAIL">
+    <id name="User_RecId" column="SEC_USER_REC_ID">
+      <generator class="identity"  />
+    </id>
+    <property name="User_Id" column="SEC_USER_ID" length="5" />
+    <property name="User_Login" column="SEC_USER_LOGIN" length="15" />
+    <property name="User_Name" column="SEC_USER_NAME" length="200" />
+    <property name="User_ShortName" column="SEC_USER_SHRT_NAME" length="20" />
+    <property name="User_GroupCode" column="SEC_USER_GROUP_CODE" length="15" />
+    <property name="User_Role" column="SEC_USER_ROLE" length="25" />
+    <property name="User_Password" column="SEC_USER_PASSWORD" length="50" />
+    
+    
+    <property name="User_Branch" column="SEC_USER_BRANCH" length="100" />
+    <property name="User_Phone1" column="SEC_USER_PHONE1" length="25" />
+    <property name="User_Phone2" column="SEC_USER_PHONE2" length="25" />
+    <property name="User_Email1" column="SEC_USER_EMAIL1" length="50" />
+    <property name="User_Email2" column="SEC_USER_EMAIL2" length="50" />
+    <property name="User_Tag" column="SEC_USER_TAG" length="10" />
+    <property name="User_Last_Pword_change" column="SEC_USER_LAST_PWORD_CHANGE" type="datetime" />
+    <property name="ADM_Last_Login_Date" column="SEC_USER_LAST_LOGIN_DATE" type="datetime" />
+    
+    <property name="ADM_FlagID" column="SEC_USER_FLAG" length="3" />
+    <property name="ADM_OperID" column="SEC_USER_OPERID" length="10" />
+    <property name="ADM_Keydate" column="SEC_USER_KEYDTE" type="datetime" />
+  </class>
+</hibernate-mapping>
+
