@@ -95,15 +95,6 @@ Partial Public Class ADPermissions
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''GridView1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
     '''GrdLapsePolicy control.
     '''</summary>
     '''<remarks>
@@ -111,4 +102,13 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GrdLapsePolicy As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''GridView1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 End Class

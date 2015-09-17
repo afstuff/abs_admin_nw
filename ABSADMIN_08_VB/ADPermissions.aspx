@@ -18,6 +18,10 @@
          .auto-style1 {
              width: 233px;
          }
+         .auto-style2 {
+             width: 233px;
+             height: 9px;
+         }
      </style>
      </head>
 <body>
@@ -66,55 +70,16 @@
                     </tr>
 
                     <tr>
-                    <td valign="top" class="auto-style1">
-                         <div id="jstree" style="background-color:#fff!important">
-                                  <ul>
-                                      <li data-jstree='{"icon":"glyphicon glyphicon-earphone", "opened":true,"selected":true}'>Telephone Bill
-                                            <ul>
-                                                <li>Code SetUp</li>
-                                                <li>Transactions</li>
-                                                <li>Report</li>
-                                            </ul>
-                                         </li>
-                                       <li data-jstree='{"icon":"glyphicon glyphicon-earphone", "opened":true,"selected":true}'>Services Bill
-                                            <ul>
-                                                <li>Code SetUp</li>
-                                                <li>Transactions</li>
-                                                <li>Report</li>
-                                            </ul>
-                                         </li>
-                                      <li data-jstree='{"icon":"glyphicon glyphicon-car", "opened":true,"selected":true}'>Motor Vehicle (R & M)
-                                            <ul>
-                                                <li>Code Setup</li>
-                                                <li>Transactions</li>
-                                                <li>Report</li>
-                                            </ul>
-                                         </li>
-                                       <li data-jstree='{"icon":"glyphicon glyphicon-earphone", "opened":true,"selected":true}'>Procurement
-                                            <ul>
-                                                <li>Code Setup</li>
-                                                <li>Transactions</li>
-                                                <li>Report</li>
-                                            </ul>
-                                         </li>
-                                        <li data-jstree='{"icon":"glyphicon glyphicon-earphone", "opened":true,"selected":true}'>Branch Expenses
-                                            <ul>
-                                                <li>Code Setup</li>
-                                                <li>Transactions</li>
-                                                <li>Report</li>
-                                            </ul>
-                                         </li>
-                                  </ul>
-                              </div>
-                    </td><td valign="top">
-                            <asp:GridView ID="GridView1" runat="server" Visible="False">
-                            </asp:GridView>
+                    <td valign="top" class="auto-style2" style="font-weight:bold; font-size:14pt;">
+                        Menu
+                    </td><td valign="top" rowspan="2">
+                            
                         <asp:GridView ID="GrdLapsePolicy" runat="server"
-                                          AutoGenerateColumns="False" Height="117px" Width="502px" BorderWidth="0px">
+                                          AutoGenerateColumns="False" Height="117px" Width="502px" BorderWidth="0px" BorderStyle="None" BorderColor="Transparent">
                               <Columns>
                                  <asp:TemplateField HeaderText="All" HeaderStyle-HorizontalAlign="Center"> 
                                      <ItemTemplate>
-                                         <asp:CheckBox ID="chkAll" runat="server" />
+                                         <asp:CheckBox ID="chkAll" runat="server" AutoPostBack="true" OnCheckedChanged="MyButtonClick"/>
                                      </ItemTemplate>
                                  </asp:TemplateField>
                                   <asp:TemplateField HeaderText="Add" HeaderStyle-HorizontalAlign="Center" > 
@@ -145,7 +110,53 @@
                   <AlternatingRowStyle BackColor="white" Font-Names="Trebuchet MS" Font-Size="Small "
                       ForeColor="black" />
                             </asp:GridView>
+                        <asp:GridView ID="GridView1" runat="server" Visible="False">
+                            </asp:GridView>
                          </td>
+                    </tr>
+
+                    <tr>
+                    <td valign="top" class="auto-style1">
+                         <div id="jstree" style="background-color:#fff!important">
+                                  <ul>
+                                      <li data-jstree='{"icon":"imgsIcon/icon_telephone_blue.png", "opened":true,"selected":true}'>Telephone Bill
+                                            <ul>
+                                                <li>Code SetUp</li>
+                                                <li>Transactions</li>
+                                                <li>Report</li>
+                                            </ul>
+                                         </li>
+                                       <li data-jstree='{"icon":"imgsIcon/icon_service.png", "opened":true,"selected":true}'>Services Bill
+                                            <ul>
+                                                <li>Code SetUp</li>
+                                                <li>Transactions</li>
+                                                <li>Report</li>
+                                            </ul>
+                                         </li>
+                                      <li data-jstree='{"icon":"imgsIcon/icon_moto.png", "opened":true,"selected":true}'>Motor Vehicle (R & M)
+                                            <ul>
+                                                <li>Code Setup</li>
+                                                <li>Transactions</li>
+                                                <li>Report</li>
+                                            </ul>
+                                         </li>
+                                       <li data-jstree='{"icon":"imgsIcon/icon_procurement.png", "opened":true,"selected":true}'>Procurement
+                                            <ul>
+                                                <li>Code Setup</li>
+                                                <li>Transactions</li>
+                                                <li>Report</li>
+                                            </ul>
+                                         </li>
+                                        <li data-jstree='{"icon":"imgsIcon/icon_expenses.png", "opened":true,"selected":true}'>Branch Expenses
+                                            <ul>
+                                                <li>Code Setup</li>
+                                                <li>Transactions</li>
+                                                <li>Report</li>
+                                            </ul>
+                                         </li>
+                                  </ul>
+                              </div>
+                    </td>
                     </tr>
 
                     </table>

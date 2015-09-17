@@ -288,7 +288,7 @@ Public Class ADPermissions
             Me.cboRole.SelectedItem.Value = "" Or Me.cboRole.SelectedItem.Value = "*" Then
 
             Else
-                GetPermissions(cboRole.SelectedValue.Trim())
+                GetPermissions(Convert.ToInt32(cboRole.SelectedValue.Trim()))
             End If
         Catch ex As Exception
             Me.lblMessage.Text = "Error. Reason: " & ex.Message.ToString
@@ -303,7 +303,7 @@ Public Class ADPermissions
             FirstMsg = "Javascript:alert('" & Me.lblMessage.Text & "');"
         End If
         Dim aCode As AdminPermissions
-        acRepo.DeleteRoles(cboRole.SelectedItem.Value)
+        acRepo.DeleteRoles(Convert.ToInt32(cboRole.SelectedItem.Value))
         For i = 0 To GrdLapsePolicy.Rows.Count - 1
             'Dim chkAll As CheckBox
             'Dim chkAdd As CheckBox
@@ -346,8 +346,49 @@ Public Class ADPermissions
             acRepo.Save(aCode)
             Session("aCode") = aCode
         Next
+        GetPermissions(Convert.ToInt32(cboRole.SelectedValue))
         lblMessage.Text = "Permission deleted successfully for " & cboRole.SelectedItem.Text & " role"
-
         cmdDelN.Enabled = False
+    End Sub
+
+    Protected Sub CheckAll(ByVal i As Integer)
+        Dim chkAll As CheckBox
+            Dim chkAdd As CheckBox
+            Dim chkEdit As CheckBox
+            Dim chkDelete As CheckBox
+            Dim chkPrint As CheckBox
+
+
+            chkAll = GrdLapsePolicy.Rows(i).FindControl("chkAll")
+            chkAdd = GrdLapsePolicy.Rows(i).FindControl("chkAdd")
+            chkEdit = GrdLapsePolicy.Rows(i).FindControl("chkEdit")
+            chkDelete = GrdLapsePolicy.Rows(i).FindControl("chkDelete")
+            chkPrint = GrdLapsePolicy.Rows(i).FindControl("chkPrint")
+
+        If chkAll.Checked = True Then
+            chkAdd.Checked = True
+            chkEdit.Checked = True
+            chkDelete.Checked = True
+            chkPrint.Checked = True
+        Else
+            chkAdd.Checked = False
+            chkEdit.Checked = False
+            chkDelete.Checked = False
+            chkPrint.Checked = False
+        End If
+    End Sub
+    Protected Sub MyButtonClick(sender As Object, e As System.EventArgs)
+        'Get the button that raised the event
+        Dim chk As CheckBox = CType(sender, CheckBox)
+
+        'Get the row that contains this button
+        'Dim gvr As  GridViewRow  = (GridViewRow)chk.NamingContainer;
+        Dim gvr As GridViewRow = CType(sender, CheckBox).NamingContainer
+
+        '  DocId = Integer.Parse(TryCast(sender, LinkButton).CommandArgument)
+
+        'Get rowindex
+        Dim rowindex As Integer = gvr.RowIndex
+        CheckAll(rowindex)
     End Sub
 End Class
