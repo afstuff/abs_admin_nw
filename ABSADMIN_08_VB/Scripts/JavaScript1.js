@@ -1,4 +1,45 @@
-﻿$( document ).ready(function() {
+﻿//function to hide and show pane
+$(function () {
+    $("#showPaneBtn").hide();
+
+    if (window.sessionStorage.length > 0) {
+        var isPaneOpen = window.sessionStorage.getItem("paneBtn");
+        //if (isPaneOpen === "show") {
+        //    $("#contentPane").toggleClass("col-md-12 col-md-9");
+        //    $("#profilePane").show();
+        //}
+        if (isPaneOpen === "hide") {
+            $("#profilePane").hide();
+            $("#contentPane").toggleClass("col-md-9 col-md-12");
+            $("#showPaneBtn").show();
+        }
+    }
+
+
+    $("#hidePaneBtn").click(function (e) {
+        e.preventDefault();
+        window.sessionStorage.setItem("paneBtn", "hide");
+        $("#showPaneBtn").show();
+        //$("#hidePaneBtn").show();
+
+        $("#profilePane").hide();
+        $("#contentPane").toggleClass("col-md-9 col-md-12");
+
+    });
+
+    $("#showPaneBtn").click(function (e) {
+        e.preventDefault();
+        window.sessionStorage.setItem("paneBtn", "show");
+        //$("#hidePaneBtn").hide();
+        $("#showPaneBtn").hide();
+
+        $("#contentPane").toggleClass("col-md-12 col-md-9");
+        $("#profilePane").show();
+    });
+
+});
+
+$(document).ready(function () {
     // DOM ready
 
     // Test data
@@ -21,12 +62,12 @@
  * A not existing key in localstorage return null
  *
  */
-function getLocalProfile(callback){
-    var profileImgSrc      = localStorage.getItem("PROFILE_IMG_SRC");
-    var profileName        = localStorage.getItem("PROFILE_NAME");
+function getLocalProfile(callback) {
+    var profileImgSrc = localStorage.getItem("PROFILE_IMG_SRC");
+    var profileName = localStorage.getItem("PROFILE_NAME");
     var profileReAuthEmail = localStorage.getItem("PROFILE_REAUTH_EMAIL");
 
-    if(profileName !== null
+    if (profileName !== null
             && profileReAuthEmail !== null
             && profileImgSrc !== null) {
         callback(profileImgSrc, profileName, profileReAuthEmail);
@@ -38,12 +79,12 @@ function getLocalProfile(callback){
  * in localstorage
  */
 function loadProfile() {
-    if(!supportsHTML5Storage()) { return false; }
+    if (!supportsHTML5Storage()) { return false; }
     // we have to provide to the callback the basic
     // information to set the profile
-    getLocalProfile(function(profileImgSrc, profileName, profileReAuthEmail) {
+    getLocalProfile(function (profileImgSrc, profileName, profileReAuthEmail) {
         //changes in the UI
-        $("#profile-img").attr("src",profileImgSrc);
+        $("#profile-img").attr("src", profileImgSrc);
         $("#profile-name").html(profileName);
         $("#reauth-email").html(profileReAuthEmail);
         $("#inputEmail").hide();
@@ -74,8 +115,10 @@ function supportsHTML5Storage() {
  * @returns {boolean}
  */
 function testLocalStorageData() {
-    if(!supportsHTML5Storage()) { return false; }
-    localStorage.setItem("PROFILE_IMG_SRC", "//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" );
+    if (!supportsHTML5Storage()) { return false; }
+    localStorage.setItem("PROFILE_IMG_SRC", "//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120");
     localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
     localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
 }
+
+

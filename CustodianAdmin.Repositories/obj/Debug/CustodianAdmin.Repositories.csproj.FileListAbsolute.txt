@@ -12,15 +12,6 @@ C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\bin\Debug\CustodianAdm
 C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\obj\Debug\ResolveAssemblyReference.cache
 C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.dll
 C:\James Stuff\VS2008 version\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.pdb
-<<<<<<< HEAD
-E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Repositories.dll
-E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Repositories.pdb
-E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Model.dll
-E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Model.pdb
-E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.csprojResolveAssemblyReference.cache
-E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.dll
-E:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.pdb
-=======
 C:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Repositories.dll
 C:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Repositories.pdb
 C:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Model.dll
@@ -28,4 +19,3 @@ C:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\bin\Debug\CustodianAdmin.Model
 C:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.csprojResolveAssemblyReference.cache
 C:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.dll
 C:\AFRIK\abs_admin_nw\CustodianAdmin.Repositories\obj\Debug\CustodianAdmin.Repositories.pdb
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189

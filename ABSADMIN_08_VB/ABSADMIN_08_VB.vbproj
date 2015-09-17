@@ -80,14 +80,10 @@
   <ItemGroup>
     <Content Include="AD110.aspx" />
     <Content Include="AD111.aspx" />
-<<<<<<< HEAD
-    <Content Include="ADPermissions.aspx" />
-=======
     <Content Include="AD112.aspx" />
     <Content Include="AD130.aspx" />
     <Content Include="AD140.aspx" />
     <Content Include="AD150.aspx" />
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Castle.Core.dll" />
     <Content Include="bin\Castle.Core.xml" />
@@ -95,6 +91,8 @@
     <Content Include="bin\Castle.DynamicProxy2.xml" />
     <Content Include="bin\Iesi.Collections.dll" />
     <Content Include="bin\Iesi.Collections.xml" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\log4net.xml" />
     <Content Include="bin\NHibernate.ByteCode.Castle.dll" />
     <Content Include="bin\NHibernate.ByteCode.Castle.xml" />
     <Content Include="BranchExpenses.aspx" />
@@ -160,7 +158,7 @@
     </Compile>
     <Compile Include="AD110.aspx.vb">
       <DependentUpon>AD110.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="AD111.aspx.designer.vb">
       <DependentUpon>AD111.aspx</DependentUpon>
@@ -169,14 +167,6 @@
       <DependentUpon>AD111.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="ADPermissions.aspx.designer.vb">
-      <DependentUpon>ADPermissions.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ADPermissions.aspx.vb">
-      <DependentUpon>ADPermissions.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-=======
     <Compile Include="AD112.aspx.designer.vb">
       <DependentUpon>AD112.aspx</DependentUpon>
     </Compile>
@@ -204,7 +194,6 @@
     <Compile Include="AD150.aspx.vb">
       <DependentUpon>AD150.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189
     </Compile>
     <Compile Include="BranchExpenses.aspx.designer.vb">
       <DependentUpon>BranchExpenses.aspx</DependentUpon>
@@ -472,17 +461,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ProjectReference Include="..\CustodianAdmin.Data\CustodianAdmin.Data.csproj">
-      <Project>{91B961E1-B651-434F-98DE-D407815A6D65}</Project>
-      <Name>CustodianAdmin.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CustodianAdmin.Model\CustodianAdmin.Model.csproj">
-      <Project>{61D1E335-35D9-48C6-96E3-73707F9878D0}</Project>
-      <Name>CustodianAdmin.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CustodianAdmin.Repositories\CustodianAdmin.Repositories.csproj">
-=======
     <ProjectReference Include="..\abs_admin_nw\CustodianAdmin.Data\CustodianAdmin.Data.csproj">
       <Project>{91b961e1-b651-434f-98de-d407815a6d65}</Project>
       <Name>CustodianAdmin.Data</Name>
@@ -492,7 +470,6 @@
       <Name>CustodianAdmin.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\abs_admin_nw\CustodianAdmin.Repositories\CustodianAdmin.Repositories.csproj">
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189
       <Project>{304ddeba-2f9c-4693-b416-aa29bdfa7192}</Project>
       <Name>CustodianAdmin.Repositories</Name>
     </ProjectReference>

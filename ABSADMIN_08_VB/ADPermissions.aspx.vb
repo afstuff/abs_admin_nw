@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Imports CustodianAdmin.Data
 Imports CustodianAdmin.Model
 Imports System.Data
@@ -40,10 +41,16 @@ Public Class ADPermissions
 
             acRepo = CType(Session("acRepo"), AdminPermissionsRepository)
             strOption = CType(Session("strOption"), String)
+=======
+﻿Public Class ADPermissions
+    Inherits System.Web.UI.Page
 
-        End If
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+>>>>>>> 7e7a67932cfb1650c75821b33da700c327cbc5b5
+
     End Sub
 
+<<<<<<< HEAD
     Protected Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
 
     End Sub
@@ -350,4 +357,6 @@ Public Class ADPermissions
 
         cmdDelN.Enabled = False
     End Sub
+=======
+>>>>>>> 7e7a67932cfb1650c75821b33da700c327cbc5b5
 End Class

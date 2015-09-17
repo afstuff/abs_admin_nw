@@ -6,9 +6,6 @@ ABSADMIN_08_VB
 </name>
 </assembly>
 <members>
-<<<<<<< HEAD
-<member name="F:ABSADMIN_08_VB.AD110.cmdNew">
-=======
 <member name="F:ABSADMIN_08_VB.AD150.cmdNew">
 	<summary>
 cmdNew control.
@@ -1330,413 +1327,97 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member><member name="F:ABSADMIN_08_VB.Site1.head">
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189
 	<summary>
-cmdNew control.
+head control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.cmdSave">
+</member><member name="F:ABSADMIN_08_VB.Site1.form1">
 	<summary>
-cmdSave control.
+form1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.cmdSaveN">
+</member><member name="F:ABSADMIN_08_VB.Site1.ContentPlaceHolder1">
 	<summary>
-cmdSaveN control.
+ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-<<<<<<< HEAD
-</member><member name="F:ABSADMIN_08_VB.AD110.cmdDel">
-	<summary>
-cmdDel control.
-=======
 </member><member name="F:ABSADMIN_08_VB.Site4.head">
 	<summary>
 head control.
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.cmdDelN">
+</member><member name="F:ABSADMIN_08_VB.Site4.form1">
 	<summary>
-cmdDelN control.
+form1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.cmdPrint">
+</member><member name="F:ABSADMIN_08_VB.Site4.ContentPlaceHolder1">
 	<summary>
-cmdPrint control.
+ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.td_Return_Link">
+</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Computer">
 	<summary>
-td_Return_Link control.
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.User">
+	<summary>
+ Returns information for the current Web user.
+ </summary>
+</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Request">
+	<summary>
+ Returns Request object.
+ </summary>
+</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Response">
+	<summary>
+ Returns Response object.
+ </summary>
+</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Log">
+	<summary>
+ Returns the Asp log object.
+ </summary>
+</member><member name="T:ABSADMIN_08_VB.My.MyWebExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for Web projects.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:ABSADMIN_08_VB.Site7.headSection">
+	<summary>
+headSection control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtAction">
+</member><member name="F:ABSADMIN_08_VB.Site7.form1">
 	<summary>
-txtAction control.
+form1 control.
 </summary>
 	<remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.lblMessage">
+</member><member name="F:ABSADMIN_08_VB.Site7.ContentPlaceHolder1">
 	<summary>
-lblMessage control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.Label2">
-	<summary>
-Label2 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.ddlTransClass">
-	<summary>
-ddlTransClass control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtClassID">
-	<summary>
-txtClassID control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtClassName">
-	<summary>
-txtClassName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.Label1">
-	<summary>
-Label1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.ddlTransID">
-	<summary>
-ddlTransID control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtTransID">
-	<summary>
-txtTransID control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtTransName">
-	<summary>
-txtTransName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-<<<<<<< HEAD
-</member><member name="F:ABSADMIN_08_VB.AD110.lblTransNum">
-	<summary>
-lblTransNum control.
-=======
-</member><member name="F:ABSADMIN_08_VB.Site5.head">
-	<summary>
-head control.
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtTransNum">
-	<summary>
-txtTransNum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.lblTransDate">
-	<summary>
-lblTransDate control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtTransDate">
-	<summary>
-txtTransDate control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.lblBraNum">
-	<summary>
-lblBraNum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.ddlBraNum">
-	<summary>
-ddlBraNum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtBraNum">
-	<summary>
-txtBraNum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtBraName">
-	<summary>
-txtBraName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.lblDeptNum">
-	<summary>
-lblDeptNum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.ddlDeptNum">
-	<summary>
-ddlDeptNum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtDeptNum">
-	<summary>
-txtDeptNum control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtDeptName">
-	<summary>
-txtDeptName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.lblTransAmt">
-	<summary>
-lblTransAmt control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtTransAmt">
-	<summary>
-txtTransAmt control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.lblUserName">
-	<summary>
-lblUserName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtTelUsersName">
-	<summary>
-txtTelUsersName control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.lblTransDescr">
-	<summary>
-lblTransDescr control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtTransDescr">
-	<summary>
-txtTransDescr control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.txtClassCod">
-	<summary>
-txtClassCod control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.cmdDelItem_ASP">
-	<summary>
-cmdDelItem_ASP control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.cmdDelItem">
-	<summary>
-cmdDelItem control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.grdData">
-	<summary>
-grdData control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.AD110.ods">
-	<summary>
-ods control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.ADPermissions">
-	<summary>
-ADPermissions control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.cmdNew">
-	<summary>
-cmdNew control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.cmdSave">
-	<summary>
-cmdSave control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.cmdSaveN">
-	<summary>
-cmdSaveN control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.cmdDel">
-	<summary>
-cmdDel control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.cmdDelN">
-	<summary>
-cmdDelN control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.Label1">
-	<summary>
-Label1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.cboRole">
-	<summary>
-cboRole control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.lblMessage">
-	<summary>
-lblMessage control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.ADPermissions.GrdLapsePolicy">
-	<summary>
-GrdLapsePolicy control.
+ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -1766,9 +1447,9 @@ ContentPlaceHolder1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.Site5.headSection">
+</member><member name="F:ABSADMIN_08_VB.Site5.head">
 	<summary>
-headSection control.
+head control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -2062,9 +1743,337 @@ ods control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:ABSADMIN_08_VB.Site3.headSection">
+</member><member name="F:ABSADMIN_08_VB.dashboard.form1">
 	<summary>
-headSection control.
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdNew">
+	<summary>
+cmdNew control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdSave">
+	<summary>
+cmdSave control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdSaveN">
+	<summary>
+cmdSaveN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdDel">
+	<summary>
+cmdDel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdDelN">
+	<summary>
+cmdDelN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdPrint">
+	<summary>
+cmdPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.td_Return_Link">
+	<summary>
+td_Return_Link control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtAction">
+	<summary>
+txtAction control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblMessage">
+	<summary>
+lblMessage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.Label2">
+	<summary>
+Label2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.ddlTransClass">
+	<summary>
+ddlTransClass control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtClassID">
+	<summary>
+txtClassID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtClassName">
+	<summary>
+txtClassName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.Label1">
+	<summary>
+Label1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.ddlTransID">
+	<summary>
+ddlTransID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtTransID">
+	<summary>
+txtTransID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtTransName">
+	<summary>
+txtTransName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblTransNum">
+	<summary>
+lblTransNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtTransNum">
+	<summary>
+txtTransNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblTransDate">
+	<summary>
+lblTransDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtTransDate">
+	<summary>
+txtTransDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblBraNum">
+	<summary>
+lblBraNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.ddlBraNum">
+	<summary>
+ddlBraNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtBraNum">
+	<summary>
+txtBraNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtBraName">
+	<summary>
+txtBraName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblDeptNum">
+	<summary>
+lblDeptNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.ddlDeptNum">
+	<summary>
+ddlDeptNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtDeptNum">
+	<summary>
+txtDeptNum control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtDeptName">
+	<summary>
+txtDeptName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblTransAmt">
+	<summary>
+lblTransAmt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtTransAmt">
+	<summary>
+txtTransAmt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblUserName">
+	<summary>
+lblUserName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtTelUsersName">
+	<summary>
+txtTelUsersName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.lblTransDescr">
+	<summary>
+lblTransDescr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtTransDescr">
+	<summary>
+txtTransDescr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.txtClassCod">
+	<summary>
+txtClassCod control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdDelItem_ASP">
+	<summary>
+cmdDelItem_ASP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.cmdDelItem">
+	<summary>
+cmdDelItem control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.grdData">
+	<summary>
+grdData control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.AD110.ods">
+	<summary>
+ods control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:ABSADMIN_08_VB.Site3.head">
+	<summary>
+head control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -2118,120 +2127,9 @@ form1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-<<<<<<< HEAD
 </member><member name="F:ABSADMIN_08_VB._Default.loginBtn">
 	<summary>
 loginBtn control.
-=======
-</member><member name="F:ABSADMIN_08_VB.Site3.head">
-	<summary>
-head control.
->>>>>>> 0a51b771d3c1dbbb9fd3dcb9ab22770ce4264189
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.dashboard.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Computer">
-	<summary>
- Returns information about the host computer.
- </summary>
-</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.User">
-	<summary>
- Returns information for the current Web user.
- </summary>
-</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Request">
-	<summary>
- Returns Request object.
- </summary>
-</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Response">
-	<summary>
- Returns Response object.
- </summary>
-</member><member name="P:ABSADMIN_08_VB.My.MyWebExtension.Log">
-	<summary>
- Returns the Asp log object.
- </summary>
-</member><member name="T:ABSADMIN_08_VB.My.MyWebExtension">
-	<summary>
- Module used to define the properties that are available in the My Namespace for Web projects.
- </summary>
-	<remarks></remarks>
-</member><member name="F:ABSADMIN_08_VB.Site1.head">
-	<summary>
-head control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site1.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site1.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site4.headSection">
-	<summary>
-headSection control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site4.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site4.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site7.headSection">
-	<summary>
-headSection control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site7.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:ABSADMIN_08_VB.Site7.ContentPlaceHolder1">
-	<summary>
-ContentPlaceHolder1 control.
 </summary>
 	<remarks>
 Auto-generated field.

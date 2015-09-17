@@ -14,9 +14,9 @@
 
 			$("#cmbServiceComp").on('focusout', function (e) {
 				e.preventDefault();
-				$("#txtServiceComp").attr("value", $("#cmbServiceComp option:selected").val())
+			    $("#txtServiceComp").attr("value", $("#cmbServiceComp option:selected").val());
 
-				//    return false;
+			    //    return false;
 			});
 
 
