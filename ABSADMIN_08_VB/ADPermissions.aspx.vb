@@ -173,6 +173,22 @@ Public Class ADPermissions
             Menu_Name = "Transactions"
         ElseIf i = 19 Then
             Menu_Name = "Reports"
+        ElseIf i = 20 Then
+            Menu_Name = "Insurance Premium Records"
+        ElseIf i = 21 Then
+            Menu_Name = "Code Setup"
+        ElseIf i = 22 Then
+            Menu_Name = "Transactions"
+        ElseIf i = 23 Then
+            Menu_Name = "Reports"
+        ElseIf i = 24 Then
+            Menu_Name = "Insurance Claim Records"
+        ElseIf i = 25 Then
+            Menu_Name = "Code Setup"
+        ElseIf i = 26 Then
+            Menu_Name = "Transactions"
+        ElseIf i = 27 Then
+            Menu_Name = "Reports"
         End If
         Return Menu_Name
     End Function
@@ -219,11 +235,28 @@ Public Class ADPermissions
             Menu_Position = "5.2"
         ElseIf i = 19 Then
             Menu_Position = "5.3"
+        ElseIf i = 20 Then
+            Menu_Position = "6"
+        ElseIf i = 21 Then
+            Menu_Position = "6.1"
+        ElseIf i = 22 Then
+            Menu_Position = "6.2"
+        ElseIf i = 23 Then
+            Menu_Position = "6.3"
+        ElseIf i = 24 Then
+            Menu_Position = "7"
+        ElseIf i = 25 Then
+            Menu_Position = "7.1"
+        ElseIf i = 26 Then
+            Menu_Position = "7.2"
+        ElseIf i = 27 Then
+            Menu_Position = "7.3"
         End If
         Return Menu_Position
     End Function
 
     Private Sub GetPermissions(ByVal _roleId As Integer)
+        cmdDelN.Enabled = False
         GridView1.DataSource = acRepo.GetAdminPermissions(_roleId)
         GridView1.DataBind()
         GrdLapsePolicy.DataSource = acRepo.GetAdminPermissions(_roleId)
