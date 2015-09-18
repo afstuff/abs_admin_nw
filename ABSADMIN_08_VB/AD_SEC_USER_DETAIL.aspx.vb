@@ -1,24 +1,26 @@
 ﻿Imports CustodianAdmin.Data
 Imports CustodianAdmin.Model
+'Imports System.Linq
 Public Class AD_SEC_USER_DETAIL
     Inherits System.Web.UI.Page
-    Dim acRepo As UserDetailRepository
-    Dim aCode As UserDetail
+    Dim udRepo As UserDetailRepository
+    Dim uDetail As UserDetail
     Dim li As ListItem
     Protected blnStatus As Boolean
     Protected blnStatusX As Boolean
     Dim MenuName As String
     Dim MenuPosition As String
-    Dim FirstMsg As String
+    Protected FirstMsg As String
     Dim updateFlag As Boolean
     Dim strKey As String
     Dim strOption As String
+    Dim strErrMsg As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Me.txtUserID.Text = RTrim("001")
         If Not Page.IsPostBack Then
-            acRepo = New UserDetailRepository
-            Session("acRepo") = acRepo
+            'udRepo = New UserDetailRepository
+            ' Session("udRepo") = udRepo
             updateFlag = False
             Session("updateFlag") = updateFlag
             strKey = Request.QueryString("idd")
@@ -26,6 +28,26 @@ Public Class AD_SEC_USER_DETAIL
 
             strOption = Request.QueryString("sopt")
             Session("strOption") = strOption
+
+            li = New ListItem
+            li.Text = "*** Select ***"
+            li.Value = "*"
+            cboGroup.Items.Add(li)
+
+            li = New ListItem
+            li.Text = "Administrators"
+            li.Value = "admin"
+            cboGroup.Items.Add(li)
+
+            li = New ListItem
+            li.Text = "Management"
+            li.Value = "mgt"
+            cboGroup.Items.Add(li)
+
+            li = New ListItem
+            li.Text = "System Users"
+            li.Value = "sysuser"
+            cboGroup.Items.Add(li)
 
             cboRole.Items.Add("Select")
             li = New ListItem("Super User", 1)
@@ -47,29 +69,32 @@ Public Class AD_SEC_USER_DETAIL
             'Me.txtCustNum.Focus()
             Me.txtName.Enabled = True
             Me.txtName.Focus()
+            'If Me.txtAction.Text = "New" Then
+            '    Call DoNew()
+            '    'Call Proc_OpenRecord(Me.txtNum.Text)
+            '    Me.txtAction.Text = ""
+            '    Me.txtName.Focus()
+            'End If
+
+            'If Me.txtAction.Text = "Save" Then
+            '    'Call DoSave()
+            '    'Me.txtAction.Text = ""
+            'End If
+
+            'If Me.txtAction.Text = "Delete" Then
+            '    Call DoDelete()
+            '    Me.txtAction.Text = ""
+            'End If
+
+            'If Me.txtAction.Text = "Delete_Item" Then
+            '    ''Call DoDelItem()
+            '    Me.txtAction.Text = ""
+            'End If
+
+        Else 'post back
+            udRepo = CType(Session("udRepo"), UserDetailRepository)
+            strOption = CType(Session("strOption"), String)
         End If
-
-        'If Me.txtAction.Text = "New" Then
-        '    Call DoNew()
-        '    'Call Proc_OpenRecord(Me.txtNum.Text)
-        '    Me.txtAction.Text = ""
-        '    Me.txtName.Focus()
-        'End If
-
-        'If Me.txtAction.Text = "Save" Then
-        '    'Call DoSave()
-        '    'Me.txtAction.Text = ""
-        'End If
-
-        'If Me.txtAction.Text = "Delete" Then
-        '    Call DoDelete()
-        '    Me.txtAction.Text = ""
-        'End If
-
-        'If Me.txtAction.Text = "Delete_Item" Then
-        '    ''Call DoDelItem()
-        '    Me.txtAction.Text = ""
-        'End If
     End Sub
 
     Protected Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
@@ -82,11 +107,11 @@ Public Class AD_SEC_USER_DETAIL
     End Sub
 
     Protected Sub txtLoginName_TextChanged(sender As Object, e As EventArgs) Handles txtLoginName.TextChanged
-        'If RTrim(Me.txtLoginName.Text) <> "" Then
-        '    lblMessage.Text = RTrim(Me.txtShortName.Text)
-        '    strREC_ID = RTrim(Me.txtLoginName.Text)
-        '    strErrMsg = Proc_OpenRecord(Me.txtLoginName.Text)
-        'End If
+        If RTrim(Me.txtLoginName.Text) <> "" Then
+            lblMessage.Text = RTrim(Me.txtShortName.Text)
+            ' strREC_ID = RTrim(Me.txtLoginName.Text)
+            strErrMsg = Proc_OpenRecord(Me.txtLoginName.Text)
+        End If
     End Sub
 
     Protected Sub DoNew()
@@ -109,10 +134,11 @@ Public Class AD_SEC_USER_DETAIL
             txtConPassword.Text = ""
             .cmdDel.Enabled = False
             .cmdDelN.Enabled = False
-            .lblMessage.Text = "Status: New Entry..."
+            txtLoginName.Enabled = True
+            txtLoginName.ReadOnly = False
+            '  .lblMessage.Text = "Status: New Entry..."
         End With
         ' strREC_ID = ""
-
     End Sub
 
     Protected Sub Proc_Populate_Box(ByVal pvCODE As String, ByVal pvTransType As String, ByVal pvcboList As DropDownList)
@@ -153,58 +179,24 @@ Public Class AD_SEC_USER_DETAIL
         'End Select
 
     End Sub
-
-
     Private Sub Proc_DataBind()
+        Dim o
         ''Me.cmdDelItem.Enabled = True
+        udRepo = New UserDetailRepository()
+        With GridView1
+            .DataSource = udRepo.GetUsersHelp(RTrim(Me.txtSearch.Value))
+            .DataBind()
+        End With
+        Dim P As Integer = 0
+        Dim C As Integer = 0
 
-        ''Try
-        ''    Me.txtCustModule.Text = cboCustModule.SelectedValue
-        ''Catch ex As Exception
-        ''End Try
-
-        'strTable = strTableName
-        'strSQL = ""
-        'strSQL = strSQL & "SELECT SEC_USER_REC_ID, SEC_USER_ID, SEC_USER_LOGIN"
-        'strSQL = strSQL & ",RTRIM(ISNULL(SEC_USER_NAME,'')) AS SEC_USER_FULLNAME"
-        'strSQL = strSQL & ",RTRIM(ISNULL(SEC_USER_PHONE1,'')) + ' ' + RTRIM(ISNULL(SEC_USER_PHONE2,'')) AS SEC_USER_PHONE_NUM"
-        'strSQL = strSQL & " FROM " & strTable & " "
-        'strSQL = strSQL & " WHERE SEC_USER_ID = '" & RTrim(Me.txtUserID.Text) & "'"
-        'strSQL = strSQL & " AND (SEC_USER_NAME LIKE '%" & RTrim(Me.txtSearch.Value) & "%')"
-        'strSQL = strSQL & " ORDER BY SEC_USER_REC_ID, RTRIM(ISNULL(SEC_USER_NAME,''))"
-
-        'Dim mystrCONN As String = CType(Session("connstr"), String)
-        'Dim objOLEConn As New OleDbConnection(mystrCONN)
-
-        ''open connection to database
-        'objOLEConn.Open()
-        'Dim objDA As OleDbDataAdapter = New OleDbDataAdapter(strSQL, objOLEConn)
-
-        'Dim objDS As DataSet = New DataSet()
-        'objDA.Fill(objDS, strTable)
-
-        'With GridView1
-        '    .DataSource = objDS
-        '    .DataBind()
-        'End With
-        'objDS = Nothing
-        'objDA = Nothing
-        'If objOLEConn.State = ConnectionState.Open Then
-        '    objOLEConn.Close()
-        'End If
-        'objOLEConn = Nothing
-
-
-        'Dim P As Integer = 0
-        'Dim C As Integer = 0
-
-        'C = 0
-        'For P = 0 To Me.GridView1.Rows.Count - 1
-        '    C = C + 1
-        'Next
-        'If C >= 1 Then
-        '    Me.cmdDelete_ASP.Enabled = True
-        'End If
+        C = 0
+        For P = 0 To Me.GridView1.Rows.Count - 1
+            C = C + 1
+        Next
+        If C >= 1 Then
+            Me.cmdDelN.Enabled = True
+        End If
 
     End Sub
 
@@ -254,7 +246,7 @@ Public Class AD_SEC_USER_DETAIL
             Exit Sub
         End If
         strMyVal = RTrim(Me.cboRole.Text)
-        If RTrim(strMyVal) = "" Or RTrim(strMyVal) = "*" Then
+        If RTrim(strMyVal) = "Select" Or RTrim(strMyVal) = "*" Then
             Me.lblMessage.Text = "Missing/Invalid " & Me.lblRole.Text
             FirstMsg = "Javascript:alert('" & Me.lblMessage.Text & "')"
             Exit Sub
@@ -352,31 +344,61 @@ Public Class AD_SEC_USER_DETAIL
         Catch ex As Exception
             myUserIDX = ""
         End Try
-        aCode = New UserDetail()
 
-        aCode.User_Id = RTrim(Me.txtUserID.Text)
-        aCode.User_Login = RTrim(Me.txtLoginName.Text)
-        aCode.User_Name = RTrim(Me.txtName.Text)
-        aCode.User_ShortName = RTrim(Me.txtShortName.Text)
-        aCode.User_GroupCode = RTrim(Me.txtGroup.Text)
-        aCode.User_Role = LTrim(Me.cboRole.Text)
-        aCode.User_Branch = LTrim(Me.txtBranch.Text)
-        aCode.User_Password = EncryptNew(LTrim(Me.txtPassword.Text))
-        aCode.User_Phone1 = Left(LTrim(Me.txtCustPhone01.Text), 11)
-        aCode.User_Phone1 = Left(LTrim(Me.txtCustPhone02.Text), 11)
-        aCode.User_Email1 = Left(LTrim(Me.txtCustEmail01.Text), 49)
-        aCode.User_Email1 = Left(LTrim(Me.txtCustEmail02.Text), 49)
-        aCode.User_FlagID = "A"
-        aCode.User_OperID = CType(myUserIDX, String)
-        aCode.User_Keydate = Now
+        udRepo = New UserDetailRepository()
+        uDetail = New UserDetail()
 
-        Me.lblMessage.Text = "New Record Saved to Database Successfully."
+        Dim search = udRepo.GetByLoginName(txtLoginName.Text)
+        If search Is Nothing Then
+            uDetail.User_Id = RTrim(Me.txtUserID.Text)
+            uDetail.User_Login = RTrim(Me.txtLoginName.Text)
+            uDetail.User_Name = RTrim(Me.txtName.Text)
+            uDetail.User_ShortName = RTrim(Me.txtShortName.Text)
+            uDetail.User_GroupCode = RTrim(Me.txtGroup.Text)
+            uDetail.User_Role = LTrim(Me.cboRole.Text)
+            uDetail.User_Branch = LTrim(Me.txtBranch.Text)
+            uDetail.User_Password = EncryptNew(LTrim(Me.txtPassword.Text))
+            uDetail.User_Phone1 = Left(LTrim(Me.txtCustPhone01.Text), 11)
+            uDetail.User_Phone2 = Left(LTrim(Me.txtCustPhone02.Text), 11)
+            uDetail.User_Email1 = Left(LTrim(Me.txtCustEmail01.Text), 49)
+            uDetail.User_Email2 = Left(LTrim(Me.txtCustEmail02.Text), 49)
+            uDetail.User_Last_Pword_change = CDate("1905-06-21")
+            uDetail.User_Last_Login_Date = CDate("1905-06-21")
+            uDetail.User_FlagID = "A"
+            uDetail.User_OperID = CType(myUserIDX, String)
+            uDetail.User_Keydate = Now
+            udRepo.Save(uDetail)
+            Session("uDetail") = uDetail
+            Me.lblMessage.Text = "New Record Saved to Database Successfully."
+        Else
+            Session("uDetail") = uDetail
+            Me.txtRecNo.Text = search.User_RecId
+            uDetail.User_Id = RTrim(Me.txtUserID.Text)
+            uDetail.User_Login = RTrim(Me.txtLoginName.Text)
+            uDetail.User_Name = RTrim(Me.txtName.Text)
+            uDetail.User_ShortName = RTrim(Me.txtShortName.Text)
+            uDetail.User_GroupCode = RTrim(Me.txtGroup.Text)
+            uDetail.User_Role = LTrim(Me.cboRole.Text)
+            uDetail.User_Branch = LTrim(Me.txtBranch.Text)
+            uDetail.User_Password = EncryptNew(LTrim(Me.txtPassword.Text))
+            uDetail.User_Phone1 = Left(LTrim(Me.txtCustPhone01.Text), 11)
+            uDetail.User_Phone2 = Left(LTrim(Me.txtCustPhone02.Text), 11)
+            uDetail.User_Email1 = Left(LTrim(Me.txtCustEmail01.Text), 49)
+            uDetail.User_Email2 = Left(LTrim(Me.txtCustEmail02.Text), 49)
+            uDetail.User_Last_Pword_change = CDate("1905-06-21")
+            uDetail.User_Last_Login_Date = CDate("1905-06-21")
+            uDetail.User_FlagID = "C"
+            uDetail.User_OperID = CType(myUserIDX, String)
+            uDetail.User_Keydate = Now
+            udRepo.Update(uDetail)
+            Me.lblMessage.Text = "Record Updated to Database Successfully."
+        End If
         FirstMsg = "Javascript:alert('" & Me.lblMessage.Text & "')"
         'Me.lblMessage.Text = ""
 
-        ' Me.txtSearch.Value = RTrim(Me.txtName.Text)
+        Me.txtSearch.Value = RTrim(Me.txtName.Text)
         Call Proc_DataBind()
-        'Me.txtSearch.Value = ""
+        Me.txtSearch.Value = ""
 
         DoNew()
 
@@ -504,103 +526,67 @@ Public Class AD_SEC_USER_DETAIL
     'End Sub
 
     Private Function Proc_OpenRecord(ByVal strRefNo As String) As String
+        udRepo = New UserDetailRepository
+        On Error GoTo myRtn_Err
 
-        '        On Error GoTo myRtn_Err
+        strErrMsg = "false"
 
-        '        strErrMsg = "false"
+        lblMessage.Text = ""
+        If Trim(strRefNo) = "" Then
+            Proc_OpenRecord = strErrMsg
+            Return Proc_OpenRecord
+        End If
 
-        '        lblMessage.Text = ""
-        '        If Trim(strRefNo) = "" Then
-        '            Proc_OpenRecord = strErrMsg
-        '            Return Proc_OpenRecord
-        '        End If
-
-        '        strREC_ID = Trim(strRefNo)
-
-        '        strTable = strTableName
-        '        strSQL = ""
-        '        strSQL = strSQL & "SELECT TOP 1 TRN.*"
-        '        strSQL = strSQL & " FROM " & strTable & " AS TRN"
-        '        strSQL = strSQL & " WHERE TRN.SEC_USER_LOGIN = '" & RTrim(strREC_ID) & "'"
-        '        strSQL = strSQL & " AND TRN.SEC_USER_ID = '" & RTrim(Me.txtUserID.Text) & "'"
-        '        'strSQL = strSQL & " AND TBIL_CUST_CLASS_REC_ID = '" & Val(RTrim(txtRecNo.Text)) & "'"
-
-        '        Dim mystrCONN As String = CType(Session("connstr"), String)
-        '        Dim objOLEConn As New OleDbConnection(mystrCONN)
-        '        Dim objOLECmd As OleDbCommand = New OleDbCommand(strSQL, objOLEConn)
-
-        '        objOLECmd.CommandType = CommandType.Text
-        '        'objOLECmd.Parameters.Add("p01", OleDbType.VarChar, 50).Value = strREC_ID
-
-        '        Dim objOLEDR As OleDbDataReader
-
-        '        'open connection to database
-        '        objOLEConn.Open()
-
-        '        objOLEDR = objOLECmd.ExecuteReader()
-        '        If (objOLEDR.Read()) Then
-        '            Me.txtRecNo.Text = RTrim(CType(objOLEDR("SEC_USER_REC_ID") & vbNullString, String))
-        '            Me.txtUserID.Text = RTrim(CType(objOLEDR("SEC_USER_ID") & vbNullString, String))
-        '            Me.cboRole.Text = RTrim(CType(objOLEDR("SEC_USER_ROLE") & vbNullString, String))
-        '            Me.txtShortName.Text = RTrim(CType(objOLEDR("SEC_USER_SHRT_NAME") & vbNullString, String))
-        '            Me.txtName.Text = RTrim(CType(objOLEDR("SEC_USER_NAME") & vbNullString, String))
-        '            Me.txtBranch.Text = RTrim(CType(objOLEDR("SEC_USER_BRANCH") & vbNullString, String))
-        '            Me.txtCustPhone01.Text = RTrim(CType(objOLEDR("SEC_USER_PHONE1") & vbNullString, String))
-        '            Me.txtCustPhone02.Text = RTrim(CType(objOLEDR("SEC_USER_PHONE2") & vbNullString, String))
-        '            Me.txtCustEmail01.Text = RTrim(CType(objOLEDR("SEC_USER_EMAIL1") & vbNullString, String))
-        '            Me.txtCustEmail02.Text = RTrim(CType(objOLEDR("SEC_USER_EMAIL2") & vbNullString, String))
+        Dim search = udRepo.GetByLoginName(strRefNo)
+        If search IsNot Nothing Then
+            Session("uDetail") = search
+            Me.txtRecNo.Text = search.User_RecId
+            Me.txtUserID.Text = search.User_Id
+            Me.cboRole.Text = search.User_Role
+            Me.txtShortName.Text = search.User_ShortName
+            Me.txtName.Text = search.User_Name
+            Me.txtBranch.Text = search.User_Branch
+            Me.txtCustPhone01.Text = search.User_Phone1
+            Me.txtCustPhone02.Text = search.User_Phone2
+            Me.txtCustEmail01.Text = search.User_Email1
+            Me.txtCustEmail02.Text = search.User_Email2
 
 
-        '            Me.txtGroup.Text = RTrim(CType(objOLEDR("SEC_USER_GROUP_CODE") & vbNullString, String))
+            Me.txtGroup.Text = search.User_GroupCode
 
-        '            'Call Proc_DDL_Get(Me.cboGroup, RTrim(Me.txtGroup.Text))
-        '            'This will be done dynamic later
-        '            If txtGroup.Text = "admin" Then
-        '                'cboGroup.Text = "Administrators"
-        '                cboGroup.Text = "admin"
-        '                cboGroup.SelectedValue = "admin"
-        '            ElseIf txtGroup.Text = "mgt" Then
-        '                cboGroup.Text = "mgt"
-        '            ElseIf txtGroup.Text = "sysuser" Then
-        '                cboGroup.Text = "sysuser"
-        '            End If
+            'Call Proc_DDL_Get(Me.cboGroup, RTrim(Me.txtGroup.Text))
+            'This will be done dynamic later
+            If txtGroup.Text = "admin" Then
+                'cboGroup.Text = "Administrators"
+                cboGroup.Text = "admin"
+                cboGroup.SelectedValue = "admin"
+            ElseIf txtGroup.Text = "mgt" Then
+                cboGroup.Text = "mgt"
+            ElseIf txtGroup.Text = "sysuser" Then
+                cboGroup.Text = "sysuser"
+            End If
 
-        '            Call DisableBox(Me.txtLoginName)
-        '            strErrMsg = "Status: Data Modification"
-        '            strOPT = "1"
-        '            Me.cmdNew_ASP.Enabled = True
-        '            Me.cmdDelete_ASP.Enabled = True
-        '        Else
-        '            'Me.txtCustNum.Text = ""
-        '            Me.cmdDelete_ASP.Enabled = False
-        '            strErrMsg = "Status: New Entry..."
-        '            Me.txtName.Enabled = True
-        '            Me.txtName.Focus()
-        '        End If
+            Call DisableBox(Me.txtLoginName)
+            strErrMsg = "Status: Data Modification"
+            ' strOPT = "1"
+            Me.cmdNew.Enabled = True
+            Me.cmdDelN.Enabled = True
+        Else
+            'Me.txtCustNum.Text = ""
+            Me.cmdDelN.Enabled = False
+            strErrMsg = "Status: New Entry..."
+            Me.txtName.Enabled = True
+            Me.txtName.Focus()
+        End If
 
-        '        ' dispose of open objects
-        '        objOLECmd.Dispose()
+        GoTo MyRtn_Ok
 
-        '        If objOLEDR.IsClosed = False Then
-        '            objOLEDR.Close()
-        '        End If
-
-        '        If objOLEConn.State = ConnectionState.Open Then
-        '            objOLEConn.Close()
-        '        End If
-        '        GoTo MyRtn_Ok
-
-        'myRtn_Err:
-        '        strErrMsg = Err.Number & " - " & Err.Description
-        'MyRtn_Ok:
-
-        '        objOLECmd = Nothing
-        '        objOLEDR = Nothing
-        '        objOLEConn = Nothing
-
-        '        lblMessage.Text = strErrMsg
-        '        Proc_OpenRecord = strErrMsg
-        '        Return Proc_OpenRecord
+myRtn_Err:
+        strErrMsg = Err.Number & " - " & Err.Description
+MyRtn_Ok:
+        lblMessage.Text = strErrMsg
+        Proc_OpenRecord = strErrMsg
+        Return Proc_OpenRecord
 
     End Function
 
@@ -707,4 +693,70 @@ Public Class AD_SEC_USER_DETAIL
         Next
         EncryptNew = icNewText
     End Function
+
+    Protected Sub cboGroup_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboGroup.SelectedIndexChanged
+        Me.txtGroup.Text = RTrim(Me.cboGroup.SelectedItem.Value)
+        If RTrim(Me.txtGroup.Text) = "*" Or RTrim(Me.txtGroup.Text) = "" Or RTrim(Me.txtGroup.Text) = "0" Then
+            Me.txtGroup.Text = ""
+            Exit Sub
+        End If
+    End Sub
+
+    Protected Sub cmdNew_Click(sender As Object, e As EventArgs) Handles cmdNew.Click
+        DoNew()
+        lblMessage.Text = "Status: New Entry..."
+    End Sub
+
+    Protected Sub cmdDelN_Click(sender As Object, e As EventArgs) Handles cmdDelN.Click
+        Dim msg As String = String.Empty
+        'uDetail = New UserDetail
+        ' udRepo = CType(Session("udRepo"), UserDetailRepository)
+        udRepo = New UserDetailRepository
+        uDetail = CType(Session("uDetail"), UserDetail)
+        Try
+            udRepo.Delete(uDetail)
+            msg = "Record deleted successfully"
+            lblMessage.Text = msg
+            ' lblError.Text = msg
+            '   grdData.DataBind()
+
+        Catch ex As Exception
+            msg = ex.Message
+            'lblError.Text = msg
+            'lblError.Visible = True
+            'publicMsgs = "javascript:alert('" + msg + "')"
+        End Try
+        DoNew()
+    End Sub
+
+    Private Sub cmdSearch_Click(sender As Object, e As EventArgs) Handles cmdSearch.Click
+        If Trim(Me.txtSearch.Value) = "" Or Trim(Me.txtSearch.Value) = "." Or Trim(Me.txtSearch.Value) = "*" Then
+        Else
+            Call Proc_DataBind()
+        End If
+    End Sub
+
+    Private Sub GridView1_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles GridView1.PageIndexChanging
+        GridView1.PageIndex = e.NewPageIndex
+        Call Proc_DataBind()
+        Me.lblMessage.Text = "Page " & GridView1.PageIndex + 1 & " of " & Me.GridView1.PageCount
+    End Sub
+
+    Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles GridView1.SelectedIndexChanged
+        ' Get the currently selected row using the SelectedRow property.
+        Dim row As GridViewRow = GridView1.SelectedRow
+
+        ' Display the required value from the selected row.
+        Me.txtRecNo.Text = row.Cells(2).Text
+
+        Me.txtUserID.Text = row.Cells(3).Text
+        'Call Proc_DDL_Get(Me.ddlGroup, RTrim(Me.txtGroupNum.Text))
+
+        Me.txtLoginName.Text = row.Cells(4).Text
+        'Call Proc_DDL_Get(Me.cboTransList, RTrim(Me.txtCustNum.Text))
+
+        Call Proc_OpenRecord(Me.txtLoginName.Text)
+
+        lblMessage.Text = "You selected " & Me.txtLoginName.Text & " / " & Me.txtRecNo.Text & "."
+    End Sub
 End Class

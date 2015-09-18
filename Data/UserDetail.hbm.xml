@@ -20,11 +20,11 @@
     <property name="User_Email2" column="SEC_USER_EMAIL2" length="50" />
     <property name="User_Tag" column="SEC_USER_TAG" length="10" />
     <property name="User_Last_Pword_change" column="SEC_USER_LAST_PWORD_CHANGE" type="datetime" />
-    <property name="ADM_Last_Login_Date" column="SEC_USER_LAST_LOGIN_DATE" type="datetime" />
+    <property name="User_Last_Login_Date" column="SEC_USER_LAST_LOGIN_DATE" type="datetime" />
     
-    <property name="ADM_FlagID" column="SEC_USER_FLAG" length="3" />
-    <property name="ADM_OperID" column="SEC_USER_OPERID" length="10" />
-    <property name="ADM_Keydate" column="SEC_USER_KEYDTE" type="datetime" />
+    <property name="User_FlagID" column="SEC_USER_FLAG" length="3" />
+    <property name="User_OperID" column="SEC_USER_OPERID" length="10" />
+    <property name="User_Keydate" column="SEC_USER_KEYDTE" type="datetime" />
   </class>
 </hibernate-mapping>
 
