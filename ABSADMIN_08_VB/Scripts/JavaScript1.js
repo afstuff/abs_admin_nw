@@ -39,6 +39,55 @@ $(function () {
 
 });
 
+//Menu Constructors
+$(function () {
+    if (window.sessionStorage.length > 0) {
+        //console.log("working!");
+
+        //get menu from session
+        var dString = JSON.parse(sessionStorage.getItem("userInfo"));
+        // Decode the String
+        var mn = dString;
+        //console.log(dString);
+        //console.log(mn);
+
+        //loop tru
+        $.each(mn, function (m) {
+            //console.log(m);
+            //console.log(mn[m]);
+            //console.log(mn[m].menuName);
+
+            if ((mn[m].menuPos == "1") && (mn[m].canAdd) == "0") {
+                $("#tell").addClass("hidden");
+            }
+
+            if ((mn[m].menuPos == "2") && (mn[m].canAdd) == "0") {
+                $("#ser").addClass("hidden");
+            }
+            if ((mn[m].menuPos == "3") && (mn[m].canAdd) == "0") {
+                $("#mot").addClass("hidden");
+            }
+            if ((mn[m].menuPos == "4") && (mn[m].canAdd) == "0") {
+                $("#pro").addClass("hidden");
+            }
+            if ((mn[m].menuPos == "5") && (mn[m].canAdd) == "0") {
+                $("#bra").addClass("hidden");
+            }
+            if ((mn[m].menuPos == "6") && (mn[m].canAdd) == "0") {
+                $("#pre").addClass("hidden");
+            }
+            if ((mn[m].menuPos == "7") && (mn[m].canAdd) == "0") {
+                $("#clm").addClass("hidden");
+            }
+           
+        });
+
+
+    }
+});
+
+
+
 $(document).ready(function () {
     // DOM ready
 
@@ -120,5 +169,4 @@ function testLocalStorageData() {
     localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
     localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
 }
-
 

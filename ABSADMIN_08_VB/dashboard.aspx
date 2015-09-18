@@ -80,7 +80,7 @@
                         <p>
                             &nbsp;
                         </p>
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="tell">
                             <a href="TelephoneBill.aspx">
                                 <img src="imgs/telephone_blue.png" />
                                 <br />
@@ -88,7 +88,7 @@
                             </a>
                         </div>
 
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="ser">
                             <a href="ServicesBill.aspx">
                                 <img src="imgs/service.png" />
                                 <br />
@@ -96,14 +96,14 @@
                             </a>
                         </div>
 
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="mot">
                             <a href="MotorVehicle.aspx">
                                 <img src="imgs/moto.png" />
                                 <br />
                                 Motor Vehicle(R&amp;M)
                             </a>
                         </div>
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="pro">
                             <a href="Procurement.aspx">
                                 <img src="imgs/procurement.png" />
                                 <br />
@@ -113,34 +113,27 @@
 
                         <div class="clearfix" style="margin-bottom: 80px!important;"></div>
 
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="bra">
                             <a href="BranchExpenses.aspx">
                                 <img src="imgs/expenses.png" />
                                 <br />
                                 Branch Expenses
                             </a>
                         </div>
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="pre">
                             <a href="PremiumPaid.aspx">
                                 <img src="imgs/premRec.png" />
                                 <br />
                                 Insurance Prem. Rec.
                             </a>
                         </div>
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="clm">
                             <a href="ClaimReceived.aspx">
                                 <img src="imgs/claimRec.png" />
                                 <br />
                                 Insurance Claim Rec.
                             </a>
                         </div>
-                        <%-- <div class="menuItemDiv" align="center">
-                            <a href="#">
-                                <img src="imgs/moto.png" />
-                                <br />
-                                Motor Vehicle(R&M)
-                            </a>
-                        </div>--%>
                         <div class="clearfix" style="margin-bottom: 80px!important;"></div>
 
 

@@ -21,8 +21,8 @@ Public Class AD140
         strKey1 = Request.QueryString("mod")
         If (strKey1 = "pro") Then
             MasterPageFile = "~/Site4.master"
-        'ElseIf (strKey1 = "001") Then
-        '    MasterPageFile = "~/Site3.master"
+            'ElseIf (strKey1 = "001") Then
+            '    MasterPageFile = "~/Site3.master"
             'ElseIf (strKey = "002") Then
             '    MasterPageFile = "~/Site4.master"
             'ElseIf (strKey = "005") Then
@@ -277,7 +277,4 @@ Public Class AD140
 
     End Sub
 
-    Protected Sub DoProc_Company_Search(ByVal sender As Object, ByVal e As EventArgs) Handles cmdCompany_Search.Click
-
-    End Sub
 End Class

@@ -16,6 +16,40 @@
             width: 283px;
         }
     </style>
+    
+    <script>
+          $(function () {
+              if (window.sessionStorage.length > 0) {
+                  //console.log("working!");
+                  //get menu from session
+                  var dString = JSON.parse(sessionStorage.getItem("userInfo"));
+                  // Decode the String
+                  var mn = dString;
+
+                  //console.log(dString);
+                  //console.log(mn);
+
+                  //loop tru
+                  $.each(mn, function (m) {
+                      var premiumPage = document.getElementById('premiumPage').innerHTML;
+                      if (premiumPage == "Premium Paid Rec.-") {
+                          if (mn[m].canAdd == "0") {
+                              $("#1").addClass("hidden");
+                          }
+                          if (mn[m].canEdit == "0") {
+                              $("#2").addClass("hidden");
+                          }
+                          if (mn[m].canDelete == "0") {
+                              $("#3").addClass("hidden");
+                          }
+                      }
+                  });
+              }
+          });
+
+
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -82,8 +116,7 @@
                         <table class="table input-sm">
                             <tr>
                                 <td class="auto-style1">
-                                    <span class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Premium Paid Rec. - 
-                                    </span>
+                                    <span id="premiumPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Premium Paid Rec.-</span>
                                 </td>
                                 <td>
                                     <div class="dropdown input-group-sm">
@@ -92,9 +125,9 @@
     <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
-                                            <li><a href='AD111.aspx?sopt=005&mod=prm' target='_self'>Codes Setup</a></li>
-                                            <li><a href='AD180.aspx' target='_self'>Transaction</a></li>
-                                            <li><a href='AD112.aspx' target='_self'>Report</a></li>
+                                            <li id="1"><a href='AD111.aspx?sopt=005&mod=prm' target='_self'>Codes Setup</a></li>
+                                            <li id="2"><a href='AD180.aspx' target='_self'>Transaction</a></li>
+                                            <li id="3"><a href='AD112.aspx' target='_self'>Report</a></li>
                                         </ul>
                                     </div>
                                 </td>

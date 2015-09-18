@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site6.Master" CodeBehind="AD180.aspx.vb" Inherits="ABSADMIN_08_VB.AD180" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headSection" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
     <script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>

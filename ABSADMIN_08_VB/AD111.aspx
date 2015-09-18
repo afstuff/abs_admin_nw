@@ -18,7 +18,7 @@
                 alert('Error!!!' + '\n\n' + errorText);
             }
 
-            function OnFailure(response) {
+            function onFailure(response) {
                 //debugger;
                 alert('Failure!!!' + '<br/>' + response.reponseText);
             }
@@ -36,7 +36,7 @@
                             $("#cmbCodeType").append($("<option></option>").val(value.mId).html(value.Make + ',  ' + value.Type));
                         });
                     },
-                    failure: OnFailure,
+                    failure: onFailure,
                     error: onErrorLoadMotorTypes
                 });
                 // this avoids page refresh on button click
