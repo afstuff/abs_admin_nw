@@ -22,6 +22,7 @@ namespace CustodianAdmin.Model
         public virtual string User_Email2 { get; set; }
 
         public virtual string User_Tag { get; set; }
+
         public virtual DateTime User_Last_Pword_change { get; set; }
 
         public virtual DateTime User_Last_Login_Date { get; set; }
