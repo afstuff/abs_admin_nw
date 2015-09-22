@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site6.Master" CodeBehind="AD180.aspx.vb" Inherits="ABSADMIN_08_VB.AD180" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site7.Master" CodeBehind="AD180.aspx.vb" Inherits="ABSADMIN_08_VB.AD180" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
@@ -75,7 +75,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">Transaction
+    <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">Transactions
     </h3>
     <table align="center" border="0" class="tbl_main">
         <tr>
@@ -294,5 +294,6 @@
                         <td colspan="4" valign="top" style="width: auto;">&nbsp;</td>
                     </tr>
                 </table>
-                <asp:ObjectDataSource ID="ods" runat="server" SelectMethod="InsuranceClaimBills" TypeName="CustodianAdmin.Data.InsuranceClaimRepository"></asp:ObjectDataSource>
+    </table>
+    <asp:ObjectDataSource ID="ods" runat="server" SelectMethod="InsuranceClaimBills" TypeName="CustodianAdmin.Data.InsuranceClaimRepository"></asp:ObjectDataSource>
 </asp:Content>

@@ -80,6 +80,7 @@
                 //var menuItem0 = [];
 
                 var userPage = [];
+
                 $.each(admobjects, function () {
                     var admobject = $(this);
                     userPage.push({ userRole: $(this).find("SEC_USER_ROLE").text(), userName: $(this).find("SEC_USER_NAME").text() });
@@ -89,6 +90,7 @@
                     // Encode the String
                     var eString = JSON.stringify(userPage);
                     console.log(eString);
+                    sessionStorage.setItem("userRole", "");
                     sessionStorage.setItem("userRole", eString);
 
                     //move to next page
@@ -159,7 +161,7 @@
                     <p id="profile-name" class="profile-name-card"></p>
                     <div class="form-signin">
                         <span id="reauth-email" class="reauth-email"></span>
-                        <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                         <div id="remember" class="checkbox">
                             <label>
@@ -170,8 +172,8 @@
                         <button id="loginBtn" class="btn btn-lg btn-info btn-block btn-signin">Sign in</button>
                     </div>
                     <!-- /form -->
-                    <a href="#" class="forgot-password">Forgot the password?
-                    </a>
+                    <a href="#" class="forgot-password pull-left">Forgot the password?</a>
+                    <a href="#" class="forgot-password pull-right">Register!</a>
                 </div>
                 <!-- /card-container -->
             </div>

@@ -14,13 +14,16 @@ Public Class AD180
     Dim acRepo As AdminCodeRepository
     Dim cbill As InsuranceClaim
     Dim updateFlag As Boolean
+    Dim strKey1 As String
     Dim strKey As String
     Dim TotClaimPaid As Decimal = 0
     Dim ClaimPaid As Decimal = 0
     Dim TotClaimRequested As Decimal = 0
     Dim ClaimRequested As Decimal = 0
 
+    Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreInit
 
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         txtTransNum.Attributes.Add("disabled", "disabled")
 

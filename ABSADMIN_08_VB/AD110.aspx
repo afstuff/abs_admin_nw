@@ -195,7 +195,7 @@
 
                     <tr>
                         <td colspan="2" valign="top">&nbsp;
-                            <asp:TextBox ID="txtClassCod" MaxLength="15" runat="server" Text="006" Visible="true"></asp:TextBox></td>
+                            <asp:TextBox ID="txtClassCod" MaxLength="15" runat="server" Text="006" Visible="False"></asp:TextBox></td>
                     </tr>
 
                 </table>

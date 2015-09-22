@@ -17,45 +17,7 @@
         }
     </style>
     
-    <script>
-          $(function () {
-              if (window.sessionStorage.length > 0) {
-                  //console.log("working!");
-                  //get menu from session
-                  var dString = JSON.parse(sessionStorage.getItem("userInfo"));
-                  // Decode the String
-                  var mn = dString;
-
-                  //console.log(dString);
-                  //console.log(mn);
-
-                  //loop tru
-                  $.each(mn, function (m) {
-                      var premiumPage = document.getElementById('premiumPage').innerHTML;
-                      if (premiumPage == "Premium Paid Rec.-") {
-                          if (mn[m].canAdd == "0") {
-                              $("#1").addClass("hidden");
-
-                          }
-                          if (mn[m].canEdit == "0") {
-                              $("#2").addClass("hidden");
-                          }
-                          if (mn[m].canDelete == "0") {
-                              $("#3").addClass("hidden");
-                              $("#cmdDelN").addClass("hidden");
-                          }
-                          if (mn[m].canPrint == "0") {
-                              //$("#3").addClass("hidden");
-                              $("#cmdPrint").addClass("hidden");
-                          }
-                      }
-                  });
-              }
-          });
-
-
-
-    </script>
+    
 </head>
 <body>
     <form id="form1" runat="server">
@@ -125,17 +87,12 @@
                                     <span id="premiumPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Premium Paid Rec.-</span>
                                 </td>
                                 <td>
-                                    <div class="dropdown input-group-sm">
-                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                            Select Task
-    <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
-                                            <li id="1"><a href='AD111.aspx?sopt=005&mod=prm' target='_self'>Codes Setup</a></li>
-                                            <li id="2"><a href='AD180.aspx' target='_self'>Transaction</a></li>
-                                            <li id="3"><a href='AD112.aspx' target='_self'>Report</a></li>
-                                        </ul>
-                                    </div>
+                                     <asp:DropDownList ID="subMenuDdl" runat="server" CssClass="dropdown" Style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;" AutoPostBack="True">
+                                        <asp:ListItem>Select Task</asp:ListItem>
+                                        <asp:ListItem Value="1">Code Setup</asp:ListItem>
+                                        <asp:ListItem Value="2">Transactions</asp:ListItem>
+                                        <asp:ListItem Value="3">Report</asp:ListItem>
+                                    </asp:DropDownList>
                                 </td>
                                <td>
                                     <a href="dashboard.aspx" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-home"></i></a>
