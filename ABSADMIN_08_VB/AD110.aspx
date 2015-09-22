@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Transaction ::Telephone Bill" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site1.Master" CodeBehind="AD110.aspx.vb" Inherits="ABSADMIN_08_VB.AD110" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="Content/calendar.css" />
     <link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
@@ -74,8 +75,10 @@
                 }
                 return false;
             }); // retrieve the values for branch
+
         });
     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">Transaction

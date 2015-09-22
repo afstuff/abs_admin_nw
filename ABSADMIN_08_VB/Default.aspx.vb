@@ -4,7 +4,7 @@ Imports CustodianAdmin.Model
 Public Class _Default
     Inherits System.Web.UI.Page
 
-      Dim Shared acRepo As AdminPermissionsRepository
+    Shared acRepo As AdminPermissionsRepository
     Dim aCode As AdminPermissions
     Dim li As ListItem
     Dim MenuName As String
@@ -16,7 +16,7 @@ Public Class _Default
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-         If Not Page.IsPostBack Then
+        If Not Page.IsPostBack Then
             acRepo = New AdminPermissionsRepository
             Session("acRepo") = acRepo
             updateFlag = False
@@ -41,9 +41,9 @@ Public Class _Default
     '    Response.Redirect("dashboard.aspx")
     'End Sub
 
-    
+
     <System.Web.Services.WebMethod()> _
-    Public Shared Function GetUserRolesInfo(ByVal  roleId As Integer) As String
+    Public Shared Function GetUserRolesInfo(ByVal roleId As Integer) As String
         Dim roleinfo As String = String.Empty
         'Dim crit As String = 
 
@@ -58,5 +58,58 @@ Public Class _Default
 
     End Function
 
+
+    Public Shared Function EncryptNew(ByVal icText As String) As String
+        Dim icLen As Integer
+        Dim icNewText As String
+        Dim icChar As String
+        Dim i As Long
+
+        icChar = ""
+        icNewText = ""
+
+        icLen = Len(icText)
+        For i = 1 To icLen
+            icChar = Mid(icText, i, 1)
+            Select Case Asc(icChar)
+                Case 65 To 90
+                    icChar = Chr(Asc(icChar) + 127)
+                Case 97 To 122
+                    icChar = Chr(Asc(icChar) + 121)
+                Case 48 To 57
+                    icChar = Chr(Asc(icChar) + 196)
+                Case 32
+                    icChar = Chr(32)
+            End Select
+            icNewText = icNewText + icChar
+        Next
+        EncryptNew = icNewText
+    End Function
+
+    <System.Web.Services.WebMethod(EnableSession:=True)> _
+    Public Shared Function DoLogin(ByVal userName As String, ByVal userPassword As String) As String
+        Dim roleinfo As String = String.Empty
+        Dim roleInfoDt As DataTable = Nothing
+        Dim userPassword1 As String = String.Empty
+        'Dim crit As String = 
+        If (userName <> Nothing And userPassword <> Nothing) Then
+            userPassword1 = EncryptNew(userPassword)
+        End If
+
+        Try
+            roleinfo = acRepo.DoUserLogin(userName, userPassword1)
+            roleInfoDt = acRepo.DoUserLoginDt(userName, userPassword1)
+
+            Dim ctx As HttpContext = System.Web.HttpContext.Current
+            ctx.Session("roleInfoDt") = roleInfoDt
+
+            Return roleinfo
+        Finally
+            If roleinfo = "<NewDataSet />" Then
+                Throw New Exception()
+            End If
+        End Try
+
+    End Function
 
 End Class

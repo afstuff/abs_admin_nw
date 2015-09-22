@@ -7,8 +7,6 @@
     <script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
     <script language="javascript" type="text/javascript" src="Scripts/ScriptJS.js"></script>
 
-
-
     <script type="text/javascript">
         // calling jquery functions once document is ready
         $(document).ready(function () {

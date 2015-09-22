@@ -17,35 +17,41 @@
             width: 331px;
         }
     </style>
-    
-    <script>
-          $(function () {
-              if (window.sessionStorage.length > 0) {
-                  //console.log("working!");
-                  //get menu from session
-                  var dString = JSON.parse(sessionStorage.getItem("userInfo"));
-                  // Decode the String
-                  var mn = dString;
-                  //console.log(dString);
-                  //console.log(mn);
 
-                  //loop tru
-                  $.each(mn, function (m) {
-                      var claimPage = document.getElementById('claimPage').innerHTML;
-                      if (claimPage == "Claim Received Rec.-") {
-                          if (mn[m].canAdd == "0") {
-                              $("#1").addClass("hidden");
-                          }
-                          if (mn[m].canEdit == "0") {
-                              $("#2").addClass("hidden");
-                          }
-                          if (mn[m].canDelete == "0") {
-                              $("#3").addClass("hidden");
-                          }
-                      }
-                  });
-              }
-          });
+    <script>
+        $(function () {
+            if (window.sessionStorage.length > 0) {
+                //console.log("working!");
+                //get menu from session
+                var dString = JSON.parse(sessionStorage.getItem("userInfo"));
+                // Decode the String
+                var mn = dString;
+                //console.log(dString);
+                //console.log(mn);
+
+                //loop tru
+                $.each(mn, function (m) {
+                    var claimPage = document.getElementById('claimPage').innerHTML;
+                    if (claimPage == "Insurance Claim Rec.-") {
+                        if ((mn[m].menuPos == "7.1") && (mn[m].canAdd == "0")) {
+                            $("#1").addClass("hidden");
+
+                        }
+                        if (mn[m].canEdit == "0") {
+                            $("#2").addClass("hidden");
+                        }
+                        if (mn[m].canDelete == "0") {
+                            $("#3").addClass("hidden");
+                            //$("#cmdDelN").addClass("hidden");
+                        }
+                        if (mn[m].canPrint == "0") {
+                            //$("#3").addClass("hidden");
+                            //$("#cmdPrint").addClass("hidden");
+                        }
+                    }
+                });
+            }
+        });
 
 
 
@@ -74,7 +80,7 @@
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR BUTTONS -->
                         <div class="profile-userbuttons form-group-sm">
-                           <button id="hidePaneBtn" class="btn btn-info input-sm  pull-right">
+                            <button id="hidePaneBtn" class="btn btn-info input-sm  pull-right">
                                 <i class="glyphicon glyphicon-align-justify"></i>
                             </button>
                             <br />
@@ -108,7 +114,7 @@
                         <!-- END MENU -->
                     </div>
                 </div>
-                 <div id="contentPane" class="col-md-9">
+                <div id="contentPane" class="col-md-9">
                     <div class="profile-content">
                         <h1 style="font-weight: bold; font-family: Century Gothic;">ABS - ADMIN
                         </h1>
@@ -116,7 +122,7 @@
                         <table class="table input-sm">
                             <tr>
                                 <td class="auto-style1">
-                                    <span id="claimPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Claim Received Rec.-</span>
+                                    <span id="claimPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Insurance Claim Rec.-</span>
                                 </td>
                                 <td>
                                     <div class="dropdown input-group-sm">

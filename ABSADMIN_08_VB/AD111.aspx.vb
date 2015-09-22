@@ -39,6 +39,18 @@ Public Class AD111
         End If
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim roleId As Int32
+        Dim roleInfo As DataTable = Session("roleInfoDt")
+        For Each dr As DataRow In roleInfo.Rows
+            roleId = dr("SEC_USER_ROLE").ToString()
+            GetUserRoleValue(roleId)
+        Next
+
+
+
+
+
         If Not Page.IsPostBack Then
             acRepo = New AdminCodeRepository
 
@@ -111,6 +123,22 @@ Public Class AD111
             'Me.PageAnchor_Return_Link.Visible = True
             PageLinks = ""
         End If
+    End Sub
+
+    Public Sub GetUserRoleValue(ByVal rId As Int32)
+        Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
+        Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.1" Or dr("ADM_Menu_Position") = "2.1" Or dr("ADM_Menu_Position") = "3.1" Or dr("ADM_Menu_Position") = "4.1" Or dr("ADM_Menu_Position") = "5.1" Or dr("ADM_Menu_Position") = "6.1" Or dr("ADM_Menu_Position") = "7.1") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdDelN.Visible = False
+            End If
+
+            If ((dr("ADM_Menu_Position") = "1.1" Or dr("ADM_Menu_Position") = "2.1" Or dr("ADM_Menu_Position") = "3.1" Or dr("ADM_Menu_Position") = "4.1" Or dr("ADM_Menu_Position") = "5.1" Or dr("ADM_Menu_Position") = "6.1" Or dr("ADM_Menu_Position") = "7.1") And (dr("ADM_Option_Print") = 0)) Then
+                cmdPrint.Visible = False
+            End If
+
+        Next
+
     End Sub
 
     Protected Sub AdjustScreen()

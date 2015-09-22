@@ -27,7 +27,7 @@
 <body>
     <form id="ADPermissions" runat="server">
      <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">User Permissions</h3>
-    <!--<div class="div_container_02">-->
+    <div class="div_container_02">
     <br />
     <table align="center" border="0" class="tbl_main">
         <tr>
@@ -154,22 +154,6 @@
                                                 <li>Report</li>
                                             </ul>
                                          </li>
-
-                                      <li data-jstree='{"icon":"imgsIcon/icon_expenses.png", "opened":true,"selected":true}'>Insurance Premium Records
-                                            <ul>
-                                                <li>Code Setup</li>
-                                                <li>Transactions</li>
-                                                <li>Report</li>
-                                            </ul>
-                                         </li>
-
-                                      <li data-jstree='{"icon":"imgsIcon/icon_expenses.png", "opened":true,"selected":true}'>Insurance Claim Records
-                                            <ul>
-                                                <li>Code Setup</li>
-                                                <li>Transactions</li>
-                                                <li>Report</li>
-                                            </ul>
-                                         </li>
                                   </ul>
                               </div>
                     </td>
@@ -180,7 +164,7 @@
         </tr>
 
         </table>
-       <!-- </div>-->
+        </div>
     </form> 
     <script src="dist/libs/jquery.js"></script>
     <script src="dist/jstree.min.js"></script>

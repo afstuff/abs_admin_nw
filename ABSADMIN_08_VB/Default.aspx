@@ -58,12 +58,12 @@
 
             }
 
-            function getUserRolesInfo() {
-                console.log("Clicked");
+            function getUserRolesInfo(roleId) {
+                console.log("getUserRolesInfo Clicked");
                 $.ajax({
                     type: "POST",
                     url: "Default.aspx/GetUserRolesInfo",
-                    data: "{roleId : '1'}", 
+                    data: "{roleId : " + roleId + "}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: onSuccessLoadUserRole,
@@ -74,10 +74,71 @@
                 return false;
             }
 
+            function retrieveLoginValues(admobjects) {
+                var menuItem = new Object();
+                //var subItem = [];
+                //var menuItem0 = [];
+
+                var userPage = [];
+                $.each(admobjects, function () {
+                    var admobject = $(this);
+                    userPage.push({ userRole: $(this).find("SEC_USER_ROLE").text(), userName: $(this).find("SEC_USER_NAME").text() });
+
+                    console.log(userPage);
+
+                    // Encode the String
+                    var eString = JSON.stringify(userPage);
+                    console.log(eString);
+                    sessionStorage.setItem("userRole", eString);
+
+                    //move to next page
+                    //window.location.href = "dashboard.aspx";
+
+
+                    getUserRolesInfo($(this).find("SEC_USER_ROLE").text());
+
+                });
+            }
+
+            function onSuccessLogin(response) {
+                //debugger;
+                console.log(response.d);
+
+                var xmlDoc = $.parseXML(response.d);
+                var xml = $(xmlDoc);
+                var admobjects = xml.find("Table");
+                retrieveLoginValues(admobjects);
+
+            }
+
+            function doLogin(inputEmail, inputPassword) {
+                console.log("doLogin Clicked");
+                $.ajax({
+                    type: "POST",
+                    url: "Default.aspx/DoLogin",
+                    data: "{userName : '" + inputEmail + "', userPassword : '" + inputPassword + "'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onSuccessLogin,
+                    failure: onFailure,
+                    error: onErrorLoadMotorTypes
+                });
+                // this avoids page refresh on button click
+                return false;
+            }
+
 
             $("#loginBtn").click(function (e) {
                 e.preventDefault();
-                getUserRolesInfo();
+                //getUserRolesInfo();
+
+                var inputEmail = $("#inputEmail").val();
+                var inputPassword = $("#inputPassword").val();
+                alert(inputEmail + " " + inputPassword);
+                if ((inputEmail != null) || inputPassword != null) {
+                    doLogin(inputEmail, inputPassword);
+                }
+
             });
 
         })
@@ -98,7 +159,7 @@
                     <p id="profile-name" class="profile-name-card"></p>
                     <div class="form-signin">
                         <span id="reauth-email" class="reauth-email"></span>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                         <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                         <div id="remember" class="checkbox">
                             <label>
@@ -106,7 +167,7 @@
                                 Remember me
                             </label>
                         </div>
-                        <Button id="loginBtn" Class="btn btn-lg btn-info btn-block btn-signin">Sign in</Button>
+                        <button id="loginBtn" class="btn btn-lg btn-info btn-block btn-signin">Sign in</button>
                     </div>
                     <!-- /form -->
                     <a href="#" class="forgot-password">Forgot the password?

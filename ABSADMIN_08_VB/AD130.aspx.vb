@@ -31,6 +31,7 @@ Public Class AD130
             Session("updateFlag") = updateFlag
             strKey = Request.QueryString("idd")
             Session("strKey") = strKey
+            'if del = 0 then cmdDelN.visible = false
 
             SetComboBinding(cmbVehicle, acRepo.GetAdminCodes("001"), "ItemDesc", "ItemCode")
             SetComboBinding(cmbServiceComp, acRepo.GetAdminCodes("002"), "ItemDesc", "ItemCode")
@@ -86,7 +87,7 @@ Public Class AD130
     Protected Sub cmdSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdSave.Click, cmdSaveN.Click
         updateFlag = CType(Session("updateFlag"), String)
 
-        If Not updateFlag Then 'if new record
+        If Not updateFlag Then 'if new record and add = 1
             vmbill = New VehicleMaintenance
 
             'lblError.Visible = False
@@ -110,7 +111,7 @@ Public Class AD130
 
             vmRepo.Save(vmbill)
             Session("vmbill") = vmbill
-        Else
+        Else 'end if if updateflag = true and edit = 1
             vmRepo = CType(Session("vmRepo"), VehicleMaintRepository)
             vmbill = CType(Session("vmbill"), VehicleMaintenance)
 

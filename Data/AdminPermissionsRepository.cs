@@ -160,11 +160,31 @@ namespace CustodianAdmin.Data
                     var dataSet = new System.Data.DataSet();
 
                     adapter.Fill(dataSet);
-
+                     
                     return dataSet;
                 }
             }
         }
+
+
+
+        private static DataTable GetDataTable(string qry)
+        {
+            using (var session = GetSession())
+            {
+                using (var conn = session.Connection as SqlConnection)
+                {
+                    var adapter = new SqlDataAdapter(qry, conn);
+                    var dataSet = new System.Data.DataSet();
+
+                    adapter.Fill(dataSet);
+                    DataTable dt = dataSet.Tables[0];
+
+                    return dt;
+                }
+            }
+        }
+
 
         public String GeUserRoleInfo(Int32 roleId)
         {
@@ -175,6 +195,31 @@ namespace CustodianAdmin.Data
             return GetDataSet(query).GetXml();
         }
 
+
+        public String DoUserLogin(string userName, string userPassword)
+        {
+            string query = "SELECT * "
+                          + "FROM ADM_USER_LIFE_DETAIL where (SEC_USER_LOGIN = '" + userName + "') AND ( SEC_USER_PASSWORD = '" + userPassword + "')";
+            return GetDataSet(query).GetXml();
+        }
+
+
+        public DataTable GeUserRoleInfoDt(Int32 roleId)
+        {
+            //queries the generic admincodes table and extract info for the vehicles only
+            string query = "SELECT * "
+                          + "FROM ADMPermissions where ADM_Role_ID = " + roleId + "";
+
+            return GetDataTable(query);
+        }
+
+
+        public DataTable DoUserLoginDt(string userName, string userPassword)
+        {
+            string query = "SELECT * "
+                          + "FROM ADM_USER_LIFE_DETAIL where (SEC_USER_LOGIN = '" + userName + "') AND ( SEC_USER_PASSWORD = '" + userPassword + "')";
+            return GetDataTable(query);
+        }
 
     }
 }

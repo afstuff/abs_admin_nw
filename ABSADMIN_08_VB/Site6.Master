@@ -35,12 +35,18 @@
                       if (premiumPage == "Premium Paid Rec.-") {
                           if (mn[m].canAdd == "0") {
                               $("#1").addClass("hidden");
+
                           }
                           if (mn[m].canEdit == "0") {
                               $("#2").addClass("hidden");
                           }
                           if (mn[m].canDelete == "0") {
                               $("#3").addClass("hidden");
+                              $("#cmdDelN").addClass("hidden");
+                          }
+                          if (mn[m].canPrint == "0") {
+                              //$("#3").addClass("hidden");
+                              $("#cmdPrint").addClass("hidden");
                           }
                       }
                   });
