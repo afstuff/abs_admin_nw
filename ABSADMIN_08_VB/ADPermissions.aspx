@@ -27,15 +27,14 @@
 <body>
     <form id="ADPermissions" runat="server">
      <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">User Permissions</h3>
-    <div class="div_container_02">
+    <!--<div class="div_container_02">-->
     <br />
     <table align="center" border="0" class="tbl_main">
         <tr>
             <td align="left" valign="top">
                 <table border="0" class="tbl_butt">
                     <tr>
-                        <td valign="top">&nbsp;<a href="#" onclick="javascript:JSDO_RETURN('MENU_IL.aspx?menu=IL_CLAIM')" style="color:blue; font-weight:bold;">Go to Menu</a><div style="float:right"><asp:Button ID="cmdNew" CssClass="cmd_butt" Text="New Data" runat="server" />
-                            &nbsp;<asp:Button ID="cmdSave" CssClass="cmd_butt" Text="Save Data" runat="server" Visible="false" />
+                        <td valign="top">&nbsp;<a href="#" onclick="javascript:JSDO_RETURN('dashboard.aspx')" style="color:blue; font-weight:bold;">Go to Menu</a><div style="float:right">&nbsp;<asp:Button ID="cmdSave" CssClass="cmd_butt" Text="Save Data" runat="server" Visible="false" />
                             &nbsp;<asp:Button ID="cmdSaveN" CssClass="cmd_butt" Text="Save Data" runat="server" OnClientClick="JavaSave_Rtn()" Height="26px" />
                             &nbsp;<asp:Button ID="cmdDel" CssClass="cmd_butt" Text="Delete Data" Enabled="false" runat="server" Visible="false" />
                             &nbsp;<asp:Button ID="cmdDelN" CssClass="cmd_butt" Text="Delete Data" runat="server" OnClientClick="JavaDel_Rtn()" Enabled="False" /></div>
@@ -102,6 +101,11 @@
                                          <asp:CheckBox ID="chkPrint" runat="server" />
                                      </ItemTemplate>
                                  </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Visibility" HeaderStyle-HorizontalAlign="Center"> 
+                                     <ItemTemplate>
+                                         <asp:CheckBox ID="chkVisible" runat="server" />
+                                     </ItemTemplate>
+                                 </asp:TemplateField>
                     </Columns>
                       <SelectedRowStyle BackColor="Silver" />
                   <HeaderStyle CssClass="CartListHead" Font-Bold="True"
@@ -154,6 +158,22 @@
                                                 <li>Report</li>
                                             </ul>
                                          </li>
+
+                                      <li data-jstree='{"icon":"imgsIcon/icon_premRec.png", "opened":true,"selected":true}'>Insurance Premium Records
+                                            <ul>
+                                                <li>Code Setup</li>
+                                                <li>Transactions</li>
+                                                <li>Report</li>
+                                            </ul>
+                                         </li>
+
+                                      <li data-jstree='{"icon":"imgsIcon/icon_claimRec.png", "opened":true,"selected":true}'>Insurance Claim Records
+                                            <ul>
+                                                <li>Code Setup</li>
+                                                <li>Transactions</li>
+                                                <li>Report</li>
+                                            </ul>
+                                         </li>
                                   </ul>
                               </div>
                     </td>
@@ -164,7 +184,7 @@
         </tr>
 
         </table>
-        </div>
+       <!-- </div>-->
     </form> 
     <script src="dist/libs/jquery.js"></script>
     <script src="dist/jstree.min.js"></script>

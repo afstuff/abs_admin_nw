@@ -15,6 +15,7 @@ namespace CustodianAdmin.Model
         public virtual int ADM_Option_Edit { get; set; }
         public virtual int ADM_Option_Delete { get; set; }
         public virtual int ADM_Option_Print { get; set; }
+        public virtual int ADM_Option_Visible { get; set; }
         public virtual string ADM_FlagID { get; set; }
         public virtual string ADM_OperID { get; set; }
         public virtual DateTime ADM_Keydate { get; set; }

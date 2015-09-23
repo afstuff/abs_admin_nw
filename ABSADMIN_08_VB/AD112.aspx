@@ -103,6 +103,28 @@
 
                     <tr>
                         <td align="right" valign="top">
+                            <asp:Label ID="Label4" Text="Start Branch:" runat="server"></asp:Label></td>
+                        <td valign="top">
+                            <asp:DropDownList ID="ddlStartBranch" Width="150" runat="server"
+                                AutoPostBack="True">
+                            </asp:DropDownList>
+                            </td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right" valign="top">
+                            <asp:Label ID="Label5" Text="End Branch:" runat="server"></asp:Label></td>
+                        <td valign="top">
+                            <asp:DropDownList ID="ddlStBranch" Width="150" runat="server"
+                                AutoPostBack="True">
+                            </asp:DropDownList>
+                            </td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="right" valign="top">
                             <asp:Label ID="Label1" Text="Start Print Date:" runat="server"></asp:Label>&nbsp;</td>
                         <td valign="top">
                             <asp:TextBox ID="txtStartDate" MaxLength="10" runat="server"></asp:TextBox>
@@ -121,7 +143,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="5" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td colspan="2" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

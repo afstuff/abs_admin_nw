@@ -1,11 +1,8 @@
-﻿
-Imports System.Data
-Imports CustodianAdmin.Data
+﻿Imports CustodianAdmin.Data
 Imports CustodianAdmin.Model
-
+Imports System.Data
 Public Class ADPermissions
     Inherits System.Web.UI.Page
-
     Dim acRepo As AdminPermissionsRepository
     Dim aCode As AdminPermissions
     Dim li As ListItem
@@ -56,80 +53,91 @@ Public Class ADPermissions
            Me.cboRole.SelectedItem.Value = "" Or Me.cboRole.SelectedItem.Value = "*" Then
             lblMessage.Text = "Please select a role"
             FirstMsg = "Javascript:alert('" & Me.lblMessage.Text & "');"
+            Exit Sub
         End If
         Dim aCode As AdminPermissions
         acRepo.DeleteRoles(cboRole.SelectedItem.Value)
-            For i = 0 To GrdLapsePolicy.Rows.Count - 1
-                Dim chkAll As CheckBox
-                Dim chkAdd As CheckBox
-                Dim chkEdit As CheckBox
-                Dim chkDelete As CheckBox
-                Dim chkPrint As CheckBox
+        For i = 0 To GrdLapsePolicy.Rows.Count - 1
+            Dim chkAll As CheckBox
+            Dim chkAdd As CheckBox
+            Dim chkEdit As CheckBox
+            Dim chkDelete As CheckBox
+            Dim chkPrint As CheckBox
+            Dim chkVisible As CheckBox
 
-                Dim chkAllValue As Integer
-                Dim chkAddValue As Integer
-                Dim chkEditValue As Integer
-                Dim chkDeleteValue As Integer
-                Dim chkPrintValue As Integer
+            Dim chkAllValue As Integer
+            Dim chkAddValue As Integer
+            Dim chkEditValue As Integer
+            Dim chkDeleteValue As Integer
+            Dim chkPrintValue As Integer
+            Dim chkVisibleValue As Integer
 
-                chkAll = GrdLapsePolicy.Rows(i).FindControl("chkAll")
-                chkAdd = GrdLapsePolicy.Rows(i).FindControl("chkAdd")
-                chkEdit = GrdLapsePolicy.Rows(i).FindControl("chkEdit")
-                chkDelete = GrdLapsePolicy.Rows(i).FindControl("chkDelete")
-                chkPrint = GrdLapsePolicy.Rows(i).FindControl("chkPrint")
+            chkAll = GrdLapsePolicy.Rows(i).FindControl("chkAll")
+            chkAdd = GrdLapsePolicy.Rows(i).FindControl("chkAdd")
+            chkEdit = GrdLapsePolicy.Rows(i).FindControl("chkEdit")
+            chkDelete = GrdLapsePolicy.Rows(i).FindControl("chkDelete")
+            chkPrint = GrdLapsePolicy.Rows(i).FindControl("chkPrint")
+            chkVisible = GrdLapsePolicy.Rows(i).FindControl("chkVisible")
 
-                If chkAll.Checked Then
-                    chkAllValue = 1
-                Else
-                    chkAllValue = 0
-                End If
+            If chkAll.Checked Then
+                chkAllValue = 1
+            Else
+                chkAllValue = 0
+            End If
 
-                If chkAdd.Checked Then
-                    chkAddValue = 1
-                Else
-                    chkAddValue = 0
-                End If
+            If chkAdd.Checked Then
+                chkAddValue = 1
+            Else
+                chkAddValue = 0
+            End If
 
-                If chkEdit.Checked Then
-                    chkEditValue = 1
-                Else
-                    chkEditValue = 0
-                End If
+            If chkEdit.Checked Then
+                chkEditValue = 1
+            Else
+                chkEditValue = 0
+            End If
 
-                If chkDelete.Checked Then
-                    chkDeleteValue = 1
-                Else
-                    chkDeleteValue = 0
-                End If
-
-
-                If chkPrint.Checked Then
-                    chkPrintValue = 1
-                Else
-                    chkPrintValue = 0
-                End If
-
-                'acRepo = New AdminPermissionsRepository
-
-                aCode = New AdminPermissions()
-
-                MenuName = DetermineMenuName(i)
-                MenuPosition = DetermineMenuPosition(i)
+            If chkDelete.Checked Then
+                chkDeleteValue = 1
+            Else
+                chkDeleteValue = 0
+            End If
 
 
-                aCode.ADM_Role_ID = Convert.ToInt32(cboRole.SelectedValue)
-                aCode.ADM_Menu_Position = MenuPosition
-                aCode.ADM_Menu_Name = MenuName
-                aCode.ADM_Option_Add = chkAddValue
-                aCode.ADM_Option_Edit = chkEditValue
-                aCode.ADM_Option_Delete = chkDeleteValue
-                aCode.ADM_Option_Print = chkPrintValue
-                aCode.ADM_FlagID = "A"
-                aCode.ADM_OperID = "CRU"
-                aCode.ADM_Keydate = Now
-                acRepo.Save(aCode)
-                Session("aCode") = aCode
-            Next
+            If chkPrint.Checked Then
+                chkPrintValue = 1
+            Else
+                chkPrintValue = 0
+            End If
+
+            If chkVisible.Checked Then
+                chkVisibleValue = 1
+            Else
+                chkVisibleValue = 0
+            End If
+
+            'acRepo = New AdminPermissionsRepository
+
+            aCode = New AdminPermissions()
+
+            MenuName = DetermineMenuName(i)
+            MenuPosition = DetermineMenuPosition(i)
+
+
+            aCode.ADM_Role_ID = Convert.ToInt32(cboRole.SelectedValue)
+            aCode.ADM_Menu_Position = MenuPosition
+            aCode.ADM_Menu_Name = MenuName
+            aCode.ADM_Option_Add = chkAddValue
+            aCode.ADM_Option_Edit = chkEditValue
+            aCode.ADM_Option_Delete = chkDeleteValue
+            aCode.ADM_Option_Print = chkPrintValue
+            aCode.ADM_Option_Visible = chkVisibleValue
+            aCode.ADM_FlagID = "A"
+            aCode.ADM_OperID = "CRU"
+            aCode.ADM_Keydate = Now
+            acRepo.Save(aCode)
+            Session("aCode") = aCode
+        Next
         lblMessage.Text = "Permission updated successfully"
         cmdDelN.Enabled = False
     End Sub
@@ -175,6 +183,22 @@ Public Class ADPermissions
         ElseIf i = 18 Then
             Menu_Name = "Transactions"
         ElseIf i = 19 Then
+            Menu_Name = "Reports"
+        ElseIf i = 20 Then
+            Menu_Name = "Insurance Premium Records"
+        ElseIf i = 21 Then
+            Menu_Name = "Code Setup"
+        ElseIf i = 22 Then
+            Menu_Name = "Transactions"
+        ElseIf i = 23 Then
+            Menu_Name = "Reports"
+        ElseIf i = 24 Then
+            Menu_Name = "Insurance Claim Records"
+        ElseIf i = 25 Then
+            Menu_Name = "Code Setup"
+        ElseIf i = 26 Then
+            Menu_Name = "Transactions"
+        ElseIf i = 27 Then
             Menu_Name = "Reports"
         End If
         Return Menu_Name
@@ -222,11 +246,28 @@ Public Class ADPermissions
             Menu_Position = "5.2"
         ElseIf i = 19 Then
             Menu_Position = "5.3"
+        ElseIf i = 20 Then
+            Menu_Position = "6"
+        ElseIf i = 21 Then
+            Menu_Position = "6.1"
+        ElseIf i = 22 Then
+            Menu_Position = "6.2"
+        ElseIf i = 23 Then
+            Menu_Position = "6.3"
+        ElseIf i = 24 Then
+            Menu_Position = "7"
+        ElseIf i = 25 Then
+            Menu_Position = "7.1"
+        ElseIf i = 26 Then
+            Menu_Position = "7.2"
+        ElseIf i = 27 Then
+            Menu_Position = "7.3"
         End If
         Return Menu_Position
     End Function
 
     Private Sub GetPermissions(ByVal _roleId As Integer)
+        cmdDelN.Enabled = False
         GridView1.DataSource = acRepo.GetAdminPermissions(_roleId)
         GridView1.DataBind()
         GrdLapsePolicy.DataSource = acRepo.GetAdminPermissions(_roleId)
@@ -237,22 +278,26 @@ Public Class ADPermissions
             Dim chkEditValue As Integer
             Dim chkDeleteValue As Integer
             Dim chkPrintValue As Integer
+            Dim chkVisibleValue As Integer
 
             chkAddValue = GridView1.Rows(i).Cells(4).Text
             chkEditValue = GridView1.Rows(i).Cells(5).Text
             chkDeleteValue = GridView1.Rows(i).Cells(6).Text
             chkPrintValue = GridView1.Rows(i).Cells(7).Text
+            chkVisibleValue = GridView1.Rows(i).Cells(8).Text
             Dim chkAll As CheckBox
             Dim chkAdd As CheckBox
             Dim chkEdit As CheckBox
             Dim chkDelete As CheckBox
             Dim chkPrint As CheckBox
+            Dim chkVisible As CheckBox
 
             chkAll = GrdLapsePolicy.Rows(i).FindControl("chkAll")
             chkAdd = GrdLapsePolicy.Rows(i).FindControl("chkAdd")
             chkEdit = GrdLapsePolicy.Rows(i).FindControl("chkEdit")
             chkDelete = GrdLapsePolicy.Rows(i).FindControl("chkDelete")
             chkPrint = GrdLapsePolicy.Rows(i).FindControl("chkPrint")
+            chkVisible = GrdLapsePolicy.Rows(i).FindControl("chkVisible")
 
             If chkAddValue = 1 Then
                 chkAdd.Checked = True
@@ -280,6 +325,13 @@ Public Class ADPermissions
                 cmdDelN.Enabled = True
             Else
                 chkPrint.Checked = False
+            End If
+
+            If chkVisibleValue = 1 Then
+                chkVisible.Checked = True
+                cmdDelN.Enabled = True
+            Else
+                chkVisible.Checked = False
             End If
         Next
     End Sub
@@ -319,6 +371,7 @@ Public Class ADPermissions
             Dim chkEditValue As Integer
             Dim chkDeleteValue As Integer
             Dim chkPrintValue As Integer
+            Dim chkVisibleValue As Integer
 
             'chkAll = GrdLapsePolicy.Rows(i).FindControl("chkAll")
             'chkAdd = GrdLapsePolicy.Rows(i).FindControl("chkAdd")
@@ -326,11 +379,13 @@ Public Class ADPermissions
             'chkDelete = GrdLapsePolicy.Rows(i).FindControl("chkDelete")
             'chkPrint = GrdLapsePolicy.Rows(i).FindControl("chkPrint")
 
-           
+
             chkAllValue = 0
             chkAddValue = 0
             chkEditValue = 0
             chkDeleteValue = 0
+            chkPrintValue = 0
+            chkVisibleValue = 0
             aCode = New AdminPermissions()
             MenuName = DetermineMenuName(i)
             MenuPosition = DetermineMenuPosition(i)
@@ -343,6 +398,7 @@ Public Class ADPermissions
             aCode.ADM_Option_Edit = chkEditValue
             aCode.ADM_Option_Delete = chkDeleteValue
             aCode.ADM_Option_Print = chkPrintValue
+            aCode.ADM_Option_Visible = chkVisibleValue
             aCode.ADM_FlagID = "A"
             aCode.ADM_OperID = "CRU"
             aCode.ADM_Keydate = Now
@@ -356,28 +412,32 @@ Public Class ADPermissions
 
     Protected Sub CheckAll(ByVal i As Integer)
         Dim chkAll As CheckBox
-            Dim chkAdd As CheckBox
-            Dim chkEdit As CheckBox
-            Dim chkDelete As CheckBox
-            Dim chkPrint As CheckBox
+        Dim chkAdd As CheckBox
+        Dim chkEdit As CheckBox
+        Dim chkDelete As CheckBox
+        Dim chkPrint As CheckBox
+        Dim chkVisible As CheckBox
 
 
-            chkAll = GrdLapsePolicy.Rows(i).FindControl("chkAll")
-            chkAdd = GrdLapsePolicy.Rows(i).FindControl("chkAdd")
-            chkEdit = GrdLapsePolicy.Rows(i).FindControl("chkEdit")
-            chkDelete = GrdLapsePolicy.Rows(i).FindControl("chkDelete")
-            chkPrint = GrdLapsePolicy.Rows(i).FindControl("chkPrint")
+        chkAll = GrdLapsePolicy.Rows(i).FindControl("chkAll")
+        chkAdd = GrdLapsePolicy.Rows(i).FindControl("chkAdd")
+        chkEdit = GrdLapsePolicy.Rows(i).FindControl("chkEdit")
+        chkDelete = GrdLapsePolicy.Rows(i).FindControl("chkDelete")
+        chkPrint = GrdLapsePolicy.Rows(i).FindControl("chkPrint")
+        chkVisible = GrdLapsePolicy.Rows(i).FindControl("chkVisible")
 
         If chkAll.Checked = True Then
             chkAdd.Checked = True
             chkEdit.Checked = True
             chkDelete.Checked = True
             chkPrint.Checked = True
+            chkVisible.Checked = True
         Else
             chkAdd.Checked = False
             chkEdit.Checked = False
             chkDelete.Checked = False
             chkPrint.Checked = False
+            chkVisible.Checked = False
         End If
     End Sub
     Protected Sub MyButtonClick(sender As Object, e As System.EventArgs)

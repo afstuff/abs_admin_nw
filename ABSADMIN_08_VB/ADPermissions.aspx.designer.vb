@@ -23,15 +23,6 @@ Partial Public Class ADPermissions
     Protected WithEvents ADPermissions As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''cmdNew control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cmdNew As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''cmdSave control.
     '''</summary>
     '''<remarks>
