@@ -12,16 +12,7 @@ Option Explicit On
 
 
 Partial Public Class AD_SEC_USER_DETAIL
-
-    '''<summary>
-    '''form1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''cmdNew control.
     '''</summary>
@@ -30,7 +21,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdNew As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdSave control.
     '''</summary>
@@ -39,7 +30,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdSave As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdSaveN control.
     '''</summary>
@@ -48,7 +39,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdSaveN As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdDel control.
     '''</summary>
@@ -57,7 +48,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdDel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdDelN control.
     '''</summary>
@@ -66,7 +57,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdDelN As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdPrint control.
     '''</summary>
@@ -75,7 +66,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdPrint As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''txtAction control.
     '''</summary>
@@ -84,7 +75,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtAction As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''txtSearch control.
     '''</summary>
@@ -93,7 +84,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtSearch As Global.System.Web.UI.HtmlControls.HtmlInputText
-
+    
     '''<summary>
     '''cmdSearch control.
     '''</summary>
@@ -102,7 +93,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdSearch As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''lblMessage control.
     '''</summary>
@@ -111,7 +102,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''GridView1 control.
     '''</summary>
@@ -120,7 +111,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''lblCustID control.
     '''</summary>
@@ -129,7 +120,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblCustID As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtUserID control.
     '''</summary>
@@ -138,7 +129,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtUserID As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblRecNo control.
     '''</summary>
@@ -147,7 +138,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblRecNo As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtRecNo control.
     '''</summary>
@@ -156,7 +147,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtRecNo As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblFullName control.
     '''</summary>
@@ -165,7 +156,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblFullName As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtName control.
     '''</summary>
@@ -174,7 +165,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtName As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblShortName control.
     '''</summary>
@@ -183,7 +174,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblShortName As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtShortName control.
     '''</summary>
@@ -192,7 +183,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtShortName As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblGroup control.
     '''</summary>
@@ -201,7 +192,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblGroup As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtGroup control.
     '''</summary>
@@ -210,7 +201,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtGroup As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''cboGroup control.
     '''</summary>
@@ -219,7 +210,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboGroup As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''lblRole control.
     '''</summary>
@@ -228,7 +219,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblRole As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cboRole control.
     '''</summary>
@@ -237,7 +228,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboRole As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''lblBraNum control.
     '''</summary>
@@ -246,7 +237,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblBraNum As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtBranch control.
     '''</summary>
@@ -255,7 +246,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtBranch As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblCustPhone01 control.
     '''</summary>
@@ -264,7 +255,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblCustPhone01 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtCustPhone01 control.
     '''</summary>
@@ -273,7 +264,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtCustPhone01 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblCustPhone02 control.
     '''</summary>
@@ -282,7 +273,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblCustPhone02 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtCustPhone02 control.
     '''</summary>
@@ -291,7 +282,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtCustPhone02 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblCustEmail01 control.
     '''</summary>
@@ -300,7 +291,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblCustEmail01 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtCustEmail01 control.
     '''</summary>
@@ -309,7 +300,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtCustEmail01 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblCustEmail02 control.
     '''</summary>
@@ -318,7 +309,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblCustEmail02 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtCustEmail02 control.
     '''</summary>
@@ -327,7 +318,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtCustEmail02 As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblCustEmail5 control.
     '''</summary>
@@ -336,7 +327,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblCustEmail5 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''lblLoginName control.
     '''</summary>
@@ -345,7 +336,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblLoginName As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtLoginName control.
     '''</summary>
@@ -354,7 +345,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtLoginName As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblPassword control.
     '''</summary>
@@ -363,7 +354,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblPassword As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtPassword control.
     '''</summary>
@@ -372,7 +363,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''lblConPassword control.
     '''</summary>
@@ -381,7 +372,7 @@ Partial Public Class AD_SEC_USER_DETAIL
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblConPassword As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''txtConPassword control.
     '''</summary>

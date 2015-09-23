@@ -17,11 +17,32 @@
             width: 315px;
         }
     </style>
-    
-       <script>
-       
 
-
+    <script>
+        $(function () {
+            if (window.sessionStorage.length > 0) {
+                //console.log("working!");
+                //get menu from session
+                var dString = JSON.parse(sessionStorage.getItem("userInfo"));
+                // Decode the String
+                var mn = dString;
+                //loop tru
+                $.each(mn, function (m) {
+                    var motorPage = document.getElementById('motorPage').innerHTML;
+                    if (motorPage == "Motor Vehicle-") {
+                        if ((mn[m].menuPos == "3.1") && (mn[m].canVisible) == "0") {
+                            $("#1").addClass("hidden");
+                        }
+                        if ((mn[m].menuPos == "3.2") && (mn[m].canVisible) == "0") {
+                            $("#2").addClass("hidden");
+                        }
+                        if ((mn[m].menuPos == "3.3") && (mn[m].canVisible) == "0") {
+                            $("#3").addClass("hidden");
+                        }
+                    }
+                });
+            }
+        });
     </script>
 
 </head>
@@ -55,22 +76,22 @@
                         </div>
                         <!-- END SIDEBAR BUTTONS -->
                         <!-- SIDEBAR MENU -->
-                        <div class="profile-usermenu">
+                       <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <a href="#">
+                                    <a href="dashboard.aspx">
                                         <i class="glyphicon glyphicon-home"></i>
-                                        Overview </a>
+                                        Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="AD_SEC_USER_DETAIL.aspx">
                                         <i class="glyphicon glyphicon-user"></i>
                                         View Profile  </a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank">
+                                    <a href="SignOut.aspx" target="_blank">
                                         <i class="glyphicon glyphicon-ok"></i>
-                                        Tasks </a>
+                                        Sign Out </a>
                                 </li>
                                 <li>
                                     <a href="#">
@@ -90,16 +111,27 @@
                         <table class="table input-sm">
                             <tr>
                                 <td class="auto-style1">
-                                    <span id="motorPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Motor Vehicle (R&amp;M) - 
-                                    </span>
+                                    <span id="motorPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Motor Vehicle-</span>
                                 </td>
                                 <td>
-                                     <asp:DropDownList ID="subMenuDdl" runat="server" CssClass="dropdown" Style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;" AutoPostBack="True">
+                                    <asp:DropDownList ID="subMenuDdl" runat="server" CssClass="dropdown" Style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;" AutoPostBack="True" Visible="False">
                                         <asp:ListItem>Select Task</asp:ListItem>
                                         <asp:ListItem Value="1">Code Setup</asp:ListItem>
                                         <asp:ListItem Value="2">Transactions</asp:ListItem>
                                         <asp:ListItem Value="3">Report</asp:ListItem>
                                     </asp:DropDownList>
+
+                                    <div class="dropdown input-group-sm">
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Select Task
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul id="subMenu" class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
+                                            <li id="1"><a href='AD111.aspx?sopt=001' target='_self'>Codes Setup</a></li>
+                                            <li id="2"><a href='AD130.aspx' target='_self'>Transactions</a></li>
+                                            <li id="3"><a href='AD112.aspx' target='_self'>Report</a></li>
+                                        </ul>
+                                    </div>
                                 </td>
                                 <td>
                                     <a href="dashboard.aspx" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-home"></i></a>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ABSADMIN_08.Site1" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="ABSADMIN_08_VB.Site1" %>
 
 <!DOCTYPE html>
 
@@ -17,22 +17,58 @@
             width: 216px;
         }
     </style>
+
+    <script>
+        //Menu Constructors
+        $(function () {
+            if (window.sessionStorage.length > 0) {
+                //console.log("working!");
+
+                //get menu from session
+                var dString = JSON.parse(sessionStorage.getItem("userInfo"));
+                // Decode the String
+                var mn = dString;
+                //console.log(dString);
+                //console.log(mn);
+
+                //loop tru
+                $.each(mn, function (m) {
+
+                    if ((mn[m].menuPos == "1.1") && (mn[m].canVisible) == "0") {
+                        $("#1").addClass("hidden");
+                    }
+
+                    if ((mn[m].menuPos == "1.2") && (mn[m].canVisible) == "0") {
+                        $("#2").addClass("hidden");
+                    }
+                    if ((mn[m].menuPos == "1.3") && (mn[m].canVisible) == "0") {
+                        $("#3").addClass("hidden");
+                    }
+
+                });
+
+
+            }
+        });
+
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container">
             <div class="row profile">
-                <div class="col-md-3">
+                <div id="profilePane" class="col-md-3">
                     <div class="profile-sidebar">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
-                            <img src="imgs/IMG_20150219_091342.jpg" class="img-responsive img-circle" alt="" />
+                            <img src="imgs/User-icon.png" class="img-responsive img-circle" alt="" />
                         </div>
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->
                         <div class="profile-usertitle">
                             <div class="profile-usertitle-name">
-                                Femi Adesanya
+                                ABS USER
                             </div>
                             <div class="profile-usertitle-job">
                                 ABS
@@ -40,8 +76,8 @@
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR BUTTONS -->
-                        <div class="profile-userbuttons form-group-sm">
-                            <button id="hidePaneBtn" class="btn btn-info btn-sm pull-right">
+                        <div class="profile-userbuttons">
+                            <button id="hidePaneBtn" class="btn btn-info input-sm pull-right">
                                 <i class="glyphicon glyphicon-align-justify"></i>
                             </button>
                             <br />
@@ -51,19 +87,19 @@
                         <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <a href="#">
+                                    <a href="dashboard.aspx">
                                         <i class="glyphicon glyphicon-home"></i>
-                                        Overview </a>
+                                        Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="AD_SEC_USER_DETAIL.aspx">
                                         <i class="glyphicon glyphicon-user"></i>
                                         View Profile  </a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank">
+                                    <a href="SignOut.aspx" target="_blank">
                                         <i class="glyphicon glyphicon-ok"></i>
-                                        Tasks </a>
+                                        Sign Out </a>
                                 </li>
                                 <li>
                                     <a href="#">
@@ -75,36 +111,45 @@
                         <!-- END MENU -->
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div id="contentPane" class="col-md-9">
                     <div class="profile-content">
                         <h1 style="font-weight: bold; font-family: Century Gothic;">ABS - ADMIN
                         </h1>
                         <%--<hr />--%>
-                        <table class="table">
+                        <table class="table input-sm">
                             <tr>
                                 <td class="auto-style1">
-                                    <span class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Telephone Bill - 
-                                    </span>
+                                    <span id="TellPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Telephone Bill-</span>
                                 </td>
                                 <td>
+                                    <asp:DropDownList ID="subMenuDdl" runat="server" CssClass="dropdown" Style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;" AutoPostBack="True" Visible="False">
+                                        <asp:ListItem>Select Task</asp:ListItem>
+                                        <asp:ListItem Value="1">Code Setup</asp:ListItem>
+                                        <asp:ListItem Value="2">Transactions</asp:ListItem>
+                                        <asp:ListItem Value="3">Report</asp:ListItem>
+                                    </asp:DropDownList>
+
                                     <div class="dropdown input-group-sm">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Select Task
-    <span class="caret"></span>
+                                            <span class="caret"></span>
                                         </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
-                                            <li><a href='AD111.aspx?sopt=006' target='_self'>Codes Setup</a></li>
-                                            <li><a href='AD110.aspx' target='_self'>Transaction</a></li>
-                                            <li><a href='AD112.aspx' target='_self'>Report</a></li>
+                                        <ul id="subMenu" class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
+                                            <li id="1"><a href='AD111.aspx?sopt=006' target='_self'>Codes Setup</a></li>
+                                            <li id="2"><a href='AD110.aspx' target='_self'>Transactions</a></li>
+                                            <li id="3"><a href='AD112.aspx' target='_self'>Report</a></li>
                                         </ul>
                                     </div>
                                 </td>
+                                <td>
+                                    <a href="dashboard.aspx" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-home"></i></a>
+                                    <button id="showPaneBtn" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-align-justify"></i></button>
+                                </td>
                             </tr>
                             <tr>
-                                <td colspan="2">
+                                <td colspan="3">
                                     <div>
                                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                                            
                                         </asp:ContentPlaceHolder>
                                     </div>
                                 </td>
@@ -119,7 +164,7 @@
         <footer>
             <div class="container">
                 <hr />
-                <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;Afrik Business Software
+                <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;<%= Now.Year %> - Afrik Business Software
                 </span>
                 <span class="pull-right" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">Custodian And Allied Insurance Plc.
                 </span>

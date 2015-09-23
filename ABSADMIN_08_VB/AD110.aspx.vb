@@ -18,7 +18,34 @@ Public Class AD110
     Dim TotTransAmt As Decimal = 0
     Dim TransAmt As Decimal = 0
 
+    Public Sub GetUserRoleValue(ByVal rId As Int32)
+        Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
+        Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdDelN.Visible = False
+            End If
+            GoTo checkIfPrint
+        Next
+
+checkIfPrint:
+        For Each dr1 As DataRow In dt.Rows
+            If ((dr1("ADM_Menu_Position") = "1.3" Or dr1("ADM_Menu_Position") = "2.3" Or dr1("ADM_Menu_Position") = "3.3" Or dr1("ADM_Menu_Position") = "4.3" Or dr1("ADM_Menu_Position") = "5.3" Or dr1("ADM_Menu_Position") = "6.3" Or dr1("ADM_Menu_Position") = "7.3") And (dr1("ADM_Option_Print") = 0)) Then
+                cmdPrint.Visible = False
+            End If
+
+        Next
+
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim roleId As Int32
+        Dim roleInfo As DataTable = Session("roleInfoDt")
+        For Each dr As DataRow In roleInfo.Rows
+            roleId = dr("SEC_USER_ROLE").ToString()
+            GetUserRoleValue(roleId)
+        Next
+
         'SessionProvider.RebuildSchema()
         txtTelUsersName.Attributes.Add("disabled", "disabled")
         ddlBraNum.Attributes.Add("disabled", "disabled")
@@ -89,7 +116,54 @@ Public Class AD110
             'PageLinks = ""
         End If
     End Sub
-    Private Sub InitializeFields()
+    Protected Sub cmdSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdSave.Click, cmdSaveN.Click
+        updateFlag = CType(Session("updateFlag"), String)
+
+        If Not updateFlag Then 'if new record
+            tbill = New CustodianAdmin.Model.TelephoneBill
+
+            'lblError.Visible = False
+            tbill.TransClass = ddlTransClass.SelectedValue.ToString()
+            tbill.TransId = ddlTransID.SelectedValue.ToString()
+            tbill.BranchCode = ddlBraNum.SelectedValue.ToString()
+            tbill.Department = ddlDeptNum.SelectedValue.ToString()
+            tbill.UserName = txtTelUsersName.Text
+            tbill.Description = txtTransDescr.Text
+            tbill.EntryDate = Date.Now
+            tbill.EntryFlag = "A"
+            tbill.OperatorId = "001"
+            tbill.TelephoneNo = txtTransNum.Text
+            tbill.TransDate = ValidDate(txtTransDate.Text)
+            tbill.TransAmount = Math.Round(CType(txtTransAmt.Text, Decimal), 2)
+
+
+            tbRepo.Save(tbill)
+            Session("tbill") = tbill
+        Else
+            tbRepo = CType(Session("tbRepo"), TelephoneBillRepository)
+            tbill = CType(Session("tbill"), CustodianAdmin.Model.TelephoneBill)
+
+            tbill.TransClass = ddlTransClass.SelectedValue.ToString()
+            tbill.TransId = ddlTransID.SelectedValue.ToString()
+            tbill.BranchCode = ddlBraNum.SelectedValue.ToString()
+            tbill.Department = ddlDeptNum.SelectedValue.ToString()
+            tbill.UserName = txtTelUsersName.Text
+            tbill.Description = txtTransDescr.Text
+            ' tbill.EntryDate = Date.Now
+            'tbill.EntryFlag = "A"
+            'tbill.OperatorId = "001"
+            tbill.TelephoneNo = txtTransNum.Text
+            tbill.TransDate = ValidDate(txtTransDate.Text)
+            tbill.TransAmount = Math.Round(CType(txtTransAmt.Text, Decimal), 2)
+            tbRepo.Save(tbill)
+
+        End If
+        grdData.DataBind()
+        initializeFields()
+
+
+    End Sub
+    Private Sub initializeFields()
         txtBraName.Text = String.Empty
         txtBraNum.Text = String.Empty
         txtDeptName.Text = String.Empty
@@ -113,9 +187,7 @@ Public Class AD110
         toBind.Items.Insert(0, New ListItem("Select", "NA"))
     End Sub
 
-
     Private Sub FillValues()
-
         strKey = CType(Session("strKey"), String)
         tbRepo = CType(Session("tbRepo"), TelephoneBillRepository)
         tbill = CType(Session("tbill"), CustodianAdmin.Model.TelephoneBill)
@@ -155,7 +227,6 @@ Public Class AD110
         Return strDateTest
     End Function
 
-
     Protected Sub cmdDel_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdDel.Click, cmdDelN.Click
 
         Dim msg As String = String.Empty
@@ -173,14 +244,14 @@ Public Class AD110
             'lblError.Visible = True
             'publicMsgs = "javascript:alert('" + msg + "')"
         End Try
-        InitializeFields()
+        initializeFields()
 
 
 
     End Sub
 
     Protected Sub cmdNew_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdNew.Click
-        InitializeFields()
+        initializeFields()
         updateFlag = False 'Switches to first time load
         Session("updateFlag") = updateFlag
 
@@ -207,7 +278,12 @@ Public Class AD110
 
     End Sub
 
-    Private Sub grdData_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles grdData.RowDataBound
+    Protected Sub txtTransNum_TextChanged(ByVal sender As Object, ByVal e As EventArgs) Handles txtTransNum.TextChanged
+
+    End Sub
+
+    Private Sub grdData_RowDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles grdData.RowDataBound
+
         If (e.Row.RowType = DataControlRowType.DataRow) Then
             Dim lblPrice As Label = CType(e.Row.FindControl("lblTransAmt"), Label)
             TransAmt = (Convert.ToDecimal(DataBinder.Eval(e.Row.DataItem, "TransAmount")))
@@ -231,12 +307,17 @@ Public Class AD110
                 End If
             End If
         End If
+
+    End Sub
+
+    Protected Sub grdData_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles grdData.SelectedIndexChanged
+
     End Sub
 
     Protected Sub ddlTransClass_SelectedIndexChanged(ByVal sender As Object, ByVal e As EventArgs) Handles ddlTransClass.SelectedIndexChanged
-
         SetComboBinding(ddlTransID, acRepo.GetAdminOtherCodes("011", ddlTransClass.SelectedValue), "ItemDesc", "ItemCode")
 
     End Sub
+
 
 End Class

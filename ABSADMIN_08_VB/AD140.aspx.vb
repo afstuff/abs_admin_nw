@@ -19,19 +19,40 @@ Public Class AD140
     Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreInit
 
         strKey1 = Request.QueryString("mod")
-        If (strKey1 = "pro") Then
+        If (strKey1 = "ser") Then
+            MasterPageFile = "~/Site2.master"
+        ElseIf (strKey1 = "pro") Then
             MasterPageFile = "~/Site4.master"
-            'ElseIf (strKey1 = "001") Then
-            '    MasterPageFile = "~/Site3.master"
             'ElseIf (strKey = "002") Then
             '    MasterPageFile = "~/Site4.master"
             'ElseIf (strKey = "005") Then
             '    MasterPageFile = "~/Site4.master"
         Else
-            MasterPageFile = "~/Site2.master"
+            'MasterPageFile = "~/Site2.master"
         End If
     End Sub
+    Public Sub GetUserRoleValue(ByVal rId As Int32)
+        Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
+        Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdDelN.Visible = False
+            End If
+        Next
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.3" Or dr("ADM_Menu_Position") = "2.3" Or dr("ADM_Menu_Position") = "3.3" Or dr("ADM_Menu_Position") = "4.3" Or dr("ADM_Menu_Position") = "5.3" Or dr("ADM_Menu_Position") = "6.3" Or dr("ADM_Menu_Position") = "7.3") And (dr("ADM_Option_Print") = 0)) Then
+                cmdPrint.Visible = False
+            End If
+        Next
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim roleId As Int32
+        Dim roleInfo As DataTable = Session("roleInfoDt")
+        For Each dr As DataRow In roleInfo.Rows
+            roleId = dr("SEC_USER_ROLE").ToString()
+            GetUserRoleValue(roleId)
+        Next
 
         'SessionProvider.RebuildSchema()
         'ddlBraNum.Attributes.Add("disabled", "disabled")

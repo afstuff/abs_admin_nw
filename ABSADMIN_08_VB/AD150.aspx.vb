@@ -3,7 +3,7 @@ Imports CustodianAdmin.Model
 
 Public Class AD150
     Inherits System.Web.UI.Page
-     Protected FirstMsg As String
+    Protected FirstMsg As String
     Protected PageLinks As String
 
     Protected strPOP_UP As String
@@ -16,7 +16,30 @@ Public Class AD150
     Dim TotTransAmt As Decimal = 0
     Dim TransAmt As Decimal = 0
 
+    Public Sub GetUserRoleValue(ByVal rId As Int32)
+        Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
+        Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdDelN.Visible = False
+            End If
+        Next
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.3" Or dr("ADM_Menu_Position") = "2.3" Or dr("ADM_Menu_Position") = "3.3" Or dr("ADM_Menu_Position") = "4.3" Or dr("ADM_Menu_Position") = "5.3" Or dr("ADM_Menu_Position") = "6.3" Or dr("ADM_Menu_Position") = "7.3") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdPrint.Visible = False
+            End If
+        Next
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim roleId As Int32
+        Dim roleInfo As DataTable = Session("roleInfoDt")
+        For Each dr As DataRow In roleInfo.Rows
+            roleId = dr("SEC_USER_ROLE").ToString()
+            GetUserRoleValue(roleId)
+        Next
+
+
         'SessionProvider.RebuildSchema()
         txtTransNum.Attributes.Add("disabled", "disabled")
         'txtTransAmt1.Attributes.Add("disabled", "disabled")
@@ -83,10 +106,10 @@ Public Class AD150
             strPOP_UP = "NO"
         End Try
 
-       
+
 
     End Sub
-     
+
     Protected Sub cmdSave_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdSave.Click, cmdSaveN.Click
         updateFlag = CType(Session("updateFlag"), String)
         Dim transAmt As Decimal = Convert.ToDecimal(txtTransAmt1.Text)

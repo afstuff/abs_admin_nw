@@ -24,7 +24,30 @@ Public Class AD180
     Protected Sub Page_PreInit(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreInit
 
     End Sub
+
+    Public Sub GetUserRoleValue(ByVal rId As Int32)
+        Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
+        Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdDelN.Visible = False
+            End If
+        Next
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdDelN.Visible = False
+            End If
+        Next
+    End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Dim roleId As Int32
+        Dim roleInfo As DataTable = Session("roleInfoDt")
+        For Each dr As DataRow In roleInfo.Rows
+            roleId = dr("SEC_USER_ROLE").ToString()
+            GetUserRoleValue(roleId)
+        Next
+
         txtTransNum.Attributes.Add("disabled", "disabled")
 
         If Not Page.IsPostBack Then

@@ -37,7 +37,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">Report
+   <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">Report
     </h3>
 
     <table align="center" border="0" class="tbl_main">
@@ -108,8 +108,6 @@
                             <asp:DropDownList ID="ddlStartBranch" Width="150" runat="server"
                                 AutoPostBack="True">
                             </asp:DropDownList>
-                            <asp:TextBox ID="txtStartBranch" Enabled="true" Width="100" runat="server"
-                                Visible="False"></asp:TextBox>
                             </td>
                     </tr>
 
@@ -118,11 +116,9 @@
                         <td align="right" valign="top">
                             <asp:Label ID="Label5" Text="End Branch:" runat="server"></asp:Label></td>
                         <td valign="top">
-                            <asp:DropDownList ID="ddlEndBranch" Width="150" runat="server"
+                            <asp:DropDownList ID="ddlStBranch" Width="150" runat="server"
                                 AutoPostBack="True">
                             </asp:DropDownList>
-                            <asp:TextBox ID="txtEndBranch" Enabled="true" Width="100" runat="server"
-                                Visible="False"></asp:TextBox>
                             </td>
                     </tr>
 

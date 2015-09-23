@@ -41,6 +41,15 @@ Partial Public Class Site1
     Protected WithEvents subMenuDdl As Global.System.Web.UI.WebControls.DropDownList
     
     '''<summary>
+    '''subMenu control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents subMenu As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+    
+    '''<summary>
     '''ContentPlaceHolder1 control.
     '''</summary>
     '''<remarks>

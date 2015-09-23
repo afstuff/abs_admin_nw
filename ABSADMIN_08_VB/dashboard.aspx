@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dashboard.aspx.cs" Inherits="ABSADMIN_08.dashboard" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="dashboard.aspx.vb" Inherits="ABSADMIN_08_VB.dashboard" %>
 
 <!DOCTYPE html>
 
@@ -12,20 +12,21 @@
     <script src="Scripts/JavaScript1.js"></script>
 </head>
 <body>
+
     <form id="form1" runat="server">
         <div class="container">
             <div class="row profile">
-                <div class="col-md-3">
+                <div id="profilePane" class="col-md-3">
                     <div class="profile-sidebar">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
-                            <img src="imgs/IMG_20150219_091342.jpg" class="img-responsive img-circle" alt="" />
+                            <img src="imgs/User-icon.png" class="img-responsive img-circle" alt="" />
                         </div>
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->
                         <div class="profile-usertitle">
                             <div class="profile-usertitle-name">
-                                Femi Adesanya
+                                ABS USER
                             </div>
                             <div class="profile-usertitle-job">
                                 ABS
@@ -34,7 +35,7 @@
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR BUTTONS -->
                         <div class="profile-userbuttons form-group-sm">
-                            <button id="hidePaneBtn" class="btn btn-info btn-sm pull-right">
+                            <button id="hidePaneBtn" class="btn btn-info input-sm pull-right">
                                 <i class="glyphicon glyphicon-align-justify"></i>
                             </button>
                             <br />
@@ -44,19 +45,19 @@
                         <div class="profile-usermenu">
                             <ul class="nav">
                                 <li class="active">
-                                    <a href="#">
+                                    <a href="dashboard.aspx">
                                         <i class="glyphicon glyphicon-home"></i>
-                                        Overview </a>
+                                        Dashboard </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="AD_SEC_USER_DETAIL.aspx">
                                         <i class="glyphicon glyphicon-user"></i>
-                                       View Profile  </a>
+                                        View Profile  </a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_blank">
+                                    <a href="SignOut.aspx" target="_blank">
                                         <i class="glyphicon glyphicon-ok"></i>
-                                        Tasks </a>
+                                        Sign Out </a>
                                 </li>
                                 <li>
                                     <a href="#">
@@ -68,18 +69,19 @@
                         <!-- END MENU -->
                     </div>
                 </div>
-                <div class="col-md-9">
+                <div id="contentPane" class="col-md-9">
                     <div class="profile-content">
-                        <h1 style="font-weight: bold; font-family: Century Gothic;">ABS - ADMIN
-                        </h1>
+                        <span style="font-weight: bold; font-family: Century Gothic; font-size: xx-large;">ABS - ADMIN
+                        </span>
+                        <button id="showPaneBtn" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-align-justify"></i></button>
                         <hr />
-
+                        
                         <h3 style="font-weight: bold; font-family: Century Gothic;">Dashboard
                         </h3>
                         <p>
                             &nbsp;
                         </p>
-                        <div class="menuItemDiv" align="center">
+                        <div class="menuItemDiv" align="center" id="tell">
                             <a href="TelephoneBill.aspx">
                                 <img src="imgs/telephone_blue.png" />
                                 <br />
@@ -87,23 +89,23 @@
                             </a>
                         </div>
 
-                        <div class="menuItemDiv" align="center">
-                            <a href="#">
+                        <div class="menuItemDiv" align="center" id="ser">
+                            <a href="ServicesBill.aspx">
                                 <img src="imgs/service.png" />
                                 <br />
                                 Services Bill
                             </a>
                         </div>
 
-                        <div class="menuItemDiv" align="center">
-                            <a href="#">
+                        <div class="menuItemDiv" align="center" id="mot">
+                            <a href="MotorVehicle.aspx">
                                 <img src="imgs/moto.png" />
                                 <br />
                                 Motor Vehicle(R&amp;M)
                             </a>
                         </div>
-                        <div class="menuItemDiv" align="center">
-                            <a href="#">
+                        <div class="menuItemDiv" align="center" id="pro">
+                            <a href="Procurement.aspx">
                                 <img src="imgs/procurement.png" />
                                 <br />
                                 Procurement
@@ -112,34 +114,34 @@
 
                         <div class="clearfix" style="margin-bottom: 80px!important;"></div>
 
-                        <div class="menuItemDiv" align="center">
-                            <a href="#">
+                        <div class="menuItemDiv" align="center" id="bra">
+                            <a href="BranchExpenses.aspx">
                                 <img src="imgs/expenses.png" />
                                 <br />
                                 Branch Expenses
                             </a>
                         </div>
-                        <div class="menuItemDiv" align="center">
-                            <a href="#">
+                        <div class="menuItemDiv" align="center" id="pre">
+                            <a href="PremiumPaid.aspx">
                                 <img src="imgs/premRec.png" />
                                 <br />
                                 Insurance Prem. Rec.
                             </a>
                         </div>
-                        <div class="menuItemDiv" align="center">
-                            <a href="#">
+                        <div class="menuItemDiv" align="center" id="clm">
+                            <a href="ClaimReceived.aspx">
                                 <img src="imgs/claimRec.png" />
                                 <br />
                                 Insurance Claim Rec.
                             </a>
                         </div>
-                        <%-- <div class="menuItemDiv" align="center">
-                            <a href="#">
-                                <img src="imgs/moto.png" />
+                        <div class="menuItemDiv" align="center" id="clm">
+                            <a href="Settings.aspx">
+                                <img src="imgs/setup.fw.png" />
                                 <br />
-                                Motor Vehicle(R&M)
+                                Settings
                             </a>
-                        </div>--%>
+                        </div>
                         <div class="clearfix" style="margin-bottom: 80px!important;"></div>
 
 
@@ -150,7 +152,7 @@
             <footer>
                 <div class="container">
                     <hr />
-                    <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;Afrik Business Software
+                    <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;<%= Now.Year %> - Afrik Business Software
                     </span>
                     <span class="pull-right" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">Custodian And Allied Insurance Plc.
                     </span>
@@ -161,3 +163,4 @@
     </form>
 </body>
 </html>
+
