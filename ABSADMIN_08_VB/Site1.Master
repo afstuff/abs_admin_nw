@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="ABSADMIN_08_VB.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ABSADMIN_08.Site1" %>
 
 <!DOCTYPE html>
 
@@ -17,23 +17,22 @@
             width: 216px;
         }
     </style>
-
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="container">
             <div class="row profile">
-                <div id="profilePane" class="col-md-3">
+                <div class="col-md-3">
                     <div class="profile-sidebar">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
-                            <img src="imgs/User-icon.png" class="img-responsive img-circle" alt="" />
+                            <img src="imgs/IMG_20150219_091342.jpg" class="img-responsive img-circle" alt="" />
                         </div>
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->
                         <div class="profile-usertitle">
                             <div class="profile-usertitle-name">
-                                ABS USER
+                                Femi Adesanya
                             </div>
                             <div class="profile-usertitle-job">
                                 ABS
@@ -41,8 +40,8 @@
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR BUTTONS -->
-                        <div class="profile-userbuttons">
-                            <button id="hidePaneBtn" class="btn btn-info input-sm pull-right">
+                        <div class="profile-userbuttons form-group-sm">
+                            <button id="hidePaneBtn" class="btn btn-info btn-sm pull-right">
                                 <i class="glyphicon glyphicon-align-justify"></i>
                             </button>
                             <br />
@@ -76,45 +75,36 @@
                         <!-- END MENU -->
                     </div>
                 </div>
-                <div id="contentPane" class="col-md-9">
+                <div class="col-md-9">
                     <div class="profile-content">
                         <h1 style="font-weight: bold; font-family: Century Gothic;">ABS - ADMIN
                         </h1>
                         <%--<hr />--%>
-                        <table class="table input-sm">
+                        <table class="table">
                             <tr>
                                 <td class="auto-style1">
-                                    <span id="TellPage" class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Telephone Bill-</span>
+                                    <span class="control-label" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;">Telephone Bill - 
+                                    </span>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="subMenuDdl" runat="server" CssClass="dropdown" style="font-weight: bold; font-family: Century Gothic; font-size: 20pt;" AutoPostBack="True">
-                                        <asp:ListItem>Select Task</asp:ListItem>
-                                        <asp:ListItem Value="1">Code Setup</asp:ListItem>
-                                        <asp:ListItem Value="2">Transactions</asp:ListItem>
-                                        <asp:ListItem Value="3">Report</asp:ListItem>
-                                    </asp:DropDownList> 
-
-                                   <%-- <div class="dropdown input-group-sm">
+                                    <div class="dropdown input-group-sm">
                                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Select Task
     <span class="caret"></span>
                                         </button>
-                                        <ul id="subMenu" class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
-                                            <li id="1"><a href='AD111.aspx?sopt=006' target='_self'>Codes Setup</a></li>
-                                            <li id="2"><a href='AD110.aspx' target='_self'>Transaction</a></li>
-                                            <li id="3"><a href='AD112.aspx' target='_self'>Report</a></li>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" runat="server">
+                                            <li><a href='AD111.aspx?sopt=006' target='_self'>Codes Setup</a></li>
+                                            <li><a href='AD110.aspx' target='_self'>Transaction</a></li>
+                                            <li><a href='AD112.aspx' target='_self'>Report</a></li>
                                         </ul>
-                                    </div>--%>
-                                </td>
-                                <td>
-                                    <a href="dashboard.aspx" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-home"></i></a>
-                                    <button id="showPaneBtn" class="btn btn-info input-sm pull-right"><i class="glyphicon glyphicon-align-justify"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="3">
+                                <td colspan="2">
                                     <div>
                                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                            
                                         </asp:ContentPlaceHolder>
                                     </div>
                                 </td>
@@ -129,7 +119,7 @@
         <footer>
             <div class="container">
                 <hr />
-                <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;<%= Now.Year %> - Afrik Business Software
+                <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;Afrik Business Software
                 </span>
                 <span class="pull-right" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">Custodian And Allied Insurance Plc.
                 </span>
