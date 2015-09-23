@@ -11,6 +11,7 @@
     <property name="ADM_Option_Edit" column="ADM_Option_Edit" length="5" />
     <property name="ADM_Option_Delete" column="ADM_Option_Delete" length="5" />
     <property name="ADM_Option_Print" column="ADM_Option_Print" length="5" />
+    <property name="ADM_Option_Visible" column="ADM_Option_Visible" length="5" />
     <property name="ADM_FlagID" column="ADM_FlagID" length="3" />
     <property name="ADM_OperID" column="ADM_OperID" length="5" />
     <property name="ADM_Keydate" column="ADM_Keydate" type="datetime" />
