@@ -14,13 +14,15 @@ Public Class AD112
 
     Protected publicMsgs As String = String.Empty
     Protected strPOP_UP As String
-    Dim rParams As String() = {"nw", "nw", "new", "new", "new", "new", "new", "new", "new"}
+    Dim rParams As String() = {"nw", "nw", "new", "new", "new", "new", "new", "new", "new", "new", "new", "new", "new"}
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             acRepo = New AdminCodeRepository
 
             SetComboBinding(ddlTransClass, acRepo.GetAdminCodes("010"), "ItemDesc", "ItemCode")
             SetComboBinding(ddlTransID, acRepo.GetAdminCodes("011"), "ItemDesc", "ItemCode")
+            SetComboBinding(ddlStartBranch, acRepo.GetAdminCodes("009"), "ItemDesc", "ItemCode")
+            SetComboBinding(ddlEndBranch, acRepo.GetAdminCodes("009"), "ItemDesc", "ItemCode")
             Session("acRepo") = acRepo
 
         Else 'post back
@@ -60,7 +62,10 @@ Public Class AD112
         'reportpath = SiteGlobal.ReportPath
         reportname = "AdminExpenses"
 
-
+      
+        If txtStartBranch.Text > txtEndBranch.Text Then
+            txtEndBranch.Text = "zzzz"
+        End If
         rParams(0) = reportname
         rParams(1) = "pStartDate="
         rParams(2) = sStartDate.Trim + "&"
@@ -70,6 +75,10 @@ Public Class AD112
         rParams(6) = txtTransClass.Text.Trim + "&"
         rParams(7) = "pTransID="
         rParams(8) = txtTransID.Text + "&"
+        rParams(9) = "pStartBranch="
+        rParams(10) = txtStartBranch.Text.Trim + "&"
+        rParams(11) = "pEndBranch="
+        rParams(12) = txtEndBranch.Text.Trim + "&"
 
 
         Session("ReportParams") = rParams
@@ -93,5 +102,13 @@ Public Class AD112
 
     Protected Sub butPrint_Click(sender As Object, e As EventArgs) Handles butPrint.Click
         Print_That
+    End Sub
+
+    Protected Sub ddlStartBranch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlStartBranch.SelectedIndexChanged
+        txtStartBranch.Text = ddlStartBranch.SelectedValue.ToString()
+    End Sub
+
+    Protected Sub ddlEndBranch_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlEndBranch.SelectedIndexChanged
+        txtEndBranch.Text = ddlEndBranch.SelectedValue.ToString()
     End Sub
 End Class
