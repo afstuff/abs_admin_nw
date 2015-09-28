@@ -57,29 +57,32 @@ $(function () {
             //console.log(mn[m]);
             //console.log(mn[m].menuName);
 
-            if ((mn[m].menuPos == "1") && (mn[m].canAdd) == "0") {
+            if ((mn[m].menuPos == "1") && (mn[m].canVisible) == "0") {
                 $("#tell").addClass("hidden");
             }
 
-            if ((mn[m].menuPos == "2") && (mn[m].canAdd) == "0") {
+            if ((mn[m].menuPos == "2") && (mn[m].canVisible) == "0") {
                 $("#ser").addClass("hidden");
             }
-            if ((mn[m].menuPos == "3") && (mn[m].canAdd) == "0") {
+            if ((mn[m].menuPos == "3") && (mn[m].canVisible) == "0") {
                 $("#mot").addClass("hidden");
             }
-            if ((mn[m].menuPos == "4") && (mn[m].canAdd) == "0") {
+            if ((mn[m].menuPos == "4 ") && (mn[m].canVisible) == "0") {
                 $("#pro").addClass("hidden");
             }
-            if ((mn[m].menuPos == "5") && (mn[m].canAdd) == "0") {
+            if ((mn[m].menuPos == "5") && (mn[m].canVisible) == "0") {
                 $("#bra").addClass("hidden");
             }
-            if ((mn[m].menuPos == "6") && (mn[m].canAdd) == "0") {
+            if ((mn[m].menuPos == "6") && (mn[m].canVisible) == "0") {
                 $("#pre").addClass("hidden");
             }
-            if ((mn[m].menuPos == "7") && (mn[m].canAdd) == "0") {
+            if ((mn[m].menuPos == "7") && (mn[m].canVisible) == "0") {
                 $("#clm").addClass("hidden");
             }
-           
+            if ((mn[m].menuPos == "8") && (mn[m].canVisible) == "0") {
+                $("#set").addClass("hidden");
+            }
+
         });
 
 
