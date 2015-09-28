@@ -34,7 +34,7 @@
         }); //end of doc ready
     </script>
 
-    <script src="dist/libs/jquery.js"></script>
+    <%--<script src="dist/libs/jquery.js"></script>--%>
     <script src="dist/jstree.min.js"></script>
     <script>
         $(function () {

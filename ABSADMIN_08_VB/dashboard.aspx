@@ -135,7 +135,7 @@
                                 Insurance Claim Rec.
                             </a>
                         </div>
-                        <div class="menuItemDiv" align="center" id="clm">
+                        <div class="menuItemDiv" align="center" id="set">
                             <a href="Settings.aspx">
                                 <img src="imgs/setup.fw.png" />
                                 <br />
