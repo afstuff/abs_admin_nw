@@ -12,16 +12,7 @@ Option Explicit On
 
 
 Partial Public Class ADPermissions
-
-    '''<summary>
-    '''ADPermissions control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ADPermissions As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''cmdSave control.
     '''</summary>
@@ -30,7 +21,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdSave As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdSaveN control.
     '''</summary>
@@ -39,7 +30,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdSaveN As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdDel control.
     '''</summary>
@@ -48,7 +39,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdDel As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''cmdDelN control.
     '''</summary>
@@ -57,7 +48,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cmdDelN As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Label1 control.
     '''</summary>
@@ -66,7 +57,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''cboRole control.
     '''</summary>
@@ -75,7 +66,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cboRole As Global.System.Web.UI.WebControls.DropDownList
-
+    
     '''<summary>
     '''lblMessage control.
     '''</summary>
@@ -84,7 +75,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''GrdLapsePolicy control.
     '''</summary>
@@ -93,7 +84,7 @@ Partial Public Class ADPermissions
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents GrdLapsePolicy As Global.System.Web.UI.WebControls.GridView
-
+    
     '''<summary>
     '''GridView1 control.
     '''</summary>

@@ -47,13 +47,6 @@ Public Class AD140
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Dim roleId As Int32
-        Dim roleInfo As DataTable = Session("roleInfoDt")
-        For Each dr As DataRow In roleInfo.Rows
-            roleId = dr("SEC_USER_ROLE").ToString()
-            GetUserRoleValue(roleId)
-        Next
-
         'SessionProvider.RebuildSchema()
         'ddlBraNum.Attributes.Add("disabled", "disabled")
         ddlDeptNum.Attributes.Add("disabled", "disabled")
@@ -62,6 +55,15 @@ Public Class AD140
 
 
         If Not Page.IsPostBack Then
+
+            Dim roleId As Int32
+            Dim roleInfo As DataTable = Session("roleInfoDt")
+            For Each dr As DataRow In roleInfo.Rows
+                roleId = dr("SEC_USER_ROLE").ToString()
+                GetUserRoleValue(roleId)
+            Next
+
+
             rbRepo = New RepairsBillRepository
             acRepo = New AdminCodeRepository
 

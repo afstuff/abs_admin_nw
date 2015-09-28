@@ -19,7 +19,7 @@ Public Class AD130
         Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
         Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
         For Each dr As DataRow In dt.Rows
-            
+
             If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
                 cmdDelN.Visible = False
             End If
@@ -33,12 +33,7 @@ Public Class AD130
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        Dim roleId As Int32
-        Dim roleInfo As DataTable = Session("roleInfoDt")
-        For Each dr As DataRow In roleInfo.Rows
-            roleId = dr("SEC_USER_ROLE").ToString()
-            GetUserRoleValue(roleId)
-        Next
+
 
 
         ddlBraNum.Attributes.Add("disabled", "disabled")
@@ -48,6 +43,13 @@ Public Class AD130
 
 
         If Not Page.IsPostBack Then
+            Dim roleId As Int32
+            Dim roleInfo As DataTable = Session("roleInfoDt")
+            For Each dr As DataRow In roleInfo.Rows
+                roleId = dr("SEC_USER_ROLE").ToString()
+                GetUserRoleValue(roleId)
+            Next
+
             vmRepo = New VehicleMaintRepository
             acRepo = New AdminCodeRepository
 
