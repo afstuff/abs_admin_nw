@@ -16,7 +16,9 @@
         $(function () {
             function onErrorLoadMotorTypes(response) {
                 //debugger;
-                var errorText = response.responseText;
+                //var errorText = response.responseText;
+                var errorText = response.message;
+
                 alert('Error!!!' + '\n\n' + errorText);
             }
 
@@ -136,7 +138,7 @@
 
                 var inputEmail = $("#inputEmail").val();
                 var inputPassword = $("#inputPassword").val();
-                alert(inputEmail + " " + inputPassword);
+                //alert(inputEmail + " " + inputPassword);
                 if ((inputEmail != null) || inputPassword != null) {
                     doLogin(inputEmail, inputPassword);
                 }
