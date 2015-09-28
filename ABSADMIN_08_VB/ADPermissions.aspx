@@ -174,6 +174,13 @@
                                                 <li>Report</li>
                                             </ul>
                                          </li>
+                                       <li data-jstree='{"icon":"imgsIcon/icon_claimRec.png", "opened":true,"selected":true}'>Settings
+                                            <ul>
+                                                <li>User Setup</li>
+                                                <li>User Role</li>
+                                                <%--<li>Report</li>--%>
+                                            </ul>
+                                         </li>
                                   </ul>
                               </div>
                     </td>

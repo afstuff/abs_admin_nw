@@ -200,6 +200,12 @@ Public Class ADPermissions
             Menu_Name = "Transactions"
         ElseIf i = 27 Then
             Menu_Name = "Reports"
+        ElseIf i = 28 Then
+            Menu_Name = "Settings"
+        ElseIf i = 29 Then
+            Menu_Name = "User Setup"
+        ElseIf i = 30 Then
+            Menu_Name = "User Role"
         End If
         Return Menu_Name
     End Function
@@ -262,6 +268,12 @@ Public Class ADPermissions
             Menu_Position = "7.2"
         ElseIf i = 27 Then
             Menu_Position = "7.3"
+        ElseIf i = 28 Then
+            Menu_Position = "8"
+        ElseIf i = 29 Then
+            Menu_Position = "8.1"
+        ElseIf i = 30 Then
+            Menu_Position = "8.2"
         End If
         Return Menu_Position
     End Function
