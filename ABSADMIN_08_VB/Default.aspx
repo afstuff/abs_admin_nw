@@ -175,7 +175,7 @@
                     </div>
                     <!-- /form -->
                     <a href="#" class="forgot-password pull-left">Forgot the password?</a>
-                    <a href="#" class="forgot-password pull-right">Register!</a>
+                    <a href="AD_SEC_USER_DETAIL.aspx" class="forgot-password pull-right">Register!</a>
                 </div>
                 <!-- /card-container -->
             </div>
