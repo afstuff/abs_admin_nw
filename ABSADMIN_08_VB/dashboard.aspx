@@ -55,7 +55,7 @@
                                         View Profile  </a>
                                 </li>
                                 <li>
-                                    <a href="SignOut.aspx" target="_blank">
+                                    <a href="SignOut.aspx" target="_self">
                                         <i class="glyphicon glyphicon-ok"></i>
                                         Sign Out </a>
                                 </li>

@@ -14,17 +14,29 @@
     <script>
         //function to do on page load
         $(function () {
+
+            //define the processing modal
+            var pleaseWait = $('#pleaseWaitDialog');
+            var showPleaseWait = function () {
+                pleaseWait.modal('show');
+            };
+            var hidePleaseWait = function () {
+                pleaseWait.modal('hide');
+            };
+
             function onErrorLoadMotorTypes(response) {
                 //debugger;
                 //var errorText = response.responseText;
                 var errorText = response.responseText;
 
                 alert('Error!!!' + '\n\n' + errorText);
+                hidePleaseWait();
             }
 
             function onFailure(response) {
                 //debugger;
                 alert('Failure!!!' + '<br/>' + response.reponseText);
+                hidePleaseWait();
             }
 
             function retrieveUserRolenfoValues(admobjects) {
@@ -134,14 +146,21 @@
 
             $("#loginBtn").click(function (e) {
                 e.preventDefault();
-                //getUserRolesInfo();
 
                 var inputEmail = $("#inputEmail").val();
                 var inputPassword = $("#inputPassword").val();
                 //alert(inputEmail + " " + inputPassword);
                 if ((inputEmail != null) || inputPassword != null) {
+                    showPleaseWait();
                     doLogin(inputEmail, inputPassword);
+                } else {
+                    alert("Login fields cannot be empty!");
                 }
+
+                //var pleaseWait = $('#pleaseWaitDialog');
+                //hidePleaseWait = function () {
+                //    pleaseWait.modal('hide');
+                //};
 
             });
 
@@ -181,6 +200,26 @@
             </div>
             <!-- /container -->
         </div>
+
+        <!-- Modal start -->
+        <div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span style="font-family: 'century-gothic'; font-size: 20pt; font-weight: bold;">Processing login...</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                <%--<span class="sr-only">40% Complete (success)</span>--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal ends -->
+
         <footer>
             <div class="container">
                 <hr />
