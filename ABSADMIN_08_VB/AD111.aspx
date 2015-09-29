@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
     <script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
     <script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
-    <script language="javascript" type="text/javascript" src="Scripts/ScriptJS.js"></script>
+    <script type="text/javascript" src="Scripts/ScriptJS.js"></script>
 
     <script type="text/javascript">
         // calling jquery functions once document is ready
@@ -63,10 +63,10 @@
             }
 
             function generalRefresh() {
-                switch ($('#cmbCodeClass').val()) {
+                switch ($('#<%= cmbCodeClass.ClientID %>').val()) {
                     case "001": //vehicle
-                        $('#lblItemCode').text('Vehicle No');
-                        $('#lblItemDesc').text('Name Of User');
+                        $('#<%= lblItemCode.ClientID %>').text('Vehicle No');
+                        $('#<%= lblItemDesc.ClientID %>').text('Name Of User');
                         $('#type1').show();
                         $('#BranchRow').show();
                         $('#DeptRow').show();
@@ -74,48 +74,48 @@
                         $('#TransClassRow').hide();
                         break;
                     case "002": //supplier
-                        $('#lblItemCode').text('Supplier Code');
-                        $('#lblItemDesc').text('Supplier Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Supplier Code');
+                        $('#<%= lblItemDesc.ClientID %>').text('Supplier Name');
                         $('#type1').hide();
                         $('#BranchRow').hide();
                         $('#DeptRow').hide();
                         $('#TransClassRow').hide();
                         break;
                     case "003": //Equipment
-                        $('#lblItemCode').text('Equipment Code');
-                        $('#lblItemDesc').text('Equipment Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Equipment Code');
+                        $('#<%= lblItemDesc.ClientID %>').text('Equipment Name');
                         $('#type1').hide();
                         $('#BranchRow').hide();
                         $('#DeptRow').hide();
                         $('#TransClassRow').hide();
                         break;
                     case "004": //insurance
-                        $('#lblItemCode').text('Company Code');
-                        $('#lblItemDesc').text('Company Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Company Code');
+                        $('#<%= lblItemDesc.ClientID %>').text('Company Name');
                         $('#type1').hide();
                         $('#BranchRow').hide();
                         $('#DeptRow').hide();
                         $('#TransClassRow').hide();
                         break;
                     case "005": //Brokers
-                        $('#lblItemCode').text('Broker Code');
-                        $('#lblItemDesc').text('Broke Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Broker Code');
+                        $('#<%= lblItemDesc.ClientID %>').text('Broke Name');
                         $('#type1').hide();
                         $('#BranchRow').hide();
                         $('#DeptRow').hide();
                         $('#TransClassRow').hide();
                         break;
                     case "006": //telephone user
-                        $('#lblItemCode').text('User Code');
-                        $('#lblItemDesc').text('User Name');
+                        $('#<%= lblItemCode.ClientID %>').text('User Code');
+                        $('#<%= lblItemDesc.ClientID %>').text('User Name');
                         $('#type1').hide();
                         $('#BranchRow').show();
                         $('#DeptRow').show();
                         $('#TransClassRow').hide();
                         break;
                     case "007": //meter type
-                        $('#lblItemCode').text('Meter No');
-                        $('#lblItemDesc').text('Account No/Info');
+                        $('#<%= lblItemCode.ClientID %>').text('Meter No');
+                        $('#<%= lblItemDesc.ClientID %>').text('Account No/Info');
                         $('#type1').show();
                         $('#BranchRow').show();
                         $('#DeptRow').hide();
@@ -123,32 +123,32 @@
                         loadMeterTypes();
                         break;
                     case "008": //Department
-                        $('#lblItemCode').text('Dept Code');
-                        $('#lblItemDesc').text('Dept Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Dept Code');
+                        $('#<%= lblItemDesc.ClientID %>').text('Dept Name');
                         $('#type1').hide();
                         $('#BranchRow').hide();
                         $('#DeptRow').hide();
                         $('#TransClassRow').hide();
                         break;
                     case "009": //Branch
-                        $('#lblItemCode').text('Branch Code');
-                        $('#lblItemDesc').text('Branch Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Branch Code');
+                        $('#<%= lblItemDesc.ClientID %>').text('Branch Name');
                         $('#type1').hide();
                         $('#BranchRow').hide();
                         $('#DeptRow').hide();
                         $('#TransClassRow').hide();
                         break;
                     case "010": //Trans Class
-                        $('#lblItemCode').text('Trans Class');
-                        $('#lblItemDesc').text('Class Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Trans Class');
+                        $('#<%= lblItemDesc.ClientID %>').text('Class Name');
                         $('#type1').hide();
                         $('#BranchRow').hide();
                         $('#TransClassRow').hide();
                         $('#DeptRow').hide();
                         break;
                     case "011": //Trans ID
-                        $('#lblItemCode').text('Trans ID');
-                        $('#lblItemDesc').text('ID Name');
+                        $('#<%= lblItemCode.ClientID %>').text('Trans ID');
+                        $('#<%= lblItemDesc.ClientID %>').text('ID Name');
                         //$('#lblBraNum').text('Trans Class');
 
                         $('#type1').hide();
@@ -161,18 +161,29 @@
                 }
             }
 
-            //screen responds according to selection
-            $("#cmbCodeClass").on('focusout', function (e) {
+            // screen responds according to selection
+            $("#<%=cmbCodeClass.ClientID%>").on('focusout', function (e) {
                 e.preventDefault();
                 generalRefresh();
 
             });
 
             //load data into type combo according to selection
-// ajax call to load motor types information
+            // ajax call to load motor types information
             generalRefresh();
+
+
+            //$("#cmbCodeClass").change(function (e) {
+            //    e.preventDefault();
+            //    alert("changed!");
+
+            //});
+
         });
+
+
     </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h3 style="background-color: lightgrey; padding: 5px; margin-top: 0;">Codes Setup
@@ -191,8 +202,7 @@
                             &nbsp;<asp:Button ID="cmdPrint" CssClass="cmd_butt" Enabled="false" Text="Print" runat="server" />
                             &nbsp;
                         </td>
-                        <td id="td_Return_Link" colspan="1" valign="top" runat="server">
-                            &nbsp;
+                        <td id="td_Return_Link" colspan="1" valign="top" runat="server">&nbsp;
                         </td>
                         <td colspan="1" valign="top">
                             <div style="display: none;">
@@ -222,7 +232,7 @@
                         <td align="right" valign="top">
                             <asp:Label ID="lblCodeClass" Text="Code Class:" runat="server"></asp:Label>&nbsp;</td>
                         <td valign="top">
-                            <asp:DropDownList ID="cmbCodeClass" Width="150" runat="server" AutoPostBack="true">
+                            <asp:DropDownList ID="cmbCodeClass" Width="150" runat="server" AutoPostBack="True">
                                 <asp:ListItem Text="Vehicle" Value="001"></asp:ListItem>
                                 <asp:ListItem Text="Supplier" Value="002"></asp:ListItem>
                                 <asp:ListItem Text="Equipment" Value="003"></asp:ListItem>
@@ -365,3 +375,5 @@
 
 
 </asp:Content>
+
+

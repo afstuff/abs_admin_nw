@@ -7,17 +7,12 @@
     <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/StyleSheet1.css" rel="stylesheet" />
-    <script src="Scripts/jquery-1.9.1.js"></script>
+     <script src="Scripts/jquery-1.9.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/JavaScript1.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <style type="text/css">
-        .auto-style1 {
-            width: 216px;
-        }
-    </style>
-
+    
     <script>
         //Menu Constructors
         $(function () {
@@ -49,10 +44,20 @@
 
 
             }
+
+
         });
 
 
     </script>
+
+
+    <style type="text/css">
+        .auto-style1 {
+            width: 216px;
+        }
+    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -173,5 +178,6 @@
 
     </form>
 
+    <%--<asp:ContentPlaceHolder ID="script" runat="server"></asp:ContentPlaceHolder>--%>
 </body>
 </html>
