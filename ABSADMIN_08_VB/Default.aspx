@@ -17,7 +17,7 @@
             function onErrorLoadMotorTypes(response) {
                 //debugger;
                 //var errorText = response.responseText;
-                var errorText = response.message;
+                var errorText = response.responseText;
 
                 alert('Error!!!' + '\n\n' + errorText);
             }
