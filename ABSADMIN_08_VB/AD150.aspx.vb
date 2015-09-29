@@ -38,14 +38,16 @@ Public Class AD150
         'txtTransAmt1.Attributes.Add("disabled", "disabled")
 
         If Not Page.IsPostBack Then
-
-
-            Dim roleId As Int32
-            Dim roleInfo As DataTable = Session("roleInfoDt")
-            For Each dr As DataRow In roleInfo.Rows
-                roleId = dr("SEC_USER_ROLE").ToString()
-                GetUserRoleValue(roleId)
-            Next
+            If Session("roleInfoDt") IsNot Nothing Then
+                Dim roleId As Int32
+                Dim roleInfo As DataTable = Session("roleInfoDt")
+                For Each dr As DataRow In roleInfo.Rows
+                    roleId = dr("SEC_USER_ROLE").ToString()
+                    GetUserRoleValue(roleId)
+                Next
+            Else
+                Response.Redirect("default.aspx")
+            End If
 
 
             dbRepo = New DieselBillRepository
