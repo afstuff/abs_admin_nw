@@ -41,6 +41,7 @@ $(function () {
 
 //Menu Constructors
 $(function () {
+    //alert("my fun");
     if (window.sessionStorage.length > 0) {
         //console.log("working!");
 
@@ -80,6 +81,7 @@ $(function () {
                 $("#clm").addClass("hidden");
             }
             if ((mn[m].menuPos == "8") && (mn[m].canVisible) == "0") {
+                console.log(mn[m].menuPos);
                 $("#set").addClass("hidden");
             }
 
@@ -88,6 +90,7 @@ $(function () {
 
     }
 });
+
 
 
 
