@@ -32,41 +32,6 @@
                                 ABS
                             </div>
                         </div>
-                        <!-- END SIDEBAR USER TITLE -->
-                        <!-- SIDEBAR BUTTONS -->
-                       <%-- <div class="profile-userbuttons form-group-sm">
-                            <button id="hidePaneBtn" class="btn btn-info input-sm  pull-right">
-                                <i class="glyphicon glyphicon-align-justify"></i>
-                            </button>
-                            <br />
-                        </div>--%>
-                        <!-- END SIDEBAR BUTTONS -->
-                        <!-- SIDEBAR MENU -->
-                       <%-- <div class="profile-usermenu">
-                            <ul class="nav">
-                                <li class="active">
-                                    <a href="dashboard.aspx">
-                                        <i class="glyphicon glyphicon-home"></i>
-                                        Dashboard </a>
-                                </li>
-                                <li>
-                                    <a href="AD_SEC_USER_DETAIL.aspx">
-                                        <i class="glyphicon glyphicon-user"></i>
-                                        View Profile  </a>
-                                </li>
-                                <li>
-                                    <a href="SignOut.aspx" target="_self">
-                                        <i class="glyphicon glyphicon-ok"></i>
-                                        Sign Out </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="glyphicon glyphicon-flag"></i>
-                                        Help </a>
-                                </li>
-                            </ul>
-                        </div>--%>
-                        <!-- END MENU -->
                     </div>
                 </div>
                 <div id="contentPane" class="col-md-9">

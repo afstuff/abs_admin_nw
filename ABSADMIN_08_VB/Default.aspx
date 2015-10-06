@@ -29,13 +29,13 @@
                 //var errorText = response.responseText;
                 var errorText = response.responseText;
 
-                alert('Error!!!' + '\n\n' + errorText);
+                alert('Error!!!' + '\n\n' + 'Invalid user details!');
                 hidePleaseWait();
             }
 
             function onFailure(response) {
                 //debugger;
-                alert('Failure!!!' + '<br/>' + response.reponseText);
+                alert('Failure!!!' + '<br/>' + 'Login failed, contact the admin!');
                 hidePleaseWait();
             }
 
@@ -194,7 +194,7 @@
                     </div>
                     <!-- /form -->
                     <a href="#" class="forgot-password pull-left">Forgot the password?</a>
-                    <a href="AD_SEC_USER_DETAIL.aspx" class="forgot-password pull-right">Register!</a>
+                    <a href="Register.aspx" class="forgot-password pull-right">Register!</a>
                 </div>
                 <!-- /card-container -->
             </div>

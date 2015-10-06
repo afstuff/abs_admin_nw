@@ -1,7 +1,7 @@
 ﻿Imports System.Net.Mail
 Imports CustodianAdmin.Data
 Imports CustodianAdmin.Model
-Imports MailMessage = System.Web.Mail.MailMessage
+'Imports MailMessage = System.Web.Mail.MailMessage
 
 Public Class Register
     Inherits System.Web.UI.Page
@@ -366,23 +366,7 @@ Public Class Register
         lblMessage.Text = "Status: New Entry..."
     End Sub
 
-    Public Sub SendSimpleMail()
-
-        'Dim Message As New Mail.MailMessage()
-        Dim Message As MailMessage = New MailMessage()
-        Message.To = "@gmail.com"
-        Message.Subject = "test"
-        Message.Body = "<h3>Congratulations!!!</h3><br/><br/>You have been successfully registered.<br/><br/>Your account will be activated by the admin officer!"
-
-        Dim client As New SmtpClient()
-
-        Try
-            client.Send(Message)
-        Catch ex As Exception
-            ' ...
-        End Try
-
-    End Sub
+   
 
 
 End Class
