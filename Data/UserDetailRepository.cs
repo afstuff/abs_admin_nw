@@ -102,5 +102,42 @@ namespace CustodianAdmin.Data
             }
         }
 
+
+        //get secret phrase
+        public UserDetail GetBySecretPhrase(string _loginName, string _secretPhrase)
+        {
+            using (var session = GetSession())
+            {
+                return session.CreateCriteria<UserDetail>().List<UserDetail>().FirstOrDefault(c => c.User_Login == _loginName && c.User_SecretPhrase == _secretPhrase);
+
+            }
+        }
+
+        public void UpdateUserPassword(string _loginName, string _secretPhrase)
+        {
+            using (var session = GetSession())
+            {
+                using (var trans = session.BeginTransaction())
+                {
+                    UserDetail sUserDetail = GetByLoginName(_loginName);
+                    if (sUserDetail != null)
+                    {
+
+                        sUserDetail.User_Password = _secretPhrase;
+
+                        //sUserDetail.User_Last_Pword_change = saveObj.User_Last_Pword_change;
+                        //sUserDetail.User_Last_Login_Date = saveObj.User_Last_Login_Date;
+                        //sUserDetail.User_FlagID = saveObj.User_FlagID;
+
+                        session.FlushMode = FlushMode.Commit;
+                        session.SaveOrUpdate(sUserDetail);
+                        trans.Commit();
+                        session.Flush();
+                    }
+                    //}
+                }
+            }
+        }
+
     }
 }

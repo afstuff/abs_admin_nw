@@ -173,6 +173,13 @@ Public Class Register
             Exit Sub
         End If
 
+        strMyVal = RTrim(Me.txtSecretPhrase.Text)
+        If RTrim(strMyVal) = "" Or RTrim(strMyVal) = "*" Then
+            Me.lblMessage.Text = "Missing/Invalid Secret Phrase"
+            FirstMsg = "Javascript:alert('" & Me.lblMessage.Text & "')"
+            Exit Sub
+        End If
+
         strMyVal = RTrim(Me.txtPassword.Text)
         If RTrim(strMyVal) = "" Then
             Me.lblMessage.Text = "Missing/Invalid " & Me.lblPassword.Text
@@ -258,6 +265,7 @@ Public Class Register
 
         uDetail.User_Id = RTrim(Me.txtUserID.Text)
         uDetail.User_Login = RTrim(Me.txtLoginName.Text)
+        uDetail.User_SecretPhrase = RTrim(Me.txtSecretPhrase.Text)
         uDetail.User_Name = RTrim(Me.txtName.Text)
         uDetail.User_ShortName = RTrim(Me.txtShortName.Text)
         uDetail.User_GroupCode = RTrim(Me.txtGroup.Text)
@@ -366,7 +374,7 @@ Public Class Register
         lblMessage.Text = "Status: New Entry..."
     End Sub
 
-   
+
 
 
 End Class

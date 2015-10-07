@@ -6,6 +6,7 @@
     </id>
     <property name="User_Id" column="SEC_USER_ID" length="5" />
     <property name="User_Login" column="SEC_USER_LOGIN" length="50" />
+    <property name="User_SecretPhrase" column="SEC_SECRET_PHRASE" length="50" />
     <property name="User_Name" column="SEC_USER_NAME" length="200" />
     <property name="User_ShortName" column="SEC_USER_SHRT_NAME" length="20" />
     <property name="User_GroupCode" column="SEC_USER_GROUP_CODE" length="15" />

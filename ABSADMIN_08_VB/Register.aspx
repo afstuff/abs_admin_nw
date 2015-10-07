@@ -63,7 +63,7 @@
                                                                 &nbsp;
                                                                 <asp:Button ID="cmdSave" CssClass="cmd_butt" Text="Save Data" runat="server" Visible="false" />
                                                                 <asp:Button ID="cmdSaveN" CssClass="cmd_butt" Text="Save Data" runat="server" OnClientClick="JavaSave_Rtn()" />
-                                                               <%-- &nbsp;</input>&nbsp;--%>
+                                                                <%-- &nbsp;</input>&nbsp;--%>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -137,7 +137,7 @@
                                                         <tr id="BranchRow">
                                                             <td align="right" valign="top">
                                                                 <asp:Label ID="lblBraNum" Text="Branch:" runat="server"></asp:Label>&nbsp;</td>
-                                                            <td valign="top">&nbsp;<asp:TextBox ID="txtBranch" runat="server" EnableViewState="true" MaxLength="39" Width="400px"></asp:TextBox>
+                                                            <td valign="top"><asp:TextBox ID="txtBranch" runat="server" EnableViewState="true" MaxLength="39" Width="400px"></asp:TextBox>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -199,6 +199,15 @@
                                                             </td>
                                                             <td valign="top">
                                                                 <asp:TextBox ID="txtConPassword" runat="server" EnableViewState="true" MaxLength="11" TextMode="Password" Width="200px"></asp:TextBox>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr id="DeptRow">
+                                                            <td align="right" valign="top">
+                                                                Enter Secret Phrase/Word:</td>
+                                                            <td valign="top">
+                                                                <asp:TextBox ID="txtSecretPhrase" runat="server" EnableViewState="true" MaxLength="11" TextMode="Password" Width="310px"></asp:TextBox>
+                                                                <asp:Label ID="lblPassword0" runat="server" Text="(6 min character)"></asp:Label>
                                                             </td>
                                                         </tr>
 

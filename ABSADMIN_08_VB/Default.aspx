@@ -193,7 +193,7 @@
                         <button id="loginBtn" class="btn btn-lg btn-info btn-block btn-signin">Sign in</button>
                     </div>
                     <!-- /form -->
-                    <a href="#" class="forgot-password pull-left">Forgot the password?</a>
+                    <a href="forgotpassword.aspx" class="forgot-password pull-left">Forgot the password?</a>
                     <a href="Register.aspx" class="forgot-password pull-right">Register!</a>
                 </div>
                 <!-- /card-container -->

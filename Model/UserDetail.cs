@@ -10,6 +10,7 @@ namespace CustodianAdmin.Model
         public virtual int? User_RecId { get; set; }
         public virtual int User_Id { get; set; }
         public virtual string User_Login { get; set; }
+        public virtual string User_SecretPhrase { get; set; }
         public virtual string User_Name { get; set; }
         public virtual string User_ShortName { get; set; }
         public virtual string User_GroupCode { get; set; }
