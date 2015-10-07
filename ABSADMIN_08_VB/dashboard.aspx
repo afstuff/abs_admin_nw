@@ -99,7 +99,7 @@
 
                         <div class="menuItemDiv" align="center" id="mot">
                             <a href="MotorVehicle.aspx">
-                                <img src="imgs/moto.png" />
+                                <img src="imgs/car.png" />
                                 <br />
                                 Motor Vehicle(R&amp;M)
                             </a>
