@@ -11,9 +11,9 @@
 	<script type="text/javascript">
 		// calling jquery functions once document is ready
 		$(document).ready(function () {
-			$("#cmbBrokerName").on('focusout', function (e) {
+			$("#<%= cmbBrokerName.ClientID %>").on('focusout', function (e) {
 				e.preventDefault();
-				$("#txtBrokerName").attr("value", $("#cmbBrokerName option:selected").val());
+				$("#<%= txtBrokerName.CLientID %>").attr("value", $("#<%= cmbBrokerName.ClientID %> option:selected").val());
 
 				//    return false;
 			});

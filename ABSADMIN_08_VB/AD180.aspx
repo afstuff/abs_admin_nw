@@ -14,63 +14,60 @@
         $(document).ready(function () {
 
             //screen responds according to selection
-            $("#txtPolicyNo").on('focusout', function (e) {
+            $("#<%= txtPolicyNo.ClientID %>").on('focusout', function (e) {
                 e.preventDefault();
                 //    LoadPolicyInfoObject();
 
             });
 
             //load data into type combo according to selection
-
-            function LoadPolicyInfoObject() {
-                $.ajax({
-                    type: "POST",
-                    url: "AD180.aspx/GetPolicyInformation",
-                    data: JSON.stringify({ _polnum: document.getElementById('txtPolicyNo').value }),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: OnSuccess_LoadPolicyInfoObject,
-                    failure: OnFailure,
-                    error: OnError_LoadPolicyInfoObject
-                });
-                // this avoids page refresh on button click
-                return false;
+            function onErrorLoadPolicyInfoObject(response) {
+                //debugger;
+                alert('Error!: Policy Info does not exist!' + '\n\n');
             }
 
+            function onFailure(response) {
+                //debugger;
+                alert('Failure!!!' + '<br/>' + response.reponseText);
+            }
 
-            function OnSuccess_LoadPolicyInfoObject(response) {
+            function retrievePolicyInfoValues(policyholders) {
+                //debugger;
+                $.each(policyholders, function () {
+                    var policyholder = $(this);
+
+                    $('#<%= txtBrokerName.ClientID %>').val($(this).find("sBrokerName").text());
+                    $('#<%= txtInsurerName.ClientID %>').val($(this).find("sInsuredName").text());
+                    $("#<%= cmbTransType.ClientID %>").val($(this).find("sInsuranceClass").text());
+
+                });
+            }
+
+            function onSuccessLoadPolicyInfoObject(response) {
                 //debugger;
 
                 var xmlDoc = $.parseXML(response.d);
                 var xml = $(xmlDoc);
                 var policyholders = xml.find("Table");
-                retrieve_PolicyInfoValues(policyholders);
+                retrievePolicyInfoValues(policyholders);
 
             }
-            // retrieve the values and
-            function retrieve_PolicyInfoValues(policyholders) {
-                //debugger;
-                $.each(policyholders, function () {
-                    var policyholder = $(this);
 
-                    document.getElementById('txtBrokerName').value = $(this).find("sBrokerName").text();
-                    document.getElementById('txtInsurerName').value = $(this).find("sInsuredName").text();
-                    $("#cmbTransType").val($(this).find("sInsuranceClass").text());
-
+            function loadPolicyInfoObject() {
+                var txtPolicyNo = $("#<%= txtPolicyNo.ClientID %>").Val();
+                $.ajax({
+                    type: "POST",
+                    url: "AD180.aspx/GetPolicyInformation",
+                    data: JSON.stringify({ _polnum: txtPolicyNo }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: onSuccessLoadPolicyInfoObject,
+                    failure: onFailure,
+                    error: onErrorLoadPolicyInfoObject
                 });
-            }
-
-
-            function OnFailure(response) {
-                //debugger;
-                alert('Failure!!!' + '<br/>' + response.reponseText);
-            }
-
-            function OnError_LoadPolicyInfoObject(response) {
-                //debugger;
-                alert('Error!: Policy Info does not exist!' + '\n\n');
-            }
-
+                // this avoids page refresh on button click
+                return false;
+            } // retrieve the values and
         });
     </script>
 </asp:Content>

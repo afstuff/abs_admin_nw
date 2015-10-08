@@ -269,7 +269,8 @@ Public Class Register
         uDetail.User_Name = RTrim(Me.txtName.Text)
         uDetail.User_ShortName = RTrim(Me.txtShortName.Text)
         uDetail.User_GroupCode = RTrim(Me.txtGroup.Text)
-        uDetail.User_Role = LTrim(Me.cboRole.Text)
+        'uDetail.User_Role = LTrim(Me.cboRole.Text)
+        uDetail.User_Role = 0
         uDetail.User_Branch = LTrim(Me.txtBranch.Text)
         uDetail.User_Password = EncryptNew(LTrim(Me.txtPassword.Text))
         uDetail.User_Phone1 = Left(LTrim(Me.txtCustPhone01.Text), 11)

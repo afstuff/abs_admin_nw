@@ -12,19 +12,19 @@
 		// calling jquery functions once document is ready
 		$(document).ready(function () {
 
-			$("#cmbServiceComp").on('focusout', function (e) {
+			$("#<%=cmbServiceComp.ClientID %>").on('focusout', function (e) {
 				e.preventDefault();
-			    $("#txtServiceComp").attr("value", $("#cmbServiceComp option:selected").val());
+				$("#<%=cmbServiceComp.ClientID %>").attr("value", $("#<%=cmbServiceComp.ClientID %> option:selected").val());
 
 			    //    return false;
 			});
 
 
 
-			$("#txtTransRate").on('focusout', function (e) {
+			$("#<%=txtTransRate.ClientID%>").on('focusout', function (e) {
 				e.preventDefault();
 				//document.getElementById("txtTransAmt1").value = $("#txtTransQty").val() * $("#txtTransRate").val();
-				$("#txtTransAmt1").val($("#txtTransQty").val() * $("#txtTransRate").val());
+				$("#<%= txtTransAmt1.ClientID %>").val($("#<%= txtTransQty.ClientID %>").val() * $("#<%=txtTransRate.ClientID%>").val());
 
 
 			});

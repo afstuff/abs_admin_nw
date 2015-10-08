@@ -67,9 +67,9 @@ End Sub
 
 			$("#cmbVehicle").css("left", "-9999em");
 
-			$("#cmbServiceComp").on('focusout', function (e) {
+			$("#<%= cmbServiceComp.ClientID %>").on('focusout', function (e) {
 				e.preventDefault();
-				$("#txtServiceComp").attr("value", $("#cmbServiceComp option:selected").val())
+				$("#<%= txtServiceComp.ClientID %>").attr("value", $("#<%=cmbServiceComp.ClientID %> option:selected").val());
 
 				//    return false;
 			});
@@ -78,11 +78,11 @@ End Sub
 				//debugger;
 				$.each(vehicles, function () {
 					var vehicle = $(this);
-					$("#cmbVehicle").val($(this).find("sItemCode").text())
-					$("#ddlBraNum").val($(this).find("sBranch").text())
-					$("#ddlDeptNum").val($(this).find("sDept").text())
-					document.getElementById('txtUserName').value = $(this).find("sItemDesc").text()
-					document.getElementById('txtVehicleType').value = $(this).find("sTransType").text()
+					$("#<%= cmbVehicle.ClientID %>").val($(this).find("sItemCode").text());
+					$("#<%= ddlBraNum.ClientID %>").val($(this).find("sBranch").text());
+					$("#<%= ddlDeptNum.ClientID %>").val($(this).find("sDept").text());
+					$("#<%= txtUserName.CLientID %>").val($(this).find("sItemDesc").text());
+					$("#<%=txtVehicleType.ClientID %>").val($(this).find("sTransType").text());
 				});
 
 			}
@@ -108,10 +108,11 @@ End Sub
 			}
 
 			function loadVehicleInfoObject() {
+				var txtTransNum = $("<%=txtTransNum.ClientID %>").val();
 				$.ajax({
 					type: "POST",
 					url: "AD130.aspx/GetVehicleInfo",
-					data: JSON.stringify({ _vehicleno: document.getElementById('txtTransNum').value }),
+					data: JSON.stringify({ _vehicleno: txtTransNum }),
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
 					success: onSuccessLoadVehicleInfoObject,
@@ -122,9 +123,9 @@ End Sub
 				return false;
 			}
 
-			$("#txtTransNum").on('focusout', function (e) {
+			$("#<%= txtTransNum.ClientID %>").on('focusout', function (e) {
 				e.preventDefault();
-				if ($("#txtTransNum").val() != "")
+				if ($("#<%= txtTransNum.ClientID %>").val() != "")
 					loadVehicleInfoObject();
 				//return false;
 			}); // retrieve the values for branch
@@ -137,22 +138,22 @@ End Sub
 					contentType: "application/json; charset=utf-8",
 					dataType: "json",
 					success: function (response) {
-						$("#cmbVehicleOwners").empty().append($("<option></option>").val("0").html("Please select"));
+						$("#<%= cmbVehicleOwners.ClientID %>").empty().append($("<option></option>").val("0").html("Please select"));
 						$.each(response.d, function (key, value) {
-							$("#cmbVehicleOwners").append($("<option></option>").val(value.ItemCode).html(value.ItemCode + ' -- ' + value.ItemDesc));
+							$("#<%= cmbVehicleOwners.ClientID %>").append($("<option></option>").val(value.ItemCode).html(value.ItemCode + ' -- ' + value.ItemDesc));
 						});
 					},
 					failure: onFailure,
 					error: onFailure
 				});
 				// this avoids page refresh on button click
-				return false;
-			}
+					return false;
+				}
 
-			$("#cmbVehicleOwners").on('focusout', function (e) {
+			$("#<%= cmbVehicleOwners.ClientID %>").on('focusout', function (e) {
 				e.preventDefault();
-				if ($("#cmbVehicleOwners").val() != "")
-					document.getElementById('txtTransNum').value = $("#cmbVehicleOwners").val();
+				if ($("#<%= cmbVehicleOwners.ClientID %>").val() != "")
+					$("#<%= txtTransNum.ClientID %>").val($("#<%= cmbVehicleOwners.ClientID %>").val());
 				//return false;
 			});
 

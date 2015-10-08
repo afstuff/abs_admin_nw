@@ -10,15 +10,19 @@
     <script type="text/javascript">
         // calling jquery functions once document is ready
         $(document).ready(function () {
-            $("#txtClassCod").css("display", "none");
+            $("#<%= txtClassCod.ClientID %>").css("display", "none");
 
             function retrieveAdminCodeInfoValues(admobjects) {
                 //debugger;
                 $.each(admobjects, function () {
                     var admobject = $(this);
-                    document.getElementById('txtTelUsersName').value = $(this).find("sItemDesc").text();
-                    $('#ddlBraNum').val($(this).find("sBranch").text());
-                    $('#ddlDeptNum').val($(this).find("sDept").text());
+                    //console.log($(this).find("sBranch").text());
+                    var sBranch = $(this).find("sBranch").text();
+                    var sDept = $(this).find("sDept").text();
+                    var sItemDesc = $(this).find("sItemDesc").text();
+                    $('#<%= txtTelUsersName.ClientID %>').val(sItemDesc);
+                    $('#<%= ddlBraNum.ClientID %>').val(sBranch);
+                    $('#<%= ddlDeptNum.ClientID %>').val(sDept);
 
                 });
 
@@ -26,7 +30,8 @@
 
             function onSuccessLoadAdminCode(response) {
                 //debugger;
-
+                //alert("Success");
+                console.log(response);
                 var xmlDoc = $.parseXML(response.d);
                 var xml = $(xmlDoc);
                 var admobjects = xml.find("Table");
@@ -46,17 +51,20 @@
                 var errorText = response.responseText;
 
                 alert('Error! Telephone Does Not Exist ');
-                $('#txtTransNum').focus();
+                $('#<%= txtTransNum.ClientID %>').focus();
 
             }
 
             function loadAdminCode() {
                 var classCode = "006";
+                var txtTransNum = $("#<%=txtTransNum.ClientID %>").val();
+                alert(txtTransNum);
+
                 //alert("This is the class code: " + document.getElementById('txtClassCod').value + " and Item code :" + document.getElementById('txtTransNum').value);
                 $.ajax({
                     type: "POST",
                     url: "AD111.aspx/GetMiscAdminInfo",
-                    data: JSON.stringify({ _classcode: classCode, _itemcode: document.getElementById('txtTransNum').value }),
+                    data: JSON.stringify({ _classcode: classCode, _itemcode: txtTransNum }),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: onSuccessLoadAdminCode,
@@ -67,12 +75,9 @@
                 return false;
             }
 
-            $("#txtTransNum").on('focusout', function (e) {
-                e.preventDefault();
-                if ($("#txtTransNum").val() != "") {
-                    $("#txtClassCod").val("006");
-                    loadAdminCode();
-                }
+            $("#<%= txtTransNum.ClientID %>").on('focusout', function (e) {
+                alert("out");
+                loadAdminCode();
                 return false;
             }); // retrieve the values for branch
 

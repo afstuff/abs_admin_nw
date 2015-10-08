@@ -173,11 +173,6 @@
             generalRefresh();
 
 
-            //$("#cmbCodeClass").change(function (e) {
-            //    e.preventDefault();
-            //    alert("changed!");
-
-            //});
 
         });
 

@@ -97,6 +97,12 @@
 
                 $.each(admobjects, function () {
                     var admobject = $(this);
+                    var uRole = $(this).find("SEC_USER_ROLE").text();
+                    if (uRole == "0") {
+                        alert("User has not been activated, contact admin to activate account!");
+                        return false;
+                    }
+
                     userPage.push({ userRole: $(this).find("SEC_USER_ROLE").text(), userName: $(this).find("SEC_USER_NAME").text() });
 
                     console.log(userPage);
@@ -112,7 +118,7 @@
 
 
                     getUserRolesInfo($(this).find("SEC_USER_ROLE").text());
-
+                    //return false;
                 });
             }
 
