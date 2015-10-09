@@ -28,17 +28,18 @@
                 //debugger;
                 //var errorText = response.responseText;
                 var errorText = response.responseText;
-                $("#returnMsg").html("<h4>Error!!!' + '\n\n' + 'Invalid user details!</h4>");
+                $("#returnMsg").html("<h4>Error!!! <br/>Invalid user details!</h4>");
 
                 //alert('Error!!!' + '\n\n' + 'Invalid user details!');
-                hidePleaseWait();
+                //hidePleaseWait();
             }
 
             function onFailure(response) {
                 //debugger;
-                $("#returnMsg").html("<h4>Failure!!!' + '<br/>' + 'Login failed, contact the admin!</h4>");
+                $("#returnMsg").html("");
+                $("#returnMsg").html("<h4>Failure!!! <br/> Login failed, contact the admin!</h4>");
 //                alert('Failure!!!' + '<br/>' + 'Login failed, contact the admin!');
-                hidePleaseWait();
+               // hidePleaseWait();
             }
 
             function retrieveUserRolenfoValues(admobjects) {
@@ -101,6 +102,7 @@
                     var admobject = $(this);
                     var uRole = $(this).find("SEC_USER_ROLE").text();
                     if (uRole == "0") {
+                        $("#returnMsg").html("");
                         $("#returnMsg").html("<h4>User account has not been activated, contact admin for activation !</h4>");
                         //alert("User has not been activated, contact admin to activate account!");
                         return false;
@@ -161,8 +163,10 @@
                 //alert(inputEmail + " " + inputPassword);
                 if ((inputEmail != null) || inputPassword != null) {
                     showPleaseWait();
+                    $("#returnMsg").html("");
                     doLogin(inputEmail, inputPassword);
                 } else {
+                    $("#returnMsg").html("");
                     $("#returnMsg").html("<h4>Login fields cannot be empty!</h4>");
 
                     //alert("Login fields cannot be empty!");
