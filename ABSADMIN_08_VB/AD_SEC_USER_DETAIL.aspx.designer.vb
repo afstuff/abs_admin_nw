@@ -365,6 +365,15 @@ Partial Public Class AD_SEC_USER_DETAIL
     Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''txtPassword0 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtPassword0 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''lblConPassword control.
     '''</summary>
     '''<remarks>

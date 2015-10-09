@@ -281,7 +281,7 @@
 					<tr id="BranchRow">
 						<td align="right" valign="top">
 							<asp:Label ID="lblBraNum" Text="Branch:" runat="server"></asp:Label>&nbsp;</td>
-						<td valign="top">&nbsp;<asp:TextBox ID="txtBranch" runat="server" EnableViewState="true" MaxLength="39" Width="400px"></asp:TextBox>
+						<td valign="top"><asp:TextBox ID="txtBranch" runat="server" EnableViewState="true" MaxLength="39" Width="400px"></asp:TextBox>
 						</td>
 					</tr>
 					<tr>
@@ -334,6 +334,7 @@
 						</td>
 						<td valign="top">
 							<asp:TextBox ID="txtPassword" runat="server" EnableViewState="true" MaxLength="11" TextMode="Password" Width="200px"></asp:TextBox>
+							<asp:TextBox ID="txtPassword0" runat="server" EnableViewState="true" MaxLength="11" Width="200px" Visible="False"></asp:TextBox>
 						</td>
 					</tr>
 

@@ -16,9 +16,45 @@ Public Class AD_SEC_USER_DETAIL
     Dim strOption As String
     Dim strErrMsg As String
 
+    Public Sub GetUserRoleValue(ByVal rId As Int32)
+        Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
+        Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+        For Each dr As DataRow In dt.Rows
+            If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
+                cmdDelN.Visible = False
+            End If
+            GoTo checkIfPrint
+        Next
+
+checkIfPrint:
+        For Each dr1 As DataRow In dt.Rows
+            If ((dr1("ADM_Menu_Position") = "1.3" Or dr1("ADM_Menu_Position") = "2.3" Or dr1("ADM_Menu_Position") = "3.3" Or dr1("ADM_Menu_Position") = "4.3" Or dr1("ADM_Menu_Position") = "5.3" Or dr1("ADM_Menu_Position") = "6.3" Or dr1("ADM_Menu_Position") = "7.3") And (dr1("ADM_Option_Print") = 0)) Then
+                cmdPrint.Visible = False
+            End If
+
+        Next
+
+    End Sub
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Me.txtUserID.Text = RTrim("001")
         If Not Page.IsPostBack Then
+
+            If Session("roleInfoDt") IsNot Nothing Then
+                Dim roleId As Int32
+                Dim roleInfo As DataTable = Session("roleInfoDt")
+                For Each dr As DataRow In roleInfo.Rows
+                    roleId = dr("SEC_USER_ROLE").ToString()
+                    if roleId = 3
+                        response.redirect("default.aspx")
+                    End If
+                    GetUserRoleValue(roleId)
+                Next
+            Else
+                Response.Redirect("default.aspx")
+            End If
+
+
             'udRepo = New UserDetailRepository
             ' Session("udRepo") = udRepo
             updateFlag = False
@@ -266,14 +302,14 @@ Public Class AD_SEC_USER_DETAIL
         End If
 
         strMyVal = RTrim(Me.txtPassword.Text)
-        If RTrim(strMyVal) = "" Then
+        If RTrim(strMyVal) = "" and (txtPassword0.text="") Then
             Me.lblMessage.Text = "Missing/Invalid " & Me.lblPassword.Text
             FirstMsg = "Javascript:alert('" & Me.lblMessage.Text & "')"
             Exit Sub
         End If
 
         strMyVal = RTrim(Me.txtConPassword.Text)
-        If RTrim(strMyVal) = "" Then
+        If RTrim(strMyVal) = "" and (txtPassword0.text="") Then
             Me.lblMessage.Text = "Missing/Invalid " & Me.lblConPassword.Text
             FirstMsg = "Javascript:alert('" & Me.lblMessage.Text & "')"
             Exit Sub
@@ -380,7 +416,13 @@ Public Class AD_SEC_USER_DETAIL
             uDetail.User_GroupCode = RTrim(Me.txtGroup.Text)
             uDetail.User_Role = LTrim(Me.cboRole.Text)
             uDetail.User_Branch = LTrim(Me.txtBranch.Text)
-            uDetail.User_Password = EncryptNew(LTrim(Me.txtPassword.Text))
+
+            If (LTrim(Me.txtPassword.Text = "")) Then
+                uDetail.User_Password = EncryptNew(LTrim(Me.txtPassword0.Text))
+            Else
+                uDetail.User_Password = EncryptNew(LTrim(Me.txtPassword.Text))
+            End If
+            
             uDetail.User_Phone1 = Left(LTrim(Me.txtCustPhone01.Text), 11)
             uDetail.User_Phone2 = Left(LTrim(Me.txtCustPhone02.Text), 11)
             uDetail.User_Email1 = Left(LTrim(Me.txtCustEmail01.Text), 49)
@@ -550,7 +592,7 @@ Public Class AD_SEC_USER_DETAIL
             Me.txtCustPhone02.Text = search.User_Phone2
             Me.txtCustEmail01.Text = search.User_Email1
             Me.txtCustEmail02.Text = search.User_Email2
-
+            txtPassword0.Text = DecryptNew(search.User_Password)
 
             Me.txtGroup.Text = search.User_GroupCode
 

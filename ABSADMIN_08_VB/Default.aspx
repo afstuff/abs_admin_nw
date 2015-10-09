@@ -28,14 +28,16 @@
                 //debugger;
                 //var errorText = response.responseText;
                 var errorText = response.responseText;
+                $("#returnMsg").html("<h4>Error!!!' + '\n\n' + 'Invalid user details!</h4>");
 
-                alert('Error!!!' + '\n\n' + 'Invalid user details!');
+                //alert('Error!!!' + '\n\n' + 'Invalid user details!');
                 hidePleaseWait();
             }
 
             function onFailure(response) {
                 //debugger;
-                alert('Failure!!!' + '<br/>' + 'Login failed, contact the admin!');
+                $("#returnMsg").html("<h4>Failure!!!' + '<br/>' + 'Login failed, contact the admin!</h4>");
+//                alert('Failure!!!' + '<br/>' + 'Login failed, contact the admin!');
                 hidePleaseWait();
             }
 
@@ -99,7 +101,8 @@
                     var admobject = $(this);
                     var uRole = $(this).find("SEC_USER_ROLE").text();
                     if (uRole == "0") {
-                        alert("User has not been activated, contact admin to activate account!");
+                        $("#returnMsg").html("<h4>User account has not been activated, contact admin for activation !</h4>");
+                        //alert("User has not been activated, contact admin to activate account!");
                         return false;
                     }
 
@@ -160,7 +163,9 @@
                     showPleaseWait();
                     doLogin(inputEmail, inputPassword);
                 } else {
-                    alert("Login fields cannot be empty!");
+                    $("#returnMsg").html("<h4>Login fields cannot be empty!</h4>");
+
+                    //alert("Login fields cannot be empty!");
                 }
 
                 //var pleaseWait = $('#pleaseWaitDialog');
@@ -215,6 +220,7 @@
                         <span style="font-family: 'century-gothic'; font-size: 20pt; font-weight: bold;">Processing login...</span>
                     </div>
                     <div class="modal-body">
+                        <span id="returnMsg"></span>
                         <div class="progress">
                             <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
                                 <%--<span class="sr-only">40% Complete (success)</span>--%>
