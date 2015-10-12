@@ -43,20 +43,22 @@ Public Class _Default
 
 
     <System.Web.Services.WebMethod()> _
-    Public Shared Function GetUserRolesInfo(ByVal roleId As Integer) As String
-        Dim roleinfo As String = String.Empty
+    Public Sub GetUserRolesInfoDt(ByVal roleId As Integer)
+        Dim permInfoDt As DataTable = Nothing
         'Dim crit As String = 
 
         Try
-            roleinfo = acRepo.GeUserRoleInfo(roleId)
-            Return roleinfo
+            permInfoDt = acRepo.GeUserRoleInfoDt(roleId)
+            Dim ctx As HttpContext = System.Web.HttpContext.Current
+            ctx.Session("permInfoDt") = permInfoDt
+
         Finally
-            If roleinfo = "<NewDataSet />" Then
-                Throw New Exception()
-            End If
+            'If permInfo = "<NewDataSet />" Then
+            '    Throw New Exception()
+            'End If
         End Try
 
-    End Function
+    End Sub
 
 
     Public Shared Function EncryptNew(ByVal icText As String) As String
@@ -103,6 +105,15 @@ Public Class _Default
             Dim ctx As HttpContext = System.Web.HttpContext.Current
             ctx.Session("roleInfoDt") = roleInfoDt
 
+            For Each dr As DataRow In roleInfoDt.Rows
+                Dim roleId = dr("SEC_USER_ROLE").ToString()
+                Dim permInfoDt = acRepo.GeUserRoleInfoDt(roleId)
+                'Dim ctx As HttpContext = System.Web.HttpContext.Current
+                ctx.Session("permInfoDt") = permInfoDt
+            Next
+
+
+
             Return roleinfo
         Finally
             If roleinfo = "<NewDataSet />" Then
@@ -111,5 +122,27 @@ Public Class _Default
         End Try
 
     End Function
+
+
+    Public Sub GetRolePermission(ByVal roleId As Int32)
+
+        Dim roleInfoDt As DataTable = Nothing
+        If Session("roleInfoDt") Is Nothing Then
+            Response.Redirect("default.aspx")
+        End If
+        roleInfoDt = Session("roleInfoDt")
+        Try
+            For Each dr As DataRow In roleInfoDt.Rows
+                roleId = dr("SEC_USER_ROLE").ToString()
+                Dim permInfoDt = acRepo.GeUserRoleInfoDt(roleId)
+                Dim ctx As HttpContext = System.Web.HttpContext.Current
+                ctx.Session("permInfoDt") = permInfoDt
+            Next
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
 
 End Class

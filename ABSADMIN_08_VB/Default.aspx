@@ -110,19 +110,19 @@
 
                     userPage.push({ userRole: $(this).find("SEC_USER_ROLE").text(), userName: $(this).find("SEC_USER_NAME").text() });
 
-                    console.log(userPage);
+                    //console.log(userPage);
 
                     // Encode the String
                     var eString = JSON.stringify(userPage);
-                    console.log(eString);
+                    //console.log(eString);
                     sessionStorage.setItem("userRole", "");
                     sessionStorage.setItem("userRole", eString);
 
                     //move to next page
-                    //window.location.href = "dashboard.aspx";
+                    window.location.href = "dashboard.aspx";
 
 
-                    getUserRolesInfo($(this).find("SEC_USER_ROLE").text());
+                    //getUserRolesInfo($(this).find("SEC_USER_ROLE").text());
                     //return false;
                 });
             }

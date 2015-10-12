@@ -25,9 +25,10 @@ Public Class AD180
 
     End Sub
 
-    Public Sub GetUserRoleValue(ByVal rId As Int32)
-        Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
-        Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+    Public Sub GetUserRoleValue()
+        'Dim acRepo As AdminPermissionsRepository = New AdminPermissionsRepository
+        'Dim dt As DataTable = acRepo.GeUserRoleInfoDt(rId)
+        Dim dt As DataTable = Session("permInfoDt")
         For Each dr As DataRow In dt.Rows
             If ((dr("ADM_Menu_Position") = "1.2" Or dr("ADM_Menu_Position") = "2.2" Or dr("ADM_Menu_Position") = "3.2" Or dr("ADM_Menu_Position") = "4.2" Or dr("ADM_Menu_Position") = "5.2" Or dr("ADM_Menu_Position") = "6.2" Or dr("ADM_Menu_Position") = "7.2") And (dr("ADM_Option_Delete") = 0)) Then
                 cmdDelN.Visible = False
@@ -52,7 +53,7 @@ Public Class AD180
                 Dim roleInfo As DataTable = Session("roleInfoDt")
                 For Each dr As DataRow In roleInfo.Rows
                     roleId = dr("SEC_USER_ROLE").ToString()
-                    GetUserRoleValue(roleId)
+                    GetUserRoleValue()
                 Next
             Else
                 Response.Redirect("default.aspx")

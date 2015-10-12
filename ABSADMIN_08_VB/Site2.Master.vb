@@ -7,12 +7,12 @@ Public Class Site2
         If Session("roleInfoDt") Is Nothing Then
             Response.Redirect("default.aspx")
         End If
-        Dim roleId As Int32
-        Dim roleInfo As DataTable = Session("roleInfoDt")
-        For Each dr As DataRow In roleInfo.Rows
-            roleId = dr("SEC_USER_ROLE").ToString()
-            GetUserRoleValue(roleId)
-        Next
+        'Dim roleId As Int32
+        'Dim roleInfo As DataTable = Session("roleInfoDt")
+        'For Each dr As DataRow In roleInfo.Rows
+        '    roleId = dr("SEC_USER_ROLE").ToString()
+        '    GetUserRoleValue(roleId)
+        'Next
     End Sub
 
     Private Sub GetUserRoleValue(ByVal rId As Int32)
