@@ -1,16 +1,18 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="AD130.aspx.vb" Inherits="ABSADMIN_08_VB.AD130" %>
+﻿<%@ Page Title="" Language="vb" EnableEventValidation="false" AutoEventWireup="false" MasterPageFile="~/Site3.Master" CodeBehind="AD130.aspx.vb" Inherits="ABSADMIN_08_VB.AD130" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+	<link rel="stylesheet" href="Content/calendar.css" />
 	<link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
-	<%--<script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>--%>
 	<script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
+	<script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
+	<script type="text/javascript" src="Scripts/ScriptJS.js"></script>
 
-	<script type="text/javascript" src="Scripts/ScriptJS.js">
-	</script>
+	<%--</script>--%>
 
 	<script type="text/vbscript">
 	
-	Sub cmdDelete_ASP_OnClick()
+	Sub cmdDelete_ASP_OnClick() 'cmdDelItem_ASP
 	Dim P : P = 0
 	for each V in Form1.elements
 		if V.id = "cmdDelete_ASP" then
@@ -67,7 +69,7 @@ End Sub
 
 			$("#cmbVehicle").css("left", "-9999em");
 
-			$("#<%= cmbServiceComp.ClientID %>").on('focusout', function (e) {
+			$("#<%= cmbServiceComp.ClientID %>").on('change', function (e) {
 				e.preventDefault();
 				$("#<%= txtServiceComp.ClientID %>").attr("value", $("#<%=cmbServiceComp.ClientID %> option:selected").val());
 
@@ -123,7 +125,7 @@ End Sub
 				return false;
 			}
 
-			$("#<%= txtTransNum.ClientID %>").on('focusout', function (e) {
+			$("#<%= txtTransNum.ClientID %>").on('change', function (e) {
 				e.preventDefault();
 				if ($("#<%= txtTransNum.ClientID %>").val() != "")
 					loadVehicleInfoObject();
@@ -150,7 +152,7 @@ End Sub
 					return false;
 				}
 
-			$("#<%= cmbVehicleOwners.ClientID %>").on('focusout', function (e) {
+			$("#<%= cmbVehicleOwners.ClientID %>").on('change', function (e) {
 				e.preventDefault();
 				if ($("#<%= cmbVehicleOwners.ClientID %>").val() != "")
 					$("#<%= txtTransNum.ClientID %>").val($("#<%= cmbVehicleOwners.ClientID %>").val());
@@ -320,7 +322,8 @@ End Sub
 						<td align="left" colspan="4" valign="top" class="tbl_caption">Transaction Details</td>
 					</tr>
 					<tr>
-						<td align="left" colspan="4" valign="top" style="background-color: #ccccee; height: 26px">&nbsp;&nbsp;<asp:Button ID="cmdDelItem_ASP" Enabled="true" Font-Bold="true" Text="Delete Item" runat="server" />
+						<td align="left" colspan="4" valign="top" style="background-color: #ccccee; height: 26px">&nbsp;&nbsp;
+							<asp:Button ID="cmdDelItem_ASP" Enabled="true" Font-Bold="true" Text="Delete Item" runat="server" />
 							&nbsp;&nbsp;<asp:Button ID="cmdDelItem" Enabled="false" Font-Bold="true" Visible="false" Text="Delete Item" runat="server" />
 							<asp:GridView ID="grdData" Font-Size="Small" BackColor="White" BorderColor="Silver" BorderStyle="Solid" runat="server"
 								HorizontalAlign="Left" DataSourceID="ods"

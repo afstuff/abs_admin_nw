@@ -360,4 +360,24 @@ Public Class AD130
 
     End Sub
 
+    'Protected Sub cmdDelItem_ASP_Click(sender As Object, e As EventArgs) Handles cmdDelItem_ASP.Click
+    '    For Each grow As GridViewRow In grdData.Rows
+    '        'Searching CheckBox("chkDel") in an individual row of Grid  
+    '        Dim chkdel As CheckBox = DirectCast(grow.FindControl("chkDel"), CheckBox)
+    '        'If CheckBox is checked than delete the record with particular empid  
+    '        If chkdel.Checked Then
+    '            Dim recId As Integer = Convert.ToInt32(grow.Cells(1).Text)
+    '            DeleteRecord(recId)
+    '        End If
+    '    Next
+    'End Sub
+
+
+    Sub DeleteRecord(ByVal recId As Integer)
+
+    End Sub
+
+
+
+
 End Class

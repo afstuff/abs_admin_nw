@@ -58,7 +58,7 @@
             function loadAdminCode() {
                 var classCode = "006";
                 var txtTransNum = $("#<%=txtTransNum.ClientID %>").val();
-                alert(txtTransNum);
+                //alert(txtTransNum);
 
                 //alert("This is the class code: " + document.getElementById('txtClassCod').value + " and Item code :" + document.getElementById('txtTransNum').value);
                 $.ajax({
@@ -75,8 +75,8 @@
                 return false;
             }
 
-            $("#<%= txtTransNum.ClientID %>").on('focusout', function (e) {
-                alert("out");
+            $("#<%= txtTransNum.ClientID %>").on('change', function (e) {
+                //alert("out");
                 loadAdminCode();
                 return false;
             }); // retrieve the values for branch

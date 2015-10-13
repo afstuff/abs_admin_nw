@@ -167,7 +167,7 @@
                     doLogin(inputEmail, inputPassword);
                 } else {
                     $("#returnMsg").html("");
-                    $("#returnMsg").html("<h4>Login fields cannot be empty!<br/><br/>Click screen to try again!</h4>");
+                    $("#returnMsg").html("<h4>Login fields cannot be empty.<br/><br/>Click screen to try again!</h4>");
 
                     //alert("Login fields cannot be empty!");
                 }
