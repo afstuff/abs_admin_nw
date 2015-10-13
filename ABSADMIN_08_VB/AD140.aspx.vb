@@ -23,8 +23,8 @@ Public Class AD140
             MasterPageFile = "~/Site2.master"
         ElseIf (strKey1 = "pro") Then
             MasterPageFile = "~/Site4.master"
-            'ElseIf (strKey = "002") Then
-            '    MasterPageFile = "~/Site4.master"
+        ElseIf (strKey1 = "bra") Then
+            MasterPageFile = "~/Site5.master"
             'ElseIf (strKey = "005") Then
             '    MasterPageFile = "~/Site4.master"
         Else

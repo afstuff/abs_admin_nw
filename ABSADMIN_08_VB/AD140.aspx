@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="Codes Setup ::Service Bill" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site2.Master" CodeBehind="AD140.aspx.vb" Inherits="ABSADMIN_08_VB.AD140" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+	<link rel="stylesheet" href="Content/calendar.css" />
 	<link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
 	<script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
+	<script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
+	<script type="text/javascript" src="Scripts/ScriptJS.js"></script>
 
-	<script type="text/javascript" src="Scripts/ScriptJS.js">
-	</script>
 
 	<script type="text/vbscript">
 	
@@ -55,105 +56,20 @@ Sub cmdDelItem_ASP_OnClick()
 End Sub
 
 	</script>
+
 	<script type="text/javascript">
 		// calling jquery functions once document is ready
 		$(document).ready(function () {
-			$("#<%= ddlServiceComp.ClientID %>").on('focusout', function (e) {
-				e.preventDefault();
-				$("#<%= txtServiceComp.ClientID %>").attr("value", $("#ddlServiceComp option:selected").val());
+			//test jqr
+			//alert("page loade!");
 
-				//    return false;
-			});
 
-			function retrieveVehicleInfoValues(vehicles) {
-				//debugger;
-				$.each(vehicles, function () {
-					var vehicle = $(this);
-					$("#cmbVehicle").val($(this).find("sItemCode").text());
-					$("#<%= ddlBraNum.ClientID %>").val($(this).find("sBranch").text());
-					$("#<%= ddlDeptNum.ClientID %>").val($(this).find("sDept").text());
-					document.getElementById('txtUserName').value = $(this).find("sItemDesc").text();
-					document.getElementById('txtVehicleType').value = $(this).find("sTransType").text();
-				});
-
-			}
-
-			function onSuccessLoadVehicleInfoObject(response) {
-				//debugger;
-
-				var xmlDoc = $.parseXML(response.d);
-				var xml = $(xmlDoc);
-				var vehicles = xml.find("Table");
-				retrieveVehicleInfoValues(vehicles);
-
-			}
-
-			function onFailure(response) {
-				//debugger;
-				alert('Failure!!!' + '<br/>' + response.reponseText);
-			}
-
-			function onErrorLoadVehicleInfoObject(response) {
-				//debugger;
-				alert('Error! Vehicle Does Not Exist');
-			}
-
-			function loadVehicleInfoObject() {
-				var txtTransNum = $("<%= txtTransNum.ClientID %>").val();
-				$.ajax({
-					type: "POST",
-					url: "AD130.aspx/GetVehicleInfo",
-					data: JSON.stringify({ _vehicleno: txtTransNum }),
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					success: onSuccessLoadVehicleInfoObject,
-					failure: onFailure,
-					error: onErrorLoadVehicleInfoObject
-				});
-				// this avoids page refresh on button click
-				return false;
-			}
-
-			$("#<%= txtTransNum.ClientID %>").on('focusout', function (e) {
-				e.preventDefault();
-				if ($("#<%= txtTransNum.ClientID %>").val() != "")
-					loadVehicleInfoObject();
-				//return false;
-			}); // retrieve the values for branch
-			// ajax call to load motor types information
-			function loadVehicleOwnersFromClientSide() {
-				$.ajax({
-					type: "POST",
-					url: "AD130.aspx/GetVehicleAndOwners",
-					data: "{}",
-					contentType: "application/json; charset=utf-8",
-					dataType: "json",
-					success: function (response) {
-						$("#cmbVehicleOwners").empty().append($("<option></option>").val("0").html("Please select"));
-						$.each(response.d, function (key, value) {
-							$("#cmbVehicleOwners").append($("<option></option>").val(value.ItemCode).html(value.ItemCode + ' -- ' + value.ItemDesc));
-						});
-					},
-					failure: onFailure,
-					error: onFailure
-				});
-				// this avoids page refresh on button click
-				return false;
-			}
-
-			$("#cmbVehicleOwners").on('focusout', function (e) {
-				e.preventDefault();
-				if ($("#cmbVehicleOwners").val() != "")
-					document.getElementById('txtTransNum').value = $("#cmbVehicleOwners").val();
-				//return false;
-			});
-
-			loadVehicleOwnersFromClientSide();
 
 			//$('#branch-line').hide();
 			$('#dept-line').hide();
-			$('#transid-line').hide();
+			$("#transid-line").hide();
 			$("#service_coy_line").hide();
+
 
 		});     //End of JQuery Document ready 
 	</script>
@@ -263,7 +179,8 @@ End Sub
 						<td align="right" valign="top">
 							<asp:Label ID="lblTransAmt" Text="Amount =N=:" runat="server"></asp:Label>&nbsp;</td>
 						<td valign="top">
-							<asp:TextBox ID="txtTransAmt" MaxLength="15" runat="server"></asp:TextBox>&nbsp;</td>
+							<asp:TextBox ID="txtTransAmt" MaxLength="15" runat="server"></asp:TextBox>&nbsp;
+						</td>
 					</tr>
 					<tr>
 						<td align="right" valign="top">
