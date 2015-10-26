@@ -2,9 +2,9 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<link rel="stylesheet" href="Content/calendar.css" />
+	<%--<link rel="stylesheet" href="Content/calendar.css" />--%>
 	<link rel="stylesheet" type="text/css" href="Content/StyleAdmin.css" />
-	<script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>
+	<%--<script src="Scripts/jquery.simplemodal.js" type="text/javascript"></script>--%>
 	<script src="Scripts/jquery-1.11.0.js" type="text/javascript"></script>
 	<script type="text/javascript" src="Scripts/ScriptJS.js"></script>
 
@@ -81,7 +81,7 @@ End Sub
 				$.each(vehicles, function () {
 					var vehicle = $(this);
 					$("#<%= cmbVehicle.ClientID %>").val($(this).find("sItemCode").text());
-					$("#<%= ddlBraNum.ClientID %>").val($(this).find("sBranch").text());
+				    $("#<%= ddlBraNum.ClientID %>").val($(this).find("sBranch").text()); 
 					$("#<%= ddlDeptNum.ClientID %>").val($(this).find("sDept").text());
 					$("#<%= txtUserName.CLientID %>").val($(this).find("sItemDesc").text());
 					$("#<%=txtVehicleType.ClientID %>").val($(this).find("sTransType").text());
@@ -106,11 +106,13 @@ End Sub
 
 			function onErrorLoadVehicleInfoObject(response) {
 				//debugger;
+			    console.log(response);
 				alert('Error! Vehicle Does Not Exist');
 			}
 
 			function loadVehicleInfoObject() {
-				var txtTransNum = $("<%=txtTransNum.ClientID %>").val();
+			    var txtTransNum = $("#<%=txtTransNum.ClientID %>").val();
+			    //alert($("#<%=txtTransNum.ClientID %>").val());
 				$.ajax({
 					type: "POST",
 					url: "AD130.aspx/GetVehicleInfo",
@@ -125,9 +127,9 @@ End Sub
 				return false;
 			}
 
-			$("#<%= txtTransNum.ClientID %>").on('change', function (e) {
+			$("#<%= txtTransNum.ClientID %>").on('blur', function (e) {
 				e.preventDefault();
-				if ($("#<%= txtTransNum.ClientID %>").val() != "")
+				if ($("#<%= txtTransNum.ClientID %>").val() !== "")
 					loadVehicleInfoObject();
 				//return false;
 			}); // retrieve the values for branch
@@ -154,7 +156,7 @@ End Sub
 
 			$("#<%= cmbVehicleOwners.ClientID %>").on('change', function (e) {
 				e.preventDefault();
-				if ($("#<%= cmbVehicleOwners.ClientID %>").val() != "")
+				if ($("#<%= cmbVehicleOwners.ClientID %>").val() !== "")
 					$("#<%= txtTransNum.ClientID %>").val($("#<%= cmbVehicleOwners.ClientID %>").val());
 				//return false;
 			});

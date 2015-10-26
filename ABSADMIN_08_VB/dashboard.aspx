@@ -25,7 +25,7 @@
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->
                         <div class="profile-usertitle">
-                            <div class="profile-usertitle-name">
+                            <div class="profile-usertitle-name" id="profileName">
                                 ABS USER
                             </div>
                             <div class="profile-usertitle-job">

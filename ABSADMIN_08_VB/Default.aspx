@@ -7,13 +7,84 @@
     <title>ABS ADMIN ::Sign In</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/StyleSheet1.css" rel="stylesheet" />
+
     <script src="Scripts/jquery-1.9.1.js"></script>
     <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/JavaScript1.js"></script>
+    <%--<script src="Scripts/JavaScript1.js"></script>--%>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="container" align="center" style="left: 20%!important; right: 20% !important; width: 60% !important; background-color: white !important;">
+                <h1 style="font-weight: bold; font-family: century gothic;">ABS ADMIN
+                </h1>
+            </div>
+            <div class="container" style="margin-top: 5px !important;">
+                <div class="card card-container">
+                    <img id="profile-img" class="profile-img-card" src="imgs/User-icon.png" />
+                    <p id="profile-name" class="profile-name-card"></p>
+                    <div class="form-signin">
+                        <span id="reauth-email" class="reauth-email"></span>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" autocomplete="on" required autofocus>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <div id="remember" class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me">
+                                Remember me
+                            </label>
+                        </div>
+                        <button id="loginBtn" class="btn btn-lg btn-info btn-block btn-signin">Sign in</button>
+                    </div>
+                    <!-- /form -->
+                    <a href="forgotpassword.aspx" class="forgot-password pull-left">Forgot the password?</a>
+                    <a href="Register.aspx" class="forgot-password pull-right">Register!</a>
+                </div>
+                <!-- /card-container -->
+            </div>
+            <!-- /container -->
+        </div>
+
+        <!-- Modal start -->
+        <div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span style="font-family: 'century-gothic'; font-size: 20pt; font-weight: bold;">Processing login...</span>
+                    </div>
+                    <div class="modal-body">
+                        <span id="returnMsg"></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                <%--<span class="sr-only">40% Complete (success)</span>--%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal ends -->
+
+        <footer>
+            <div class="container">
+                <hr />
+                <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;<%= Now.Year %> - Afrik Business Software
+                </span>
+                <span class="pull-right" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">Custodian And Allied Insurance Plc.
+                </span>
+            </div>
+
+        </footer>
+    </form>
+
+
+
 
     <script>
         //function to do on page load
         $(function () {
+            sessionStorage.clear();
+
 
             //define the processing modal
             var pleaseWait = $('#pleaseWaitDialog');
@@ -38,8 +109,8 @@
                 //debugger;
                 $("#returnMsg").html("");
                 $("#returnMsg").html("<h4>Failure!!! <br/> Login failed, contact the admin!<br/><br/>Click screen to try again!</h4>");
-//                alert('Failure!!!' + '<br/>' + 'Login failed, contact the admin!');
-               // hidePleaseWait();
+                //                alert('Failure!!!' + '<br/>' + 'Login failed, contact the admin!');
+                // hidePleaseWait();
             }
 
             function retrieveUserRolenfoValues(admobjects) {
@@ -182,70 +253,5 @@
         })
 
     </script>
-
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <div class="container" align="center" style="left: 20%!important; right: 20% !important; width: 60% !important; background-color: white !important;">
-                <h1 style="font-weight: bold; font-family: century gothic;">ABS ADMIN
-                </h1>
-            </div>
-            <div class="container" style="margin-top: 5px !important;">
-                <div class="card card-container">
-                    <img id="profile-img" class="profile-img-card" src="imgs/User-icon.png" />
-                    <p id="profile-name" class="profile-name-card"></p>
-                    <div class="form-signin">
-                        <span id="reauth-email" class="reauth-email"></span>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                        <div id="remember" class="checkbox">
-                            <label>
-                                <input type="checkbox" value="remember-me">
-                                Remember me
-                            </label>
-                        </div>
-                        <button id="loginBtn" class="btn btn-lg btn-info btn-block btn-signin">Sign in</button>
-                    </div>
-                    <!-- /form -->
-                    <a href="forgotpassword.aspx" class="forgot-password pull-left">Forgot the password?</a>
-                    <a href="Register.aspx" class="forgot-password pull-right">Register!</a>
-                </div>
-                <!-- /card-container -->
-            </div>
-            <!-- /container -->
-        </div>
-
-        <!-- Modal start -->
-        <div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span style="font-family: 'century-gothic'; font-size: 20pt; font-weight: bold;">Processing login...</span>
-                    </div>
-                    <div class="modal-body">
-                        <span id="returnMsg"></span>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                <%--<span class="sr-only">40% Complete (success)</span>--%>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal ends -->
-
-        <footer>
-            <div class="container">
-                <hr />
-                <span class="pull-left" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">&copy;<%= Now.Year %> - Afrik Business Software
-                </span>
-                <span class="pull-right" style="color: white; font-family: 'Century gothic'; font-size: 10pt; color: #000000;">Custodian And Allied Insurance Plc.
-                </span>
-            </div>
-
-        </footer>
-    </form>
 </body>
 </html>
