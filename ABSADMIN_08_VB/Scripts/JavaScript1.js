@@ -1,5 +1,6 @@
 ﻿//function to hide and show pane
 $(function () {
+    //alert("my fun");
     $("#showPaneBtn").hide();
 
     if (window.sessionStorage.length > 0) {
@@ -86,7 +87,15 @@ $(function () {
             }
 
         });
+       
+        var userDetails = JSON.parse(sessionStorage.getItem("userRole"));
+        $("#profileName").empty();
 
+        $.each(userDetails, function (u) {
+            Console.log(userDetails[u].userName);
+            $("#profileName").val(userDetails[u].userName);
+
+        });
 
     }
 });
